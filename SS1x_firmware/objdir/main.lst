@@ -1,0 +1,1051 @@
+   1              		.cpu cortex-m4
+   2              		.eabi_attribute 20, 1
+   3              		.eabi_attribute 21, 1
+   4              		.eabi_attribute 23, 3
+   5              		.eabi_attribute 24, 1
+   6              		.eabi_attribute 25, 1
+   7              		.eabi_attribute 26, 1
+   8              		.eabi_attribute 30, 6
+   9              		.eabi_attribute 34, 1
+  10              		.eabi_attribute 18, 4
+  11              		.file	"main.c"
+  12              		.text
+  13              	.Ltext0:
+  14              		.cfi_sections	.debug_frame
+  15              		.section	.rodata
+  16              		.align	3
+  19              	fpr_q:
+  20 0000 00000000 		.word	0
+  21 0004 8000C840 		.word	1086849152
+  22              		.align	3
+  25              	fpr_inverse_of_q:
+  26 0008 82A79790 		.word	-1869109374
+  27 000c E354153F 		.word	1058362595
+  28              		.align	3
+  31              	fpr_inv_2sqrsigma0:
+  32 0010 C2BB83C1 		.word	-1048331326
+  33 0014 8B4FC33F 		.word	1069764491
+  34              		.align	3
+  37              	fpr_inv_sigma:
+  38 0018 00000000 		.word	0
+  39 001c 00000000 		.word	0
+  40 0020 9A16247E 		.word	2116294298
+  41 0024 EB487C3F 		.word	1065109739
+  42 0028 D9AE8C54 		.word	1418505945
+  43 002c 0AE57B3F 		.word	1065084170
+  44 0030 2C769EE0 		.word	-526485972
+  45 0034 2E857B3F 		.word	1065059630
+  46 0038 36DACAD3 		.word	-741680586
+  47 003c 5EFC7A3F 		.word	1065024606
+  48 0040 EDB37609 		.word	158774253
+  49 0044 3B7B7A3F 		.word	1064991547
+  50 0048 989CCA82 		.word	-2100650856
+  51 004c 12017A3F 		.word	1064960274
+  52 0050 36275FCE 		.word	-832624842
+  53 0054 498D793F 		.word	1064930633
+  54 0058 EED96EC5 		.word	-982590994
+  55 005c 571F793F 		.word	1064902487
+  56 0060 CAC764DE 		.word	-563820598
+  57 0064 C2B6783F 		.word	1064875714
+  58 0068 E31A31F6 		.word	-164554013
+  59 006c 1E53783F 		.word	1064850206
+  60              		.align	3
+  63              	fpr_sigma_min:
+  64 0070 00000000 		.word	0
+  65 0074 00000000 		.word	0
+  66 0078 8B564406 		.word	105141899
+  67 007c 38DDF13F 		.word	1072815416
+  68 0080 2686ADDC 		.word	-592607706
+  69 0084 2E1DF23F 		.word	1072831790
+  70 0088 7A7CAAE1 		.word	-508920710
+  71 008c 465CF23F 		.word	1072847942
+  72 0090 25FB4A57 		.word	1464531749
+  73 0094 5CB9F23F 		.word	1072871772
+  74 0098 B622FEC7 		.word	-939646282
+  75 009c AB14F33F 		.word	1072895147
+  76 00a0 C3D77534 		.word	880138179
+  77 00a4 4E6EF33F 		.word	1072918094
+  78 00a8 24C2A166 		.word	1721877028
+  79 00ac 5AC6F33F 		.word	1072940634
+  80 00b0 A0B38C35 		.word	898413472
+  81 00b4 E51CF43F 		.word	1072962789
+  82 00b8 757A1FBF 		.word	-1088456075
+  83 00bc 0172F43F 		.word	1072984577
+  84 00c0 64C79099 		.word	-1718565020
+  85 00c4 C1C5F43F 		.word	1073006017
+  86              		.align	3
+  89              	fpr_log2:
+  90 00c8 EF39FAFE 		.word	-17155601
+  91 00cc 422EE63F 		.word	1072049730
+  92              		.align	3
+  95              	fpr_inv_log2:
+  96 00d0 FE822B65 		.word	1697350398
+  97 00d4 4715F73F 		.word	1073157447
+  98              		.align	3
+ 101              	fpr_bnorm_max:
+ 102 00d8 ACADD85F 		.word	1608035756
+ 103 00dc 9A6DD040 		.word	1087401370
+ 104              		.align	3
+ 107              	fpr_zero:
+ 108 00e0 00000000 		.space	8
+ 108      00000000 
+ 109              		.align	3
+ 112              	fpr_one:
+ 113 00e8 00000000 		.word	0
+ 114 00ec 0000F03F 		.word	1072693248
+ 115              		.align	3
+ 118              	fpr_two:
+ 119 00f0 00000000 		.word	0
+ 120 00f4 00000040 		.word	1073741824
+ 121              		.align	3
+ 124              	fpr_onehalf:
+ 125 00f8 00000000 		.word	0
+ 126 00fc 0000E03F 		.word	1071644672
+ 127              		.align	3
+ 130              	fpr_invsqrt2:
+ 131 0100 CD3B7F66 		.word	1719614413
+ 132 0104 9EA0E63F 		.word	1072079006
+ 133              		.align	3
+ 136              	fpr_invsqrt8:
+ 137 0108 CD3B7F66 		.word	1719614413
+ 138 010c 9EA0D63F 		.word	1071030430
+ 139              		.align	3
+ 142              	fpr_ptwo31:
+ 143 0110 00000000 		.word	0
+ 144 0114 0000E041 		.word	1105199104
+ 145              		.align	3
+ 148              	fpr_ptwo31m1:
+ 149 0118 0000C0FF 		.word	-4194304
+ 150 011c FFFFDF41 		.word	1105199103
+ 151              		.align	3
+ 154              	fpr_mtwo31m1:
+ 155 0120 0000C0FF 		.word	-4194304
+ 156 0124 FFFFDFC1 		.word	-1042284545
+ 157              		.align	3
+ 160              	fpr_ptwo63m1:
+ 161 0128 00000000 		.word	0
+ 162 012c 0000E043 		.word	1138753536
+ 163              		.align	3
+ 166              	fpr_mtwo63m1:
+ 167 0130 00000000 		.word	0
+ 168 0134 0000E0C3 		.word	-1008730112
+ 169              		.align	3
+ 172              	fpr_ptwo63:
+ 173 0138 00000000 		.word	0
+ 174 013c 0000E043 		.word	1138753536
+ 175              		.global	hm
+ 176              		.bss
+ 177              		.align	3
+ 180              	hm:
+ 181 0000 00000000 		.space	8
+ 181      00000000 
+ 182              		.global	f
+ 183              		.align	3
+ 186              	f:
+ 187 0008 00000000 		.space	8
+ 187      00000000 
+ 188              		.global	sm
+ 189              		.align	2
+ 192              	sm:
+ 193 0010 00000000 		.space	4
+ 194              		.global	smlen
+ 195              		.align	2
+ 198              	smlen:
+ 199 0014 00000000 		.space	4
+ 200              		.global	m
+ 201              		.align	2
+ 204              	m:
+ 205 0018 00000000 		.space	4
+ 206              		.global	mlen
+ 207              		.data
+ 208              		.align	3
+ 211              	mlen:
+ 212 0000 21000000 		.word	33
+ 213 0004 00000000 		.word	0
+ 214              		.global	sk
+ 215              		.bss
+ 216              		.align	2
+ 219              	sk:
+ 220 001c 00000000 		.space	4
+ 221              		.section	.text.transform,"ax",%progbits
+ 222              		.align	1
+ 223              		.global	transform
+ 224              		.arch armv7e-m
+ 225              		.syntax unified
+ 226              		.thumb
+ 227              		.thumb_func
+ 228              		.fpu softvfp
+ 230              	transform:
+ 231              	.LFB21:
+ 232              		.file 1 "main.c"
+   1:main.c        **** #include <stdint.h>
+   2:main.c        **** #include <stdlib.h>
+   3:main.c        **** #include <string.h>
+   4:main.c        **** #include <stddef.h>
+   5:main.c        **** #include <stdio.h>
+   6:main.c        **** #include <ctype.h>
+   7:main.c        **** #include "hal.h"
+   8:main.c        **** #include "simpleserial.h"
+   9:main.c        **** #include "api.h"
+  10:main.c        **** #include "katrng.h"
+  11:main.c        **** #include "inner.h"
+  12:main.c        **** #include "fft.h"
+  13:main.c        **** #include "nist.h"
+  14:main.c        **** //#include "fpr.h"
+  15:main.c        **** 
+  16:main.c        **** #define TEMPALLOC
+  17:main.c        **** #define NONCELEN   40
+  18:main.c        **** 
+  19:main.c        **** fpr hm, f;
+  20:main.c        **** 
+  21:main.c        **** unsigned char *sm;
+  22:main.c        **** unsigned long long *smlen;
+  23:main.c        **** const unsigned char *m;
+  24:main.c        **** unsigned long long mlen = 33;
+  25:main.c        **** const unsigned char *sk;
+  26:main.c        **** 
+  27:main.c        **** uint64_t transform(uint8_t *in) {
+ 233              		.loc 1 27 33
+ 234              		.cfi_startproc
+ 235              		@ args = 0, pretend = 0, frame = 24
+ 236              		@ frame_needed = 1, uses_anonymous_args = 0
+ 237              		@ link register save eliminated.
+ 238 0000 2DE9B003 		push	{r4, r5, r7, r8, r9}
+ 239              	.LCFI0:
+ 240              		.cfi_def_cfa_offset 20
+ 241              		.cfi_offset 4, -20
+ 242              		.cfi_offset 5, -16
+ 243              		.cfi_offset 7, -12
+ 244              		.cfi_offset 8, -8
+ 245              		.cfi_offset 9, -4
+ 246 0004 87B0     		sub	sp, sp, #28
+ 247              	.LCFI1:
+ 248              		.cfi_def_cfa_offset 48
+ 249 0006 00AF     		add	r7, sp, #0
+ 250              	.LCFI2:
+ 251              		.cfi_def_cfa_register 7
+ 252 0008 7860     		str	r0, [r7, #4]
+  28:main.c        ****     uint64_t result = 0;
+ 253              		.loc 1 28 14
+ 254 000a 4FF00002 		mov	r2, #0
+ 255 000e 4FF00003 		mov	r3, #0
+ 256 0012 C7E90423 		strd	r2, [r7, #16]
+ 257              	.LBB2:
+  29:main.c        ****     for (int i = 0; i < 8; i++) { //8
+ 258              		.loc 1 29 14
+ 259 0016 0023     		movs	r3, #0
+ 260 0018 FB60     		str	r3, [r7, #12]
+ 261              		.loc 1 29 5
+ 262 001a 21E0     		b	.L2
+ 263              	.L4:
+  30:main.c        ****         result |= in[i];
+ 264              		.loc 1 30 21
+ 265 001c FB68     		ldr	r3, [r7, #12]
+ 266 001e 7A68     		ldr	r2, [r7, #4]
+ 267 0020 1344     		add	r3, r3, r2
+ 268 0022 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 269 0024 DBB2     		uxtb	r3, r3
+ 270 0026 0022     		movs	r2, #0
+ 271 0028 1C46     		mov	r4, r3
+ 272 002a 1546     		mov	r5, r2
+ 273              		.loc 1 30 16
+ 274 002c D7E90423 		ldrd	r2, [r7, #16]
+ 275 0030 42EA0408 		orr	r8, r2, r4
+ 276 0034 43EA0509 		orr	r9, r3, r5
+ 277 0038 C7E90489 		strd	r8, [r7, #16]
+  31:main.c        ****         if (i != 7) //7
+ 278              		.loc 1 31 12
+ 279 003c FB68     		ldr	r3, [r7, #12]
+ 280 003e 072B     		cmp	r3, #7
+ 281 0040 0BD0     		beq	.L3
+  32:main.c        ****             result <<= 8;
+ 282              		.loc 1 32 20
+ 283 0042 D7E90401 		ldrd	r0, [r7, #16]
+ 284 0046 4FF00002 		mov	r2, #0
+ 285 004a 4FF00003 		mov	r3, #0
+ 286 004e 0B02     		lsls	r3, r1, #8
+ 287 0050 43EA1063 		orr	r3, r3, r0, lsr #24
+ 288 0054 0202     		lsls	r2, r0, #8
+ 289 0056 C7E90423 		strd	r2, [r7, #16]
+ 290              	.L3:
+  29:main.c        ****         result |= in[i];
+ 291              		.loc 1 29 29 discriminator 2
+ 292 005a FB68     		ldr	r3, [r7, #12]
+ 293 005c 0133     		adds	r3, r3, #1
+ 294 005e FB60     		str	r3, [r7, #12]
+ 295              	.L2:
+  29:main.c        ****         result |= in[i];
+ 296              		.loc 1 29 5 discriminator 1
+ 297 0060 FB68     		ldr	r3, [r7, #12]
+ 298 0062 072B     		cmp	r3, #7
+ 299 0064 DADD     		ble	.L4
+ 300              	.LBE2:
+  33:main.c        ****     }
+  34:main.c        ****     return result;
+ 301              		.loc 1 34 12
+ 302 0066 D7E90423 		ldrd	r2, [r7, #16]
+  35:main.c        **** }
+ 303              		.loc 1 35 1
+ 304 006a 1046     		mov	r0, r2
+ 305 006c 1946     		mov	r1, r3
+ 306 006e 1C37     		adds	r7, r7, #28
+ 307              	.LCFI3:
+ 308              		.cfi_def_cfa_offset 20
+ 309 0070 BD46     		mov	sp, r7
+ 310              	.LCFI4:
+ 311              		.cfi_def_cfa_register 13
+ 312              		@ sp needed
+ 313 0072 BDE8B003 		pop	{r4, r5, r7, r8, r9}
+ 314              	.LCFI5:
+ 315              		.cfi_restore 9
+ 316              		.cfi_restore 8
+ 317              		.cfi_restore 7
+ 318              		.cfi_restore 5
+ 319              		.cfi_restore 4
+ 320              		.cfi_def_cfa_offset 0
+ 321 0076 7047     		bx	lr
+ 322              		.cfi_endproc
+ 323              	.LFE21:
+ 325              		.section	.text.transform1,"ax",%progbits
+ 326              		.align	1
+ 327              		.global	transform1
+ 328              		.syntax unified
+ 329              		.thumb
+ 330              		.thumb_func
+ 331              		.fpu softvfp
+ 333              	transform1:
+ 334              	.LFB22:
+  36:main.c        **** 
+  37:main.c        **** uint64_t transform1(uint8_t *in) {
+ 335              		.loc 1 37 34
+ 336              		.cfi_startproc
+ 337              		@ args = 0, pretend = 0, frame = 24
+ 338              		@ frame_needed = 1, uses_anonymous_args = 0
+ 339              		@ link register save eliminated.
+ 340 0000 2DE9B003 		push	{r4, r5, r7, r8, r9}
+ 341              	.LCFI6:
+ 342              		.cfi_def_cfa_offset 20
+ 343              		.cfi_offset 4, -20
+ 344              		.cfi_offset 5, -16
+ 345              		.cfi_offset 7, -12
+ 346              		.cfi_offset 8, -8
+ 347              		.cfi_offset 9, -4
+ 348 0004 87B0     		sub	sp, sp, #28
+ 349              	.LCFI7:
+ 350              		.cfi_def_cfa_offset 48
+ 351 0006 00AF     		add	r7, sp, #0
+ 352              	.LCFI8:
+ 353              		.cfi_def_cfa_register 7
+ 354 0008 7860     		str	r0, [r7, #4]
+  38:main.c        ****     uint64_t result = 0;
+ 355              		.loc 1 38 14
+ 356 000a 4FF00002 		mov	r2, #0
+ 357 000e 4FF00003 		mov	r3, #0
+ 358 0012 C7E90423 		strd	r2, [r7, #16]
+ 359              	.LBB3:
+  39:main.c        ****     for (int i = 0; i < 2; i++) { //8
+ 360              		.loc 1 39 14
+ 361 0016 0023     		movs	r3, #0
+ 362 0018 FB60     		str	r3, [r7, #12]
+ 363              		.loc 1 39 5
+ 364 001a 21E0     		b	.L7
+ 365              	.L9:
+  40:main.c        ****         result |= in[i];
+ 366              		.loc 1 40 21
+ 367 001c FB68     		ldr	r3, [r7, #12]
+ 368 001e 7A68     		ldr	r2, [r7, #4]
+ 369 0020 1344     		add	r3, r3, r2
+ 370 0022 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 371 0024 DBB2     		uxtb	r3, r3
+ 372 0026 0022     		movs	r2, #0
+ 373 0028 1C46     		mov	r4, r3
+ 374 002a 1546     		mov	r5, r2
+ 375              		.loc 1 40 16
+ 376 002c D7E90423 		ldrd	r2, [r7, #16]
+ 377 0030 42EA0408 		orr	r8, r2, r4
+ 378 0034 43EA0509 		orr	r9, r3, r5
+ 379 0038 C7E90489 		strd	r8, [r7, #16]
+  41:main.c        ****         if (i != 1) //7
+ 380              		.loc 1 41 12
+ 381 003c FB68     		ldr	r3, [r7, #12]
+ 382 003e 012B     		cmp	r3, #1
+ 383 0040 0BD0     		beq	.L8
+  42:main.c        ****             result <<= 8;
+ 384              		.loc 1 42 20
+ 385 0042 D7E90401 		ldrd	r0, [r7, #16]
+ 386 0046 4FF00002 		mov	r2, #0
+ 387 004a 4FF00003 		mov	r3, #0
+ 388 004e 0B02     		lsls	r3, r1, #8
+ 389 0050 43EA1063 		orr	r3, r3, r0, lsr #24
+ 390 0054 0202     		lsls	r2, r0, #8
+ 391 0056 C7E90423 		strd	r2, [r7, #16]
+ 392              	.L8:
+  39:main.c        ****         result |= in[i];
+ 393              		.loc 1 39 29 discriminator 2
+ 394 005a FB68     		ldr	r3, [r7, #12]
+ 395 005c 0133     		adds	r3, r3, #1
+ 396 005e FB60     		str	r3, [r7, #12]
+ 397              	.L7:
+  39:main.c        ****         result |= in[i];
+ 398              		.loc 1 39 5 discriminator 1
+ 399 0060 FB68     		ldr	r3, [r7, #12]
+ 400 0062 012B     		cmp	r3, #1
+ 401 0064 DADD     		ble	.L9
+ 402              	.LBE3:
+  43:main.c        ****     }
+  44:main.c        ****     return result;
+ 403              		.loc 1 44 12
+ 404 0066 D7E90423 		ldrd	r2, [r7, #16]
+  45:main.c        **** }
+ 405              		.loc 1 45 1
+ 406 006a 1046     		mov	r0, r2
+ 407 006c 1946     		mov	r1, r3
+ 408 006e 1C37     		adds	r7, r7, #28
+ 409              	.LCFI9:
+ 410              		.cfi_def_cfa_offset 20
+ 411 0070 BD46     		mov	sp, r7
+ 412              	.LCFI10:
+ 413              		.cfi_def_cfa_register 13
+ 414              		@ sp needed
+ 415 0072 BDE8B003 		pop	{r4, r5, r7, r8, r9}
+ 416              	.LCFI11:
+ 417              		.cfi_restore 9
+ 418              		.cfi_restore 8
+ 419              		.cfi_restore 7
+ 420              		.cfi_restore 5
+ 421              		.cfi_restore 4
+ 422              		.cfi_def_cfa_offset 0
+ 423 0076 7047     		bx	lr
+ 424              		.cfi_endproc
+ 425              	.LFE22:
+ 427              		.section	.text.set_f,"ax",%progbits
+ 428              		.align	1
+ 429              		.global	set_f
+ 430              		.syntax unified
+ 431              		.thumb
+ 432              		.thumb_func
+ 433              		.fpu softvfp
+ 435              	set_f:
+ 436              	.LFB23:
+  46:main.c        **** 
+  47:main.c        **** uint8_t set_f(uint8_t *text_in_buf, uint8_t len) {
+ 437              		.loc 1 47 50
+ 438              		.cfi_startproc
+ 439              		@ args = 0, pretend = 0, frame = 8
+ 440              		@ frame_needed = 1, uses_anonymous_args = 0
+ 441 0000 80B5     		push	{r7, lr}
+ 442              	.LCFI12:
+ 443              		.cfi_def_cfa_offset 8
+ 444              		.cfi_offset 7, -8
+ 445              		.cfi_offset 14, -4
+ 446 0002 82B0     		sub	sp, sp, #8
+ 447              	.LCFI13:
+ 448              		.cfi_def_cfa_offset 16
+ 449 0004 00AF     		add	r7, sp, #0
+ 450              	.LCFI14:
+ 451              		.cfi_def_cfa_register 7
+ 452 0006 7860     		str	r0, [r7, #4]
+ 453 0008 0B46     		mov	r3, r1
+ 454 000a FB70     		strb	r3, [r7, #3]
+  48:main.c        ****     f = transform(text_in_buf);
+ 455              		.loc 1 48 9
+ 456 000c 7868     		ldr	r0, [r7, #4]
+ 457 000e FFF7FEFF 		bl	transform
+ 458 0012 0246     		mov	r2, r0
+ 459 0014 0B46     		mov	r3, r1
+ 460              		.loc 1 48 7
+ 461 0016 0449     		ldr	r1, .L13
+ 462 0018 C1E90023 		strd	r2, [r1]
+  49:main.c        ****     return 0;
+ 463              		.loc 1 49 12
+ 464 001c 0023     		movs	r3, #0
+  50:main.c        **** }
+ 465              		.loc 1 50 1
+ 466 001e 1846     		mov	r0, r3
+ 467 0020 0837     		adds	r7, r7, #8
+ 468              	.LCFI15:
+ 469              		.cfi_def_cfa_offset 8
+ 470 0022 BD46     		mov	sp, r7
+ 471              	.LCFI16:
+ 472              		.cfi_def_cfa_register 13
+ 473              		@ sp needed
+ 474 0024 80BD     		pop	{r7, pc}
+ 475              	.L14:
+ 476 0026 00BF     		.align	2
+ 477              	.L13:
+ 478 0028 00000000 		.word	f
+ 479              		.cfi_endproc
+ 480              	.LFE23:
+ 482              		.section	.text.sign,"ax",%progbits
+ 483              		.align	1
+ 484              		.global	sign
+ 485              		.syntax unified
+ 486              		.thumb
+ 487              		.thumb_func
+ 488              		.fpu softvfp
+ 490              	sign:
+ 491              	.LFB24:
+  51:main.c        **** 
+  52:main.c        **** // hm 값을 설정한다.
+  53:main.c        **** uint8_t sign(uint8_t *text_in_buf, uint8_t len) {
+ 492              		.loc 1 53 49
+ 493              		.cfi_startproc
+ 494              		@ args = 0, pretend = 0, frame = 72
+ 495              		@ frame_needed = 1, uses_anonymous_args = 0
+ 496 0000 2DE9B04F 		push	{r4, r5, r7, r8, r9, r10, fp, lr}
+ 497              	.LCFI17:
+ 498              		.cfi_def_cfa_offset 32
+ 499              		.cfi_offset 4, -32
+ 500              		.cfi_offset 5, -28
+ 501              		.cfi_offset 7, -24
+ 502              		.cfi_offset 8, -20
+ 503              		.cfi_offset 9, -16
+ 504              		.cfi_offset 10, -12
+ 505              		.cfi_offset 11, -8
+ 506              		.cfi_offset 14, -4
+ 507 0004 92B0     		sub	sp, sp, #72
+ 508              	.LCFI18:
+ 509              		.cfi_def_cfa_offset 104
+ 510 0006 00AF     		add	r7, sp, #0
+ 511              	.LCFI19:
+ 512              		.cfi_def_cfa_register 7
+ 513 0008 7862     		str	r0, [r7, #36]
+ 514 000a 0B46     		mov	r3, r1
+ 515 000c 87F82330 		strb	r3, [r7, #35]
+  54:main.c        **** 
+  55:main.c        **** //    m="D81C4D8D734FCBFBEADE3D3F8A039FAA2A2C9957E835AD55B22E75BF57BB556AC8";
+  56:main.c        **** //    sk="59044102F3CFBE1BE03C144102F7EF75FBEF83043F7CFC20C20BEEC007DE3F041FBF0BFF401041030C40040FA
+  57:main.c        **** //    crypto_sign(sm, &smlen, m, mlen, sk);
+  58:main.c        **** //    fpr fpct_a_re='c18832928d3bca60', fpct_a_im='c187c9bd5d45bba6'; \
+  59:main.c        **** //    fpr fpct_b_re='c03828bb90a8aabc', fpct_b_im='403864ec11b96315'; \
+  60:main.c        **** //    fpr fpct_d_re, fpct_d_im; \
+  61:main.c        **** //    trigger_high();
+  62:main.c        **** //    fpct_d_re = fpr_sub(\
+  63:main.c        **** //        fpr_mul(fpct_a_re, fpct_b_re), \
+  64:main.c        **** //        fpr_mul(fpct_a_im, fpct_b_im)); \
+  65:main.c        **** //    fpct_d_im = fpr_add(\
+  66:main.c        **** //        fpr_mul(fpct_a_re, fpct_b_im), \
+  67:main.c        **** //        fpr_mul(fpct_a_im, fpct_b_re)); \
+  68:main.c        **** //    trigger_low();
+  69:main.c        ****     hm = transform(text_in_buf);
+ 516              		.loc 1 69 10
+ 517 0010 786A     		ldr	r0, [r7, #36]
+ 518 0012 FFF7FEFF 		bl	transform
+ 519 0016 0246     		mov	r2, r0
+ 520 0018 0B46     		mov	r3, r1
+ 521              		.loc 1 69 8
+ 522 001a 2749     		ldr	r1, .L17
+ 523 001c C1E90023 		strd	r2, [r1]
+  70:main.c        ****     uint64_t xu, yu, w, zu, zv;
+  71:main.c        ****     uint32_t x0, x1, y0, y1, z0, z1, z2;
+  72:main.c        ****     int ex, ey, e, s, d;
+  73:main.c        **** //    fpr x = 'c18832928d3bca60';
+  74:main.c        **** //    fpr y = 'c03828bb90a8aabc';
+  75:main.c        ****     xu = (hm & (((uint64_t) 1 << 52) - 1)) | ((uint64_t) 1 << 52); //1.xx 값의 곱셈이르모 �
+ 524              		.loc 1 75 14
+ 525 0020 254B     		ldr	r3, .L17
+ 526 0022 D3E90023 		ldrd	r2, [r3]
+ 527 0026 BA61     		str	r2, [r7, #24]
+ 528 0028 C3F31303 		ubfx	r3, r3, #0, #20
+ 529 002c FB61     		str	r3, [r7, #28]
+ 530              		.loc 1 75 8
+ 531 002e D7E90623 		ldrd	r2, [r7, #24]
+ 532 0032 1146     		mov	r1, r2
+ 533 0034 B960     		str	r1, [r7, #8]
+ 534 0036 43F48013 		orr	r3, r3, #1048576
+ 535 003a FB60     		str	r3, [r7, #12]
+ 536 003c D7E90223 		ldrd	r2, [r7, #8]
+ 537 0040 C7E91023 		strd	r2, [r7, #64]
+  76:main.c        ****     yu = (f & (((uint64_t) 1 << 52) - 1)) | ((uint64_t) 1 << 52);
+ 538              		.loc 1 76 13
+ 539 0044 1D4B     		ldr	r3, .L17+4
+ 540 0046 D3E90023 		ldrd	r2, [r3]
+ 541 004a 3A61     		str	r2, [r7, #16]
+ 542 004c C3F31303 		ubfx	r3, r3, #0, #20
+ 543 0050 7B61     		str	r3, [r7, #20]
+ 544              		.loc 1 76 8
+ 545 0052 D7E90423 		ldrd	r2, [r7, #16]
+ 546 0056 1146     		mov	r1, r2
+ 547 0058 3960     		str	r1, [r7]
+ 548 005a 43F48013 		orr	r3, r3, #1048576
+ 549 005e 7B60     		str	r3, [r7, #4]
+ 550 0060 D7E90023 		ldrd	r2, [r7]
+ 551 0064 C7E90E23 		strd	r2, [r7, #56]
+  77:main.c        **** 
+  78:main.c        ****     trigger_high();
+ 552              		.loc 1 78 5
+ 553 0068 FFF7FEFF 		bl	trigger_high
+  79:main.c        ****     x0 = (uint32_t) xu & 0x01FFFFFF;
+ 554              		.loc 1 79 10
+ 555 006c 3B6C     		ldr	r3, [r7, #64]
+ 556              		.loc 1 79 8
+ 557 006e 23F07E43 		bic	r3, r3, #-33554432
+ 558 0072 7B63     		str	r3, [r7, #52]
+  80:main.c        **** //    x1 = (uint32_t) (xu >> 25);
+  81:main.c        ****     y0 = (uint32_t) yu & 0x01FFFFFF;
+ 559              		.loc 1 81 10
+ 560 0074 BB6B     		ldr	r3, [r7, #56]
+ 561              		.loc 1 81 8
+ 562 0076 23F07E43 		bic	r3, r3, #-33554432
+ 563 007a 3B63     		str	r3, [r7, #48]
+  82:main.c        **** //    y1 = (uint32_t) (yu >> 25);
+  83:main.c        ****     w = (uint64_t) x0 * (uint64_t) y0;
+ 564              		.loc 1 83 9
+ 565 007c 7B6B     		ldr	r3, [r7, #52]
+ 566 007e 0022     		movs	r2, #0
+ 567 0080 9A46     		mov	r10, r3
+ 568 0082 9346     		mov	fp, r2
+ 569              		.loc 1 83 25
+ 570 0084 3B6B     		ldr	r3, [r7, #48]
+ 571 0086 0022     		movs	r2, #0
+ 572 0088 9846     		mov	r8, r3
+ 573 008a 9146     		mov	r9, r2
+ 574              		.loc 1 83 7
+ 575 008c 08FB0BF2 		mul	r2, r8, fp
+ 576 0090 0AFB09F3 		mul	r3, r10, r9
+ 577 0094 1344     		add	r3, r3, r2
+ 578 0096 AAFB0845 		umull	r4, r5, r10, r8
+ 579 009a 2B44     		add	r3, r3, r5
+ 580 009c 1D46     		mov	r5, r3
+ 581 009e C7E90A45 		strd	r4, [r7, #40]
+ 582 00a2 C7E90A45 		strd	r4, [r7, #40]
+  84:main.c        ****     trigger_low();
+ 583              		.loc 1 84 5
+ 584 00a6 FFF7FEFF 		bl	trigger_low
+  85:main.c        **** //    z0 = (uint32_t) w & 0x01FFFFFF;
+  86:main.c        **** //    z1 = (uint32_t) (w >> 25);
+  87:main.c        **** //    w = (uint64_t) x0 * (uint64_t) y1;
+  88:main.c        **** //    z1 += (uint32_t) w & 0x01FFFFFF;
+  89:main.c        **** //    z2 = (uint32_t) (w >> 25);
+  90:main.c        **** //    w = (uint64_t) x1 * (uint64_t) y0;
+  91:main.c        **** //    z1 += (uint32_t) w & 0x01FFFFFF;
+  92:main.c        **** //    z2 += (uint32_t) (w >> 25);
+  93:main.c        **** //    zu = (uint64_t) x1 * (uint64_t) y1;
+  94:main.c        **** //    z2 += (z1 >> 25);
+  95:main.c        **** //    z1 &= 0x01FFFFFF;
+  96:main.c        **** //    zu += z2;
+  97:main.c        **** //    zu |= ((z0 | z1) + 0x01FFFFFF) >> 25;
+  98:main.c        **** //    zv = (zu >> 1) | (zu & 1);
+  99:main.c        **** //    w = zu >> 55;
+ 100:main.c        **** //    zu ^= (zu ^ zv) & -w;
+ 101:main.c        **** //    d = (int) transform1(text_in_buf);
+ 102:main.c        **** //
+ 103:main.c        **** //    ex = d; //(int) ((hm >> 52) & 0x7FF);
+ 104:main.c        **** //    ey = 1075; // (int) ((f >> 52) & 0x7FF);
+ 105:main.c        **** //    trigger_high();
+ 106:main.c        **** //    e = ex + ey - 2100; //+ (int) w;
+ 107:main.c        **** ////    s =  (int)((hm ^ f) >> 63);
+ 108:main.c        **** ////    d = ((ex + 0x7FF) & (ey + 0x7FF)) >> 11;
+ 109:main.c        **** ////    zu &= -(uint64_t)d;
+ 110:main.c        **** //    asm("nop");
+ 111:main.c        **** //    asm("nop");
+ 112:main.c        **** //    asm("nop");
+ 113:main.c        **** //    asm("nop");
+ 114:main.c        **** //    asm("nop");
+ 115:main.c        **** //    trigger_low();
+ 116:main.c        **** //    uint8_t buf[2];
+ 117:main.c        **** //    buf[0] = (e >> 8) & 0x07;
+ 118:main.c        **** //    buf[1] = e & 0xFF;
+ 119:main.c        **** //    simpleserial_put('r', 2, buf);
+ 120:main.c        **** 
+ 121:main.c        **** //	trigger_high();
+ 122:main.c        **** //	Zf(poly_mul_fft)(hm, b01, logn);
+ 123:main.c        **** //	trigger_low();
+ 124:main.c        ****     //Zf(poly_mulconst)(hm, ni, logn);
+ 125:main.c        ****     return 0;
+ 585              		.loc 1 125 12
+ 586 00aa 0023     		movs	r3, #0
+ 126:main.c        **** }
+ 587              		.loc 1 126 1
+ 588 00ac 1846     		mov	r0, r3
+ 589 00ae 4837     		adds	r7, r7, #72
+ 590              	.LCFI20:
+ 591              		.cfi_def_cfa_offset 32
+ 592 00b0 BD46     		mov	sp, r7
+ 593              	.LCFI21:
+ 594              		.cfi_def_cfa_register 13
+ 595              		@ sp needed
+ 596 00b2 BDE8B08F 		pop	{r4, r5, r7, r8, r9, r10, fp, pc}
+ 597              	.L18:
+ 598 00b6 00BF     		.align	2
+ 599              	.L17:
+ 600 00b8 00000000 		.word	hm
+ 601 00bc 00000000 		.word	f
+ 602              		.cfi_endproc
+ 603              	.LFE24:
+ 605              		.section	.text.check_f,"ax",%progbits
+ 606              		.align	1
+ 607              		.global	check_f
+ 608              		.syntax unified
+ 609              		.thumb
+ 610              		.thumb_func
+ 611              		.fpu softvfp
+ 613              	check_f:
+ 614              	.LFB25:
+ 127:main.c        **** 
+ 128:main.c        **** uint8_t check_f(uint8_t *text_in_buf, uint8_t len) {
+ 615              		.loc 1 128 52
+ 616              		.cfi_startproc
+ 617              		@ args = 0, pretend = 0, frame = 24
+ 618              		@ frame_needed = 1, uses_anonymous_args = 0
+ 619 0000 F0B5     		push	{r4, r5, r6, r7, lr}
+ 620              	.LCFI22:
+ 621              		.cfi_def_cfa_offset 20
+ 622              		.cfi_offset 4, -20
+ 623              		.cfi_offset 5, -16
+ 624              		.cfi_offset 6, -12
+ 625              		.cfi_offset 7, -8
+ 626              		.cfi_offset 14, -4
+ 627 0002 87B0     		sub	sp, sp, #28
+ 628              	.LCFI23:
+ 629              		.cfi_def_cfa_offset 48
+ 630 0004 00AF     		add	r7, sp, #0
+ 631              	.LCFI24:
+ 632              		.cfi_def_cfa_register 7
+ 633 0006 7860     		str	r0, [r7, #4]
+ 634 0008 F970     		strb	r1, [r7, #3]
+ 635              	.LBB4:
+ 129:main.c        ****     uint8_t buf[8];
+ 130:main.c        ****     for (int i = 0; i < 8; i++)
+ 636              		.loc 1 130 14
+ 637 000a 0021     		movs	r1, #0
+ 638 000c 7961     		str	r1, [r7, #20]
+ 639              		.loc 1 130 5
+ 640 000e 1EE0     		b	.L20
+ 641              	.L21:
+ 131:main.c        ****         buf[i] = (f >> (8 * (7 - i))) & 0xff;
+ 642              		.loc 1 131 21 discriminator 3
+ 643 0010 1649     		ldr	r1, .L23
+ 644 0012 D1E90001 		ldrd	r0, [r1]
+ 645              		.loc 1 131 32 discriminator 3
+ 646 0016 7C69     		ldr	r4, [r7, #20]
+ 647 0018 C4F10704 		rsb	r4, r4, #7
+ 648              		.loc 1 131 27 discriminator 3
+ 649 001c E400     		lsls	r4, r4, #3
+ 650              		.loc 1 131 21 discriminator 3
+ 651 001e C4F12006 		rsb	r6, r4, #32
+ 652 0022 A4F12005 		sub	r5, r4, #32
+ 653 0026 20FA04F2 		lsr	r2, r0, r4
+ 654 002a 01FA06F6 		lsl	r6, r1, r6
+ 655 002e 3243     		orrs	r2, r2, r6
+ 656 0030 21FA05F5 		lsr	r5, r1, r5
+ 657 0034 2A43     		orrs	r2, r2, r5
+ 658 0036 21FA04F3 		lsr	r3, r1, r4
+ 659              		.loc 1 131 16 discriminator 3
+ 660 003a D4B2     		uxtb	r4, r2
+ 661 003c 07F10C00 		add	r0, r7, #12
+ 662 0040 7969     		ldr	r1, [r7, #20]
+ 663 0042 0144     		add	r1, r1, r0
+ 664 0044 2046     		mov	r0, r4
+ 665 0046 0870     		strb	r0, [r1]
+ 130:main.c        ****         buf[i] = (f >> (8 * (7 - i))) & 0xff;
+ 666              		.loc 1 130 29 discriminator 3
+ 667 0048 7969     		ldr	r1, [r7, #20]
+ 668 004a 0131     		adds	r1, r1, #1
+ 669 004c 7961     		str	r1, [r7, #20]
+ 670              	.L20:
+ 130:main.c        ****         buf[i] = (f >> (8 * (7 - i))) & 0xff;
+ 671              		.loc 1 130 5 discriminator 1
+ 672 004e 7969     		ldr	r1, [r7, #20]
+ 673 0050 0729     		cmp	r1, #7
+ 674 0052 DDDD     		ble	.L21
+ 675              	.LBE4:
+ 132:main.c        ****     simpleserial_put('r', 8, buf);
+ 676              		.loc 1 132 5
+ 677 0054 07F10C03 		add	r3, r7, #12
+ 678 0058 1A46     		mov	r2, r3
+ 679 005a 0821     		movs	r1, #8
+ 680 005c 7220     		movs	r0, #114
+ 681 005e FFF7FEFF 		bl	simpleserial_put
+ 133:main.c        ****     return 0;
+ 682              		.loc 1 133 12
+ 683 0062 0023     		movs	r3, #0
+ 134:main.c        **** }
+ 684              		.loc 1 134 1
+ 685 0064 1846     		mov	r0, r3
+ 686 0066 1C37     		adds	r7, r7, #28
+ 687              	.LCFI25:
+ 688              		.cfi_def_cfa_offset 20
+ 689 0068 BD46     		mov	sp, r7
+ 690              	.LCFI26:
+ 691              		.cfi_def_cfa_register 13
+ 692              		@ sp needed
+ 693 006a F0BD     		pop	{r4, r5, r6, r7, pc}
+ 694              	.L24:
+ 695              		.align	2
+ 696              	.L23:
+ 697 006c 00000000 		.word	f
+ 698              		.cfi_endproc
+ 699              	.LFE25:
+ 701              		.section	.text.check_hm,"ax",%progbits
+ 702              		.align	1
+ 703              		.global	check_hm
+ 704              		.syntax unified
+ 705              		.thumb
+ 706              		.thumb_func
+ 707              		.fpu softvfp
+ 709              	check_hm:
+ 710              	.LFB26:
+ 135:main.c        **** 
+ 136:main.c        **** uint8_t check_hm(uint8_t *text_in_buf, uint8_t len) {
+ 711              		.loc 1 136 53
+ 712              		.cfi_startproc
+ 713              		@ args = 0, pretend = 0, frame = 24
+ 714              		@ frame_needed = 1, uses_anonymous_args = 0
+ 715 0000 F0B5     		push	{r4, r5, r6, r7, lr}
+ 716              	.LCFI27:
+ 717              		.cfi_def_cfa_offset 20
+ 718              		.cfi_offset 4, -20
+ 719              		.cfi_offset 5, -16
+ 720              		.cfi_offset 6, -12
+ 721              		.cfi_offset 7, -8
+ 722              		.cfi_offset 14, -4
+ 723 0002 87B0     		sub	sp, sp, #28
+ 724              	.LCFI28:
+ 725              		.cfi_def_cfa_offset 48
+ 726 0004 00AF     		add	r7, sp, #0
+ 727              	.LCFI29:
+ 728              		.cfi_def_cfa_register 7
+ 729 0006 7860     		str	r0, [r7, #4]
+ 730 0008 F970     		strb	r1, [r7, #3]
+ 731              	.LBB5:
+ 137:main.c        ****     uint8_t buf[8];
+ 138:main.c        ****     for (int i = 0; i < 8; i++)
+ 732              		.loc 1 138 14
+ 733 000a 0021     		movs	r1, #0
+ 734 000c 7961     		str	r1, [r7, #20]
+ 735              		.loc 1 138 5
+ 736 000e 1EE0     		b	.L26
+ 737              	.L27:
+ 139:main.c        ****         buf[i] = (hm >> (8 * (7 - i))) & 0xff;
+ 738              		.loc 1 139 22 discriminator 3
+ 739 0010 1649     		ldr	r1, .L29
+ 740 0012 D1E90001 		ldrd	r0, [r1]
+ 741              		.loc 1 139 33 discriminator 3
+ 742 0016 7C69     		ldr	r4, [r7, #20]
+ 743 0018 C4F10704 		rsb	r4, r4, #7
+ 744              		.loc 1 139 28 discriminator 3
+ 745 001c E400     		lsls	r4, r4, #3
+ 746              		.loc 1 139 22 discriminator 3
+ 747 001e C4F12006 		rsb	r6, r4, #32
+ 748 0022 A4F12005 		sub	r5, r4, #32
+ 749 0026 20FA04F2 		lsr	r2, r0, r4
+ 750 002a 01FA06F6 		lsl	r6, r1, r6
+ 751 002e 3243     		orrs	r2, r2, r6
+ 752 0030 21FA05F5 		lsr	r5, r1, r5
+ 753 0034 2A43     		orrs	r2, r2, r5
+ 754 0036 21FA04F3 		lsr	r3, r1, r4
+ 755              		.loc 1 139 16 discriminator 3
+ 756 003a D4B2     		uxtb	r4, r2
+ 757 003c 07F10C00 		add	r0, r7, #12
+ 758 0040 7969     		ldr	r1, [r7, #20]
+ 759 0042 0144     		add	r1, r1, r0
+ 760 0044 2046     		mov	r0, r4
+ 761 0046 0870     		strb	r0, [r1]
+ 138:main.c        ****         buf[i] = (hm >> (8 * (7 - i))) & 0xff;
+ 762              		.loc 1 138 29 discriminator 3
+ 763 0048 7969     		ldr	r1, [r7, #20]
+ 764 004a 0131     		adds	r1, r1, #1
+ 765 004c 7961     		str	r1, [r7, #20]
+ 766              	.L26:
+ 138:main.c        ****         buf[i] = (hm >> (8 * (7 - i))) & 0xff;
+ 767              		.loc 1 138 5 discriminator 1
+ 768 004e 7969     		ldr	r1, [r7, #20]
+ 769 0050 0729     		cmp	r1, #7
+ 770 0052 DDDD     		ble	.L27
+ 771              	.LBE5:
+ 140:main.c        ****     simpleserial_put('r', 8, buf);
+ 772              		.loc 1 140 5
+ 773 0054 07F10C03 		add	r3, r7, #12
+ 774 0058 1A46     		mov	r2, r3
+ 775 005a 0821     		movs	r1, #8
+ 776 005c 7220     		movs	r0, #114
+ 777 005e FFF7FEFF 		bl	simpleserial_put
+ 141:main.c        ****     return 0;
+ 778              		.loc 1 141 12
+ 779 0062 0023     		movs	r3, #0
+ 142:main.c        **** }
+ 780              		.loc 1 142 1
+ 781 0064 1846     		mov	r0, r3
+ 782 0066 1C37     		adds	r7, r7, #28
+ 783              	.LCFI30:
+ 784              		.cfi_def_cfa_offset 20
+ 785 0068 BD46     		mov	sp, r7
+ 786              	.LCFI31:
+ 787              		.cfi_def_cfa_register 13
+ 788              		@ sp needed
+ 789 006a F0BD     		pop	{r4, r5, r6, r7, pc}
+ 790              	.L30:
+ 791              		.align	2
+ 792              	.L29:
+ 793 006c 00000000 		.word	hm
+ 794              		.cfi_endproc
+ 795              	.LFE26:
+ 797              		.section	.text.main,"ax",%progbits
+ 798              		.align	1
+ 799              		.global	main
+ 800              		.syntax unified
+ 801              		.thumb
+ 802              		.thumb_func
+ 803              		.fpu softvfp
+ 805              	main:
+ 806              	.LFB27:
+ 143:main.c        **** 
+ 144:main.c        **** //// hm 값을 설정한다.
+ 145:main.c        **** //uint8_t set_hm(uint8_t *text_in_buf, uint8_t len) {
+ 146:main.c        **** //    // trigger_high();
+ 147:main.c        **** //
+ 148:main.c        **** //    for (int i = 0; i < 8; i++) {
+ 149:main.c        **** //        for (int j = 0; j < 8; j++) {
+ 150:main.c        **** //            hm[i] += (((fpr) text_in_buf[i * 8 + j]) << (56 - 8 * j));
+ 151:main.c        **** //        }
+ 152:main.c        **** //    }
+ 153:main.c        **** //    // trigger_low();
+ 154:main.c        **** //
+ 155:main.c        **** //    return 0;
+ 156:main.c        **** //}
+ 157:main.c        **** 
+ 158:main.c        **** int main(void) {
+ 807              		.loc 1 158 16
+ 808              		.cfi_startproc
+ 809              		@ args = 0, pretend = 0, frame = 0
+ 810              		@ frame_needed = 1, uses_anonymous_args = 0
+ 811 0000 80B5     		push	{r7, lr}
+ 812              	.LCFI32:
+ 813              		.cfi_def_cfa_offset 8
+ 814              		.cfi_offset 7, -8
+ 815              		.cfi_offset 14, -4
+ 816 0002 00AF     		add	r7, sp, #0
+ 817              	.LCFI33:
+ 818              		.cfi_def_cfa_register 7
+ 159:main.c        **** 
+ 160:main.c        **** 
+ 161:main.c        ****     platform_init();
+ 819              		.loc 1 161 5
+ 820 0004 FFF7FEFF 		bl	platform_init
+ 162:main.c        ****     init_uart();
+ 821              		.loc 1 162 5
+ 822 0008 FFF7FEFF 		bl	init_uart
+ 163:main.c        ****     trigger_setup();
+ 823              		.loc 1 163 5
+ 824 000c FFF7FEFF 		bl	trigger_setup
+ 164:main.c        ****     /* Uncomment this to get a HELLO message for debug */
+ 165:main.c        ****     /*
+ 166:main.c        ****     putch('h');
+ 167:main.c        ****     putch('e');
+ 168:main.c        ****     putch('l');
+ 169:main.c        ****     putch('l');
+ 170:main.c        ****     putch('o');
+ 171:main.c        ****     putch('\n');
+ 172:main.c        ****     */
+ 173:main.c        **** 
+ 174:main.c        ****     simpleserial_init();  // 'v': check_version, 'y': ss_num_commands, 'w': ss_get_commands
+ 825              		.loc 1 174 5
+ 826 0010 FFF7FEFF 		bl	simpleserial_init
+ 175:main.c        **** 
+ 176:main.c        ****     simpleserial_addcmd('f', 8, set_f);
+ 827              		.loc 1 176 5
+ 828 0014 0B4A     		ldr	r2, .L33
+ 829 0016 0821     		movs	r1, #8
+ 830 0018 6620     		movs	r0, #102
+ 831 001a FFF7FEFF 		bl	simpleserial_addcmd
+ 177:main.c        ****     simpleserial_addcmd('s', 8, sign);
+ 832              		.loc 1 177 5
+ 833 001e 0A4A     		ldr	r2, .L33+4
+ 834 0020 0821     		movs	r1, #8
+ 835 0022 7320     		movs	r0, #115
+ 836 0024 FFF7FEFF 		bl	simpleserial_addcmd
+ 178:main.c        ****     simpleserial_addcmd('c', 0, check_f);
+ 837              		.loc 1 178 5
+ 838 0028 084A     		ldr	r2, .L33+8
+ 839 002a 0021     		movs	r1, #0
+ 840 002c 6320     		movs	r0, #99
+ 841 002e FFF7FEFF 		bl	simpleserial_addcmd
+ 179:main.c        ****     simpleserial_addcmd('h', 0, check_hm);
+ 842              		.loc 1 179 5
+ 843 0032 074A     		ldr	r2, .L33+12
+ 844 0034 0021     		movs	r1, #0
+ 845 0036 6820     		movs	r0, #104
+ 846 0038 FFF7FEFF 		bl	simpleserial_addcmd
+ 847              	.L32:
+ 180:main.c        ****     while (1)
+ 181:main.c        ****         simpleserial_get();
+ 848              		.loc 1 181 9 discriminator 1
+ 849 003c FFF7FEFF 		bl	simpleserial_get
+ 850 0040 FCE7     		b	.L32
+ 851              	.L34:
+ 852 0042 00BF     		.align	2
+ 853              	.L33:
+ 854 0044 00000000 		.word	set_f
+ 855 0048 00000000 		.word	sign
+ 856 004c 00000000 		.word	check_f
+ 857 0050 00000000 		.word	check_hm
+ 858              		.cfi_endproc
+ 859              	.LFE27:
+ 861              		.text
+ 862              	.Letext0:
+ 863              		.file 2 "c:\\users\\user\\chipwhisperer5_64\\cw\\home\\portable\\armgcc\\gcc-arm-none-eabi-10-2020
+ 864              		.file 3 "c:\\users\\user\\chipwhisperer5_64\\cw\\home\\portable\\armgcc\\gcc-arm-none-eabi-10-2020
+ 865              		.file 4 "fpr.h"
+DEFINED SYMBOLS
+                            *ABS*:00000000 main.c
+C:\Users\user\AppData\Local\Temp\cctvJfuQ.s:16     .rodata:00000000 $d
+C:\Users\user\AppData\Local\Temp\cctvJfuQ.s:19     .rodata:00000000 fpr_q
+C:\Users\user\AppData\Local\Temp\cctvJfuQ.s:25     .rodata:00000008 fpr_inverse_of_q
+C:\Users\user\AppData\Local\Temp\cctvJfuQ.s:31     .rodata:00000010 fpr_inv_2sqrsigma0
+C:\Users\user\AppData\Local\Temp\cctvJfuQ.s:37     .rodata:00000018 fpr_inv_sigma
+C:\Users\user\AppData\Local\Temp\cctvJfuQ.s:63     .rodata:00000070 fpr_sigma_min
+C:\Users\user\AppData\Local\Temp\cctvJfuQ.s:89     .rodata:000000c8 fpr_log2
+C:\Users\user\AppData\Local\Temp\cctvJfuQ.s:95     .rodata:000000d0 fpr_inv_log2
+C:\Users\user\AppData\Local\Temp\cctvJfuQ.s:101    .rodata:000000d8 fpr_bnorm_max
+C:\Users\user\AppData\Local\Temp\cctvJfuQ.s:107    .rodata:000000e0 fpr_zero
+C:\Users\user\AppData\Local\Temp\cctvJfuQ.s:112    .rodata:000000e8 fpr_one
+C:\Users\user\AppData\Local\Temp\cctvJfuQ.s:118    .rodata:000000f0 fpr_two
+C:\Users\user\AppData\Local\Temp\cctvJfuQ.s:124    .rodata:000000f8 fpr_onehalf
+C:\Users\user\AppData\Local\Temp\cctvJfuQ.s:130    .rodata:00000100 fpr_invsqrt2
+C:\Users\user\AppData\Local\Temp\cctvJfuQ.s:136    .rodata:00000108 fpr_invsqrt8
+C:\Users\user\AppData\Local\Temp\cctvJfuQ.s:142    .rodata:00000110 fpr_ptwo31
+C:\Users\user\AppData\Local\Temp\cctvJfuQ.s:148    .rodata:00000118 fpr_ptwo31m1
+C:\Users\user\AppData\Local\Temp\cctvJfuQ.s:154    .rodata:00000120 fpr_mtwo31m1
+C:\Users\user\AppData\Local\Temp\cctvJfuQ.s:160    .rodata:00000128 fpr_ptwo63m1
+C:\Users\user\AppData\Local\Temp\cctvJfuQ.s:166    .rodata:00000130 fpr_mtwo63m1
+C:\Users\user\AppData\Local\Temp\cctvJfuQ.s:172    .rodata:00000138 fpr_ptwo63
+C:\Users\user\AppData\Local\Temp\cctvJfuQ.s:180    .bss:00000000 hm
+C:\Users\user\AppData\Local\Temp\cctvJfuQ.s:177    .bss:00000000 $d
+C:\Users\user\AppData\Local\Temp\cctvJfuQ.s:186    .bss:00000008 f
+C:\Users\user\AppData\Local\Temp\cctvJfuQ.s:192    .bss:00000010 sm
+C:\Users\user\AppData\Local\Temp\cctvJfuQ.s:198    .bss:00000014 smlen
+C:\Users\user\AppData\Local\Temp\cctvJfuQ.s:204    .bss:00000018 m
+C:\Users\user\AppData\Local\Temp\cctvJfuQ.s:211    .data:00000000 mlen
+C:\Users\user\AppData\Local\Temp\cctvJfuQ.s:208    .data:00000000 $d
+C:\Users\user\AppData\Local\Temp\cctvJfuQ.s:219    .bss:0000001c sk
+C:\Users\user\AppData\Local\Temp\cctvJfuQ.s:222    .text.transform:00000000 $t
+C:\Users\user\AppData\Local\Temp\cctvJfuQ.s:230    .text.transform:00000000 transform
+C:\Users\user\AppData\Local\Temp\cctvJfuQ.s:326    .text.transform1:00000000 $t
+C:\Users\user\AppData\Local\Temp\cctvJfuQ.s:333    .text.transform1:00000000 transform1
+C:\Users\user\AppData\Local\Temp\cctvJfuQ.s:428    .text.set_f:00000000 $t
+C:\Users\user\AppData\Local\Temp\cctvJfuQ.s:435    .text.set_f:00000000 set_f
+C:\Users\user\AppData\Local\Temp\cctvJfuQ.s:478    .text.set_f:00000028 $d
+C:\Users\user\AppData\Local\Temp\cctvJfuQ.s:483    .text.sign:00000000 $t
+C:\Users\user\AppData\Local\Temp\cctvJfuQ.s:490    .text.sign:00000000 sign
+C:\Users\user\AppData\Local\Temp\cctvJfuQ.s:600    .text.sign:000000b8 $d
+C:\Users\user\AppData\Local\Temp\cctvJfuQ.s:606    .text.check_f:00000000 $t
+C:\Users\user\AppData\Local\Temp\cctvJfuQ.s:613    .text.check_f:00000000 check_f
+C:\Users\user\AppData\Local\Temp\cctvJfuQ.s:697    .text.check_f:0000006c $d
+C:\Users\user\AppData\Local\Temp\cctvJfuQ.s:702    .text.check_hm:00000000 $t
+C:\Users\user\AppData\Local\Temp\cctvJfuQ.s:709    .text.check_hm:00000000 check_hm
+C:\Users\user\AppData\Local\Temp\cctvJfuQ.s:793    .text.check_hm:0000006c $d
+C:\Users\user\AppData\Local\Temp\cctvJfuQ.s:798    .text.main:00000000 $t
+C:\Users\user\AppData\Local\Temp\cctvJfuQ.s:805    .text.main:00000000 main
+C:\Users\user\AppData\Local\Temp\cctvJfuQ.s:854    .text.main:00000044 $d
+
+UNDEFINED SYMBOLS
+trigger_high
+trigger_low
+simpleserial_put
+platform_init
+init_uart
+trigger_setup
+simpleserial_init
+simpleserial_addcmd
+simpleserial_get

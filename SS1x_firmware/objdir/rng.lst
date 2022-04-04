@@ -1,0 +1,1396 @@
+   1              		.cpu cortex-m4
+   2              		.eabi_attribute 20, 1
+   3              		.eabi_attribute 21, 1
+   4              		.eabi_attribute 23, 3
+   5              		.eabi_attribute 24, 1
+   6              		.eabi_attribute 25, 1
+   7              		.eabi_attribute 26, 1
+   8              		.eabi_attribute 30, 6
+   9              		.eabi_attribute 34, 1
+  10              		.eabi_attribute 18, 4
+  11              		.file	"rng.c"
+  12              		.text
+  13              	.Ltext0:
+  14              		.cfi_sections	.debug_frame
+  15              		.section	.rodata
+  16              		.align	3
+  19              	fpr_q:
+  20 0000 00000000 		.word	0
+  21 0004 8000C840 		.word	1086849152
+  22              		.align	3
+  25              	fpr_inverse_of_q:
+  26 0008 82A79790 		.word	-1869109374
+  27 000c E354153F 		.word	1058362595
+  28              		.align	3
+  31              	fpr_inv_2sqrsigma0:
+  32 0010 C2BB83C1 		.word	-1048331326
+  33 0014 8B4FC33F 		.word	1069764491
+  34              		.align	3
+  37              	fpr_inv_sigma:
+  38 0018 00000000 		.word	0
+  39 001c 00000000 		.word	0
+  40 0020 9A16247E 		.word	2116294298
+  41 0024 EB487C3F 		.word	1065109739
+  42 0028 D9AE8C54 		.word	1418505945
+  43 002c 0AE57B3F 		.word	1065084170
+  44 0030 2C769EE0 		.word	-526485972
+  45 0034 2E857B3F 		.word	1065059630
+  46 0038 36DACAD3 		.word	-741680586
+  47 003c 5EFC7A3F 		.word	1065024606
+  48 0040 EDB37609 		.word	158774253
+  49 0044 3B7B7A3F 		.word	1064991547
+  50 0048 989CCA82 		.word	-2100650856
+  51 004c 12017A3F 		.word	1064960274
+  52 0050 36275FCE 		.word	-832624842
+  53 0054 498D793F 		.word	1064930633
+  54 0058 EED96EC5 		.word	-982590994
+  55 005c 571F793F 		.word	1064902487
+  56 0060 CAC764DE 		.word	-563820598
+  57 0064 C2B6783F 		.word	1064875714
+  58 0068 E31A31F6 		.word	-164554013
+  59 006c 1E53783F 		.word	1064850206
+  60              		.align	3
+  63              	fpr_sigma_min:
+  64 0070 00000000 		.word	0
+  65 0074 00000000 		.word	0
+  66 0078 8B564406 		.word	105141899
+  67 007c 38DDF13F 		.word	1072815416
+  68 0080 2686ADDC 		.word	-592607706
+  69 0084 2E1DF23F 		.word	1072831790
+  70 0088 7A7CAAE1 		.word	-508920710
+  71 008c 465CF23F 		.word	1072847942
+  72 0090 25FB4A57 		.word	1464531749
+  73 0094 5CB9F23F 		.word	1072871772
+  74 0098 B622FEC7 		.word	-939646282
+  75 009c AB14F33F 		.word	1072895147
+  76 00a0 C3D77534 		.word	880138179
+  77 00a4 4E6EF33F 		.word	1072918094
+  78 00a8 24C2A166 		.word	1721877028
+  79 00ac 5AC6F33F 		.word	1072940634
+  80 00b0 A0B38C35 		.word	898413472
+  81 00b4 E51CF43F 		.word	1072962789
+  82 00b8 757A1FBF 		.word	-1088456075
+  83 00bc 0172F43F 		.word	1072984577
+  84 00c0 64C79099 		.word	-1718565020
+  85 00c4 C1C5F43F 		.word	1073006017
+  86              		.align	3
+  89              	fpr_log2:
+  90 00c8 EF39FAFE 		.word	-17155601
+  91 00cc 422EE63F 		.word	1072049730
+  92              		.align	3
+  95              	fpr_inv_log2:
+  96 00d0 FE822B65 		.word	1697350398
+  97 00d4 4715F73F 		.word	1073157447
+  98              		.align	3
+ 101              	fpr_bnorm_max:
+ 102 00d8 ACADD85F 		.word	1608035756
+ 103 00dc 9A6DD040 		.word	1087401370
+ 104              		.align	3
+ 107              	fpr_zero:
+ 108 00e0 00000000 		.space	8
+ 108      00000000 
+ 109              		.align	3
+ 112              	fpr_one:
+ 113 00e8 00000000 		.word	0
+ 114 00ec 0000F03F 		.word	1072693248
+ 115              		.align	3
+ 118              	fpr_two:
+ 119 00f0 00000000 		.word	0
+ 120 00f4 00000040 		.word	1073741824
+ 121              		.align	3
+ 124              	fpr_onehalf:
+ 125 00f8 00000000 		.word	0
+ 126 00fc 0000E03F 		.word	1071644672
+ 127              		.align	3
+ 130              	fpr_invsqrt2:
+ 131 0100 CD3B7F66 		.word	1719614413
+ 132 0104 9EA0E63F 		.word	1072079006
+ 133              		.align	3
+ 136              	fpr_invsqrt8:
+ 137 0108 CD3B7F66 		.word	1719614413
+ 138 010c 9EA0D63F 		.word	1071030430
+ 139              		.align	3
+ 142              	fpr_ptwo31:
+ 143 0110 00000000 		.word	0
+ 144 0114 0000E041 		.word	1105199104
+ 145              		.align	3
+ 148              	fpr_ptwo31m1:
+ 149 0118 0000C0FF 		.word	-4194304
+ 150 011c FFFFDF41 		.word	1105199103
+ 151              		.align	3
+ 154              	fpr_mtwo31m1:
+ 155 0120 0000C0FF 		.word	-4194304
+ 156 0124 FFFFDFC1 		.word	-1042284545
+ 157              		.align	3
+ 160              	fpr_ptwo63m1:
+ 161 0128 00000000 		.word	0
+ 162 012c 0000E043 		.word	1138753536
+ 163              		.align	3
+ 166              	fpr_mtwo63m1:
+ 167 0130 00000000 		.word	0
+ 168 0134 0000E0C3 		.word	-1008730112
+ 169              		.align	3
+ 172              	fpr_ptwo63:
+ 173 0138 00000000 		.word	0
+ 174 013c 0000E043 		.word	1138753536
+ 175              		.section	.text.falcon_inner_prng_init,"ax",%progbits
+ 176              		.align	1
+ 177              		.global	falcon_inner_prng_init
+ 178              		.arch armv7e-m
+ 179              		.syntax unified
+ 180              		.thumb
+ 181              		.thumb_func
+ 182              		.fpu softvfp
+ 184              	falcon_inner_prng_init:
+ 185              	.LFB18:
+ 186              		.file 1 "rng.c"
+   1:rng.c         **** /*
+   2:rng.c         ****  * PRNG and interface to the system RNG.
+   3:rng.c         ****  *
+   4:rng.c         ****  * ==========================(LICENSE BEGIN)============================
+   5:rng.c         ****  *
+   6:rng.c         ****  * Copyright (c) 2017-2019  Falcon Project
+   7:rng.c         ****  *
+   8:rng.c         ****  * Permission is hereby granted, free of charge, to any person obtaining
+   9:rng.c         ****  * a copy of this software and associated documentation files (the
+  10:rng.c         ****  * "Software"), to deal in the Software without restriction, including
+  11:rng.c         ****  * without limitation the rights to use, copy, modify, merge, publish,
+  12:rng.c         ****  * distribute, sublicense, and/or sell copies of the Software, and to
+  13:rng.c         ****  * permit persons to whom the Software is furnished to do so, subject to
+  14:rng.c         ****  * the following conditions:
+  15:rng.c         ****  *
+  16:rng.c         ****  * The above copyright notice and this permission notice shall be
+  17:rng.c         ****  * included in all copies or substantial portions of the Software.
+  18:rng.c         ****  *
+  19:rng.c         ****  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+  20:rng.c         ****  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+  21:rng.c         ****  * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+  22:rng.c         ****  * IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+  23:rng.c         ****  * CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+  24:rng.c         ****  * TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+  25:rng.c         ****  * SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+  26:rng.c         ****  *
+  27:rng.c         ****  * ===========================(LICENSE END)=============================
+  28:rng.c         ****  *
+  29:rng.c         ****  * @author   Thomas Pornin <thomas.pornin@nccgroup.com>
+  30:rng.c         ****  */
+  31:rng.c         **** 
+  32:rng.c         **** #include <assert.h>
+  33:rng.c         **** 
+  34:rng.c         **** #include "inner.h"
+  35:rng.c         **** 
+  36:rng.c         **** 
+  37:rng.c         **** /* see inner.h */
+  38:rng.c         **** void
+  39:rng.c         **** Zf(prng_init)(prng *p, inner_shake256_context *src)
+  40:rng.c         **** {
+ 187              		.loc 1 40 1
+ 188              		.cfi_startproc
+ 189              		@ args = 0, pretend = 0, frame = 96
+ 190              		@ frame_needed = 1, uses_anonymous_args = 0
+ 191 0000 2DE9F04F 		push	{r4, r5, r6, r7, r8, r9, r10, fp, lr}
+ 192              	.LCFI0:
+ 193              		.cfi_def_cfa_offset 36
+ 194              		.cfi_offset 4, -36
+ 195              		.cfi_offset 5, -32
+ 196              		.cfi_offset 6, -28
+ 197              		.cfi_offset 7, -24
+ 198              		.cfi_offset 8, -20
+ 199              		.cfi_offset 9, -16
+ 200              		.cfi_offset 10, -12
+ 201              		.cfi_offset 11, -8
+ 202              		.cfi_offset 14, -4
+ 203 0004 99B0     		sub	sp, sp, #100
+ 204              	.LCFI1:
+ 205              		.cfi_def_cfa_offset 136
+ 206 0006 00AF     		add	r7, sp, #0
+ 207              	.LCFI2:
+ 208              		.cfi_def_cfa_register 7
+ 209 0008 7860     		str	r0, [r7, #4]
+ 210 000a 3960     		str	r1, [r7]
+  41:rng.c         **** 	/*
+  42:rng.c         **** 	 * To ensure reproducibility for a given seed, we
+  43:rng.c         **** 	 * must enforce little-endian interpretation of
+  44:rng.c         **** 	 * the state words.
+  45:rng.c         **** 	 */
+  46:rng.c         **** 	uint8_t tmp[56];
+  47:rng.c         **** 	uint64_t th, tl;
+  48:rng.c         **** 	int i;
+  49:rng.c         **** 
+  50:rng.c         **** 	inner_shake256_extract(src, tmp, 56);
+ 211              		.loc 1 50 2
+ 212 000c 07F10C03 		add	r3, r7, #12
+ 213 0010 3822     		movs	r2, #56
+ 214 0012 1946     		mov	r1, r3
+ 215 0014 3868     		ldr	r0, [r7]
+ 216 0016 FFF7FEFF 		bl	falcon_inner_i_shake256_extract
+  51:rng.c         **** 	for (i = 0; i < 14; i ++) {
+ 217              		.loc 1 51 9
+ 218 001a 0023     		movs	r3, #0
+ 219 001c FB65     		str	r3, [r7, #92]
+ 220              		.loc 1 51 2
+ 221 001e 31E0     		b	.L2
+ 222              	.L3:
+ 223              	.LBB2:
+  52:rng.c         **** 		uint32_t w;
+  53:rng.c         **** 
+  54:rng.c         **** 		w = (uint32_t)tmp[(i << 2) + 0]
+ 224              		.loc 1 54 30 discriminator 3
+ 225 0020 FB6D     		ldr	r3, [r7, #92]
+ 226 0022 9B00     		lsls	r3, r3, #2
+ 227              		.loc 1 54 20 discriminator 3
+ 228 0024 07F16002 		add	r2, r7, #96
+ 229 0028 1344     		add	r3, r3, r2
+ 230 002a 13F8543C 		ldrb	r3, [r3, #-84]	@ zero_extendqisi2
+ 231              		.loc 1 54 7 discriminator 3
+ 232 002e 1A46     		mov	r2, r3
+  55:rng.c         **** 			| ((uint32_t)tmp[(i << 2) + 1] << 8)
+ 233              		.loc 1 55 24 discriminator 3
+ 234 0030 FB6D     		ldr	r3, [r7, #92]
+ 235 0032 9B00     		lsls	r3, r3, #2
+ 236              		.loc 1 55 30 discriminator 3
+ 237 0034 0133     		adds	r3, r3, #1
+ 238              		.loc 1 55 20 discriminator 3
+ 239 0036 07F16001 		add	r1, r7, #96
+ 240 003a 0B44     		add	r3, r3, r1
+ 241 003c 13F8543C 		ldrb	r3, [r3, #-84]	@ zero_extendqisi2
+ 242              		.loc 1 55 35 discriminator 3
+ 243 0040 1B02     		lsls	r3, r3, #8
+ 244              		.loc 1 55 4 discriminator 3
+ 245 0042 1A43     		orrs	r2, r2, r3
+  56:rng.c         **** 			| ((uint32_t)tmp[(i << 2) + 2] << 16)
+ 246              		.loc 1 56 24 discriminator 3
+ 247 0044 FB6D     		ldr	r3, [r7, #92]
+ 248 0046 9B00     		lsls	r3, r3, #2
+ 249              		.loc 1 56 30 discriminator 3
+ 250 0048 0233     		adds	r3, r3, #2
+ 251              		.loc 1 56 20 discriminator 3
+ 252 004a 07F16001 		add	r1, r7, #96
+ 253 004e 0B44     		add	r3, r3, r1
+ 254 0050 13F8543C 		ldrb	r3, [r3, #-84]	@ zero_extendqisi2
+ 255              		.loc 1 56 35 discriminator 3
+ 256 0054 1B04     		lsls	r3, r3, #16
+ 257              		.loc 1 56 4 discriminator 3
+ 258 0056 1A43     		orrs	r2, r2, r3
+  57:rng.c         **** 			| ((uint32_t)tmp[(i << 2) + 3] << 24);
+ 259              		.loc 1 57 24 discriminator 3
+ 260 0058 FB6D     		ldr	r3, [r7, #92]
+ 261 005a 9B00     		lsls	r3, r3, #2
+ 262              		.loc 1 57 30 discriminator 3
+ 263 005c 0333     		adds	r3, r3, #3
+ 264              		.loc 1 57 20 discriminator 3
+ 265 005e 07F16001 		add	r1, r7, #96
+ 266 0062 0B44     		add	r3, r3, r1
+ 267 0064 13F8543C 		ldrb	r3, [r3, #-84]	@ zero_extendqisi2
+ 268              		.loc 1 57 35 discriminator 3
+ 269 0068 1B06     		lsls	r3, r3, #24
+  54:rng.c         **** 			| ((uint32_t)tmp[(i << 2) + 1] << 8)
+ 270              		.loc 1 54 5 discriminator 3
+ 271 006a 1343     		orrs	r3, r3, r2
+ 272 006c 7B64     		str	r3, [r7, #68]
+  58:rng.c         **** 		*(uint32_t *)(p->state.d + (i << 2)) = w;
+ 273              		.loc 1 58 17 discriminator 3
+ 274 006e 7B68     		ldr	r3, [r7, #4]
+ 275 0070 03F50273 		add	r3, r3, #520
+ 276              		.loc 1 58 33 discriminator 3
+ 277 0074 FA6D     		ldr	r2, [r7, #92]
+ 278 0076 9200     		lsls	r2, r2, #2
+ 279              		.loc 1 58 4 discriminator 3
+ 280 0078 1344     		add	r3, r3, r2
+ 281              		.loc 1 58 40 discriminator 3
+ 282 007a 7A6C     		ldr	r2, [r7, #68]
+ 283 007c 1A60     		str	r2, [r3]
+ 284              	.LBE2:
+  51:rng.c         **** 		uint32_t w;
+ 285              		.loc 1 51 24 discriminator 3
+ 286 007e FB6D     		ldr	r3, [r7, #92]
+ 287 0080 0133     		adds	r3, r3, #1
+ 288 0082 FB65     		str	r3, [r7, #92]
+ 289              	.L2:
+  51:rng.c         **** 		uint32_t w;
+ 290              		.loc 1 51 2 discriminator 1
+ 291 0084 FB6D     		ldr	r3, [r7, #92]
+ 292 0086 0D2B     		cmp	r3, #13
+ 293 0088 CADD     		ble	.L3
+  59:rng.c         **** 	}
+  60:rng.c         **** 	tl = *(uint32_t *)(p->state.d + 48);
+ 294              		.loc 1 60 21
+ 295 008a 7B68     		ldr	r3, [r7, #4]
+ 296 008c 03F50273 		add	r3, r3, #520
+ 297              		.loc 1 60 8
+ 298 0090 3033     		adds	r3, r3, #48
+ 299              		.loc 1 60 7
+ 300 0092 1B68     		ldr	r3, [r3]
+ 301              		.loc 1 60 5
+ 302 0094 0022     		movs	r2, #0
+ 303 0096 9A46     		mov	r10, r3
+ 304 0098 9346     		mov	fp, r2
+ 305 009a C7E914AB 		strd	r10, [r7, #80]
+  61:rng.c         **** 	th = *(uint32_t *)(p->state.d + 52);
+ 306              		.loc 1 61 21
+ 307 009e 7B68     		ldr	r3, [r7, #4]
+ 308 00a0 03F50273 		add	r3, r3, #520
+ 309              		.loc 1 61 8
+ 310 00a4 3433     		adds	r3, r3, #52
+ 311              		.loc 1 61 7
+ 312 00a6 1B68     		ldr	r3, [r3]
+ 313              		.loc 1 61 5
+ 314 00a8 0022     		movs	r2, #0
+ 315 00aa 9846     		mov	r8, r3
+ 316 00ac 9146     		mov	r9, r2
+ 317 00ae C7E91289 		strd	r8, [r7, #72]
+  62:rng.c         **** 	*(uint64_t *)(p->state.d + 48) = tl + (th << 32);
+ 318              		.loc 1 62 44
+ 319 00b2 D7E91201 		ldrd	r0, [r7, #72]
+ 320 00b6 4FF00002 		mov	r2, #0
+ 321 00ba 4FF00003 		mov	r3, #0
+ 322 00be 0300     		movs	r3, r0
+ 323 00c0 0022     		movs	r2, #0
+ 324              		.loc 1 62 16
+ 325 00c2 7968     		ldr	r1, [r7, #4]
+ 326 00c4 01F50271 		add	r1, r1, #520
+ 327              		.loc 1 62 3
+ 328 00c8 01F13006 		add	r6, r1, #48
+ 329              		.loc 1 62 38
+ 330 00cc D7E91401 		ldrd	r0, [r7, #80]
+ 331 00d0 1418     		adds	r4, r2, r0
+ 332 00d2 43EB0105 		adc	r5, r3, r1
+ 333              		.loc 1 62 33
+ 334 00d6 C6E90045 		strd	r4, [r6]
+  63:rng.c         **** 	Zf(prng_refill)(p);
+ 335              		.loc 1 63 2
+ 336 00da 7868     		ldr	r0, [r7, #4]
+ 337 00dc FFF7FEFF 		bl	falcon_inner_prng_refill
+  64:rng.c         **** }
+ 338              		.loc 1 64 1
+ 339 00e0 00BF     		nop
+ 340 00e2 6437     		adds	r7, r7, #100
+ 341              	.LCFI3:
+ 342              		.cfi_def_cfa_offset 36
+ 343 00e4 BD46     		mov	sp, r7
+ 344              	.LCFI4:
+ 345              		.cfi_def_cfa_register 13
+ 346              		@ sp needed
+ 347 00e6 BDE8F08F 		pop	{r4, r5, r6, r7, r8, r9, r10, fp, pc}
+ 348              		.cfi_endproc
+ 349              	.LFE18:
+ 351              		.section	.text.falcon_inner_prng_refill,"ax",%progbits
+ 352              		.align	1
+ 353              		.global	falcon_inner_prng_refill
+ 354              		.syntax unified
+ 355              		.thumb
+ 356              		.thumb_func
+ 357              		.fpu softvfp
+ 359              	falcon_inner_prng_refill:
+ 360              	.LFB19:
+  65:rng.c         **** 
+  66:rng.c         **** /*
+  67:rng.c         ****  * PRNG based on ChaCha20.
+  68:rng.c         ****  *
+  69:rng.c         ****  * State consists in key (32 bytes) then IV (16 bytes) and block counter
+  70:rng.c         ****  * (8 bytes). Normally, we should not care about local endianness (this
+  71:rng.c         ****  * is for a PRNG), but for the NIST competition we need reproducible KAT
+  72:rng.c         ****  * vectors that work across architectures, so we enforce little-endian
+  73:rng.c         ****  * interpretation where applicable. Moreover, output words are "spread
+  74:rng.c         ****  * out" over the output buffer with the interleaving pattern that is
+  75:rng.c         ****  * naturally obtained from the AVX2 implementation that runs eight
+  76:rng.c         ****  * ChaCha20 instances in parallel.
+  77:rng.c         ****  *
+  78:rng.c         ****  * The block counter is XORed into the first 8 bytes of the IV.
+  79:rng.c         ****  */
+  80:rng.c         **** void
+  81:rng.c         **** Zf(prng_refill)(prng *p)
+  82:rng.c         **** {
+ 361              		.loc 1 82 1
+ 362              		.cfi_startproc
+ 363              		@ args = 0, pretend = 0, frame = 96
+ 364              		@ frame_needed = 1, uses_anonymous_args = 0
+ 365 0000 F0B5     		push	{r4, r5, r6, r7, lr}
+ 366              	.LCFI5:
+ 367              		.cfi_def_cfa_offset 20
+ 368              		.cfi_offset 4, -20
+ 369              		.cfi_offset 5, -16
+ 370              		.cfi_offset 6, -12
+ 371              		.cfi_offset 7, -8
+ 372              		.cfi_offset 14, -4
+ 373 0002 99B0     		sub	sp, sp, #100
+ 374              	.LCFI6:
+ 375              		.cfi_def_cfa_offset 120
+ 376 0004 00AF     		add	r7, sp, #0
+ 377              	.LCFI7:
+ 378              		.cfi_def_cfa_register 7
+ 379 0006 7860     		str	r0, [r7, #4]
+  83:rng.c         **** 
+  84:rng.c         **** 	static const uint32_t CW[] = {
+  85:rng.c         **** 		0x61707865, 0x3320646e, 0x79622d32, 0x6b206574
+  86:rng.c         **** 	};
+  87:rng.c         **** 
+  88:rng.c         **** 	uint64_t cc;
+  89:rng.c         **** 	size_t u;
+  90:rng.c         **** 
+  91:rng.c         **** 	/*
+  92:rng.c         **** 	 * State uses local endianness. Only the output bytes must be
+  93:rng.c         **** 	 * converted to little endian (if used on a big-endian machine).
+  94:rng.c         **** 	 */
+  95:rng.c         **** 	cc = *(uint64_t *)(p->state.d + 48);
+ 380              		.loc 1 95 21
+ 381 0008 7B68     		ldr	r3, [r7, #4]
+ 382 000a 03F50273 		add	r3, r3, #520
+ 383              		.loc 1 95 8
+ 384 000e 3033     		adds	r3, r3, #48
+ 385              		.loc 1 95 5
+ 386 0010 D3E90023 		ldrd	r2, [r3]
+ 387 0014 C7E91623 		strd	r2, [r7, #88]
+  96:rng.c         **** 	for (u = 0; u < 8; u ++) {
+ 388              		.loc 1 96 9
+ 389 0018 0023     		movs	r3, #0
+ 390 001a 7B65     		str	r3, [r7, #84]
+ 391              		.loc 1 96 2
+ 392 001c 5CE2     		b	.L5
+ 393              	.L14:
+ 394              	.LBB3:
+  97:rng.c         **** 		uint32_t state[16];
+  98:rng.c         **** 		size_t v;
+  99:rng.c         **** 		int i;
+ 100:rng.c         **** 
+ 101:rng.c         **** 		memcpy(&state[0], CW, sizeof CW);
+ 395              		.loc 1 101 3
+ 396 001e 114B     		ldr	r3, .L15
+ 397 0020 07F10C06 		add	r6, r7, #12
+ 398 0024 0FCB     		ldm	r3, {r0, r1, r2, r3}
+ 399 0026 86E80F00 		stm	r6, {r0, r1, r2, r3}
+ 102:rng.c         **** 		memcpy(&state[4], p->state.d, 48);
+ 400              		.loc 1 102 29
+ 401 002a 7B68     		ldr	r3, [r7, #4]
+ 402 002c 03F50271 		add	r1, r3, #520
+ 403              		.loc 1 102 3
+ 404 0030 07F10C03 		add	r3, r7, #12
+ 405 0034 1033     		adds	r3, r3, #16
+ 406 0036 3022     		movs	r2, #48
+ 407 0038 1846     		mov	r0, r3
+ 408 003a FFF7FEFF 		bl	memcpy
+ 103:rng.c         **** 		state[14] ^= (uint32_t)cc;
+ 409              		.loc 1 103 13
+ 410 003e 7A6C     		ldr	r2, [r7, #68]
+ 411              		.loc 1 103 16
+ 412 0040 BB6D     		ldr	r3, [r7, #88]
+ 413              		.loc 1 103 13
+ 414 0042 5340     		eors	r3, r3, r2
+ 415 0044 7B64     		str	r3, [r7, #68]
+ 104:rng.c         **** 		state[15] ^= (uint32_t)(cc >> 32);
+ 416              		.loc 1 104 13
+ 417 0046 BE6C     		ldr	r6, [r7, #72]
+ 418              		.loc 1 104 30
+ 419 0048 D7E91601 		ldrd	r0, [r7, #88]
+ 420 004c 4FF00002 		mov	r2, #0
+ 421 0050 4FF00003 		mov	r3, #0
+ 422 0054 0A00     		movs	r2, r1
+ 423 0056 0023     		movs	r3, #0
+ 424              		.loc 1 104 16
+ 425 0058 1346     		mov	r3, r2
+ 426              		.loc 1 104 13
+ 427 005a 7340     		eors	r3, r3, r6
+ 428 005c BB64     		str	r3, [r7, #72]
+ 105:rng.c         **** 		for (i = 0; i < 10; i ++) {
+ 429              		.loc 1 105 10
+ 430 005e 0023     		movs	r3, #0
+ 431 0060 FB64     		str	r3, [r7, #76]
+ 432              		.loc 1 105 3
+ 433 0062 84E1     		b	.L6
+ 434              	.L16:
+ 435              		.align	2
+ 436              	.L15:
+ 437 0064 40010000 		.word	CW.0
+ 438              	.L7:
+ 106:rng.c         **** 
+ 107:rng.c         **** #define QROUND(a, b, c, d)   do { \
+ 108:rng.c         **** 		state[a] += state[b]; \
+ 109:rng.c         **** 		state[d] ^= state[a]; \
+ 110:rng.c         **** 		state[d] = (state[d] << 16) | (state[d] >> 16); \
+ 111:rng.c         **** 		state[c] += state[d]; \
+ 112:rng.c         **** 		state[b] ^= state[c]; \
+ 113:rng.c         **** 		state[b] = (state[b] << 12) | (state[b] >> 20); \
+ 114:rng.c         **** 		state[a] += state[b]; \
+ 115:rng.c         **** 		state[d] ^= state[a]; \
+ 116:rng.c         **** 		state[d] = (state[d] <<  8) | (state[d] >> 24); \
+ 117:rng.c         **** 		state[c] += state[d]; \
+ 118:rng.c         **** 		state[b] ^= state[c]; \
+ 119:rng.c         **** 		state[b] = (state[b] <<  7) | (state[b] >> 25); \
+ 120:rng.c         **** 	} while (0)
+ 121:rng.c         **** 
+ 122:rng.c         **** 			QROUND( 0,  4,  8, 12);
+ 439              		.loc 1 122 4 discriminator 3
+ 440 0068 FA68     		ldr	r2, [r7, #12]
+ 441 006a FB69     		ldr	r3, [r7, #28]
+ 442 006c 1344     		add	r3, r3, r2
+ 443 006e FB60     		str	r3, [r7, #12]
+ 444 0070 FA6B     		ldr	r2, [r7, #60]
+ 445 0072 FB68     		ldr	r3, [r7, #12]
+ 446 0074 5340     		eors	r3, r3, r2
+ 447 0076 FB63     		str	r3, [r7, #60]
+ 448 0078 FB6B     		ldr	r3, [r7, #60]
+ 449 007a 4FEA3343 		ror	r3, r3, #16
+ 450 007e FB63     		str	r3, [r7, #60]
+ 451 0080 FA6A     		ldr	r2, [r7, #44]
+ 452 0082 FB6B     		ldr	r3, [r7, #60]
+ 453 0084 1344     		add	r3, r3, r2
+ 454 0086 FB62     		str	r3, [r7, #44]
+ 455 0088 FA69     		ldr	r2, [r7, #28]
+ 456 008a FB6A     		ldr	r3, [r7, #44]
+ 457 008c 5340     		eors	r3, r3, r2
+ 458 008e FB61     		str	r3, [r7, #28]
+ 459 0090 FB69     		ldr	r3, [r7, #28]
+ 460 0092 4FEA3353 		ror	r3, r3, #20
+ 461 0096 FB61     		str	r3, [r7, #28]
+ 462 0098 FA68     		ldr	r2, [r7, #12]
+ 463 009a FB69     		ldr	r3, [r7, #28]
+ 464 009c 1344     		add	r3, r3, r2
+ 465 009e FB60     		str	r3, [r7, #12]
+ 466 00a0 FA6B     		ldr	r2, [r7, #60]
+ 467 00a2 FB68     		ldr	r3, [r7, #12]
+ 468 00a4 5340     		eors	r3, r3, r2
+ 469 00a6 FB63     		str	r3, [r7, #60]
+ 470 00a8 FB6B     		ldr	r3, [r7, #60]
+ 471 00aa 4FEA3363 		ror	r3, r3, #24
+ 472 00ae FB63     		str	r3, [r7, #60]
+ 473 00b0 FA6A     		ldr	r2, [r7, #44]
+ 474 00b2 FB6B     		ldr	r3, [r7, #60]
+ 475 00b4 1344     		add	r3, r3, r2
+ 476 00b6 FB62     		str	r3, [r7, #44]
+ 477 00b8 FA69     		ldr	r2, [r7, #28]
+ 478 00ba FB6A     		ldr	r3, [r7, #44]
+ 479 00bc 5340     		eors	r3, r3, r2
+ 480 00be FB61     		str	r3, [r7, #28]
+ 481 00c0 FB69     		ldr	r3, [r7, #28]
+ 482 00c2 4FEA7363 		ror	r3, r3, #25
+ 483 00c6 FB61     		str	r3, [r7, #28]
+ 123:rng.c         **** 			QROUND( 1,  5,  9, 13);
+ 484              		.loc 1 123 4 discriminator 3
+ 485 00c8 3A69     		ldr	r2, [r7, #16]
+ 486 00ca 3B6A     		ldr	r3, [r7, #32]
+ 487 00cc 1344     		add	r3, r3, r2
+ 488 00ce 3B61     		str	r3, [r7, #16]
+ 489 00d0 3A6C     		ldr	r2, [r7, #64]
+ 490 00d2 3B69     		ldr	r3, [r7, #16]
+ 491 00d4 5340     		eors	r3, r3, r2
+ 492 00d6 3B64     		str	r3, [r7, #64]
+ 493 00d8 3B6C     		ldr	r3, [r7, #64]
+ 494 00da 4FEA3343 		ror	r3, r3, #16
+ 495 00de 3B64     		str	r3, [r7, #64]
+ 496 00e0 3A6B     		ldr	r2, [r7, #48]
+ 497 00e2 3B6C     		ldr	r3, [r7, #64]
+ 498 00e4 1344     		add	r3, r3, r2
+ 499 00e6 3B63     		str	r3, [r7, #48]
+ 500 00e8 3A6A     		ldr	r2, [r7, #32]
+ 501 00ea 3B6B     		ldr	r3, [r7, #48]
+ 502 00ec 5340     		eors	r3, r3, r2
+ 503 00ee 3B62     		str	r3, [r7, #32]
+ 504 00f0 3B6A     		ldr	r3, [r7, #32]
+ 505 00f2 4FEA3353 		ror	r3, r3, #20
+ 506 00f6 3B62     		str	r3, [r7, #32]
+ 507 00f8 3A69     		ldr	r2, [r7, #16]
+ 508 00fa 3B6A     		ldr	r3, [r7, #32]
+ 509 00fc 1344     		add	r3, r3, r2
+ 510 00fe 3B61     		str	r3, [r7, #16]
+ 511 0100 3A6C     		ldr	r2, [r7, #64]
+ 512 0102 3B69     		ldr	r3, [r7, #16]
+ 513 0104 5340     		eors	r3, r3, r2
+ 514 0106 3B64     		str	r3, [r7, #64]
+ 515 0108 3B6C     		ldr	r3, [r7, #64]
+ 516 010a 4FEA3363 		ror	r3, r3, #24
+ 517 010e 3B64     		str	r3, [r7, #64]
+ 518 0110 3A6B     		ldr	r2, [r7, #48]
+ 519 0112 3B6C     		ldr	r3, [r7, #64]
+ 520 0114 1344     		add	r3, r3, r2
+ 521 0116 3B63     		str	r3, [r7, #48]
+ 522 0118 3A6A     		ldr	r2, [r7, #32]
+ 523 011a 3B6B     		ldr	r3, [r7, #48]
+ 524 011c 5340     		eors	r3, r3, r2
+ 525 011e 3B62     		str	r3, [r7, #32]
+ 526 0120 3B6A     		ldr	r3, [r7, #32]
+ 527 0122 4FEA7363 		ror	r3, r3, #25
+ 528 0126 3B62     		str	r3, [r7, #32]
+ 124:rng.c         **** 			QROUND( 2,  6, 10, 14);
+ 529              		.loc 1 124 4 discriminator 3
+ 530 0128 7A69     		ldr	r2, [r7, #20]
+ 531 012a 7B6A     		ldr	r3, [r7, #36]
+ 532 012c 1344     		add	r3, r3, r2
+ 533 012e 7B61     		str	r3, [r7, #20]
+ 534 0130 7A6C     		ldr	r2, [r7, #68]
+ 535 0132 7B69     		ldr	r3, [r7, #20]
+ 536 0134 5340     		eors	r3, r3, r2
+ 537 0136 7B64     		str	r3, [r7, #68]
+ 538 0138 7B6C     		ldr	r3, [r7, #68]
+ 539 013a 4FEA3343 		ror	r3, r3, #16
+ 540 013e 7B64     		str	r3, [r7, #68]
+ 541 0140 7A6B     		ldr	r2, [r7, #52]
+ 542 0142 7B6C     		ldr	r3, [r7, #68]
+ 543 0144 1344     		add	r3, r3, r2
+ 544 0146 7B63     		str	r3, [r7, #52]
+ 545 0148 7A6A     		ldr	r2, [r7, #36]
+ 546 014a 7B6B     		ldr	r3, [r7, #52]
+ 547 014c 5340     		eors	r3, r3, r2
+ 548 014e 7B62     		str	r3, [r7, #36]
+ 549 0150 7B6A     		ldr	r3, [r7, #36]
+ 550 0152 4FEA3353 		ror	r3, r3, #20
+ 551 0156 7B62     		str	r3, [r7, #36]
+ 552 0158 7A69     		ldr	r2, [r7, #20]
+ 553 015a 7B6A     		ldr	r3, [r7, #36]
+ 554 015c 1344     		add	r3, r3, r2
+ 555 015e 7B61     		str	r3, [r7, #20]
+ 556 0160 7A6C     		ldr	r2, [r7, #68]
+ 557 0162 7B69     		ldr	r3, [r7, #20]
+ 558 0164 5340     		eors	r3, r3, r2
+ 559 0166 7B64     		str	r3, [r7, #68]
+ 560 0168 7B6C     		ldr	r3, [r7, #68]
+ 561 016a 4FEA3363 		ror	r3, r3, #24
+ 562 016e 7B64     		str	r3, [r7, #68]
+ 563 0170 7A6B     		ldr	r2, [r7, #52]
+ 564 0172 7B6C     		ldr	r3, [r7, #68]
+ 565 0174 1344     		add	r3, r3, r2
+ 566 0176 7B63     		str	r3, [r7, #52]
+ 567 0178 7A6A     		ldr	r2, [r7, #36]
+ 568 017a 7B6B     		ldr	r3, [r7, #52]
+ 569 017c 5340     		eors	r3, r3, r2
+ 570 017e 7B62     		str	r3, [r7, #36]
+ 571 0180 7B6A     		ldr	r3, [r7, #36]
+ 572 0182 4FEA7363 		ror	r3, r3, #25
+ 573 0186 7B62     		str	r3, [r7, #36]
+ 125:rng.c         **** 			QROUND( 3,  7, 11, 15);
+ 574              		.loc 1 125 4 discriminator 3
+ 575 0188 BA69     		ldr	r2, [r7, #24]
+ 576 018a BB6A     		ldr	r3, [r7, #40]
+ 577 018c 1344     		add	r3, r3, r2
+ 578 018e BB61     		str	r3, [r7, #24]
+ 579 0190 BA6C     		ldr	r2, [r7, #72]
+ 580 0192 BB69     		ldr	r3, [r7, #24]
+ 581 0194 5340     		eors	r3, r3, r2
+ 582 0196 BB64     		str	r3, [r7, #72]
+ 583 0198 BB6C     		ldr	r3, [r7, #72]
+ 584 019a 4FEA3343 		ror	r3, r3, #16
+ 585 019e BB64     		str	r3, [r7, #72]
+ 586 01a0 BA6B     		ldr	r2, [r7, #56]
+ 587 01a2 BB6C     		ldr	r3, [r7, #72]
+ 588 01a4 1344     		add	r3, r3, r2
+ 589 01a6 BB63     		str	r3, [r7, #56]
+ 590 01a8 BA6A     		ldr	r2, [r7, #40]
+ 591 01aa BB6B     		ldr	r3, [r7, #56]
+ 592 01ac 5340     		eors	r3, r3, r2
+ 593 01ae BB62     		str	r3, [r7, #40]
+ 594 01b0 BB6A     		ldr	r3, [r7, #40]
+ 595 01b2 4FEA3353 		ror	r3, r3, #20
+ 596 01b6 BB62     		str	r3, [r7, #40]
+ 597 01b8 BA69     		ldr	r2, [r7, #24]
+ 598 01ba BB6A     		ldr	r3, [r7, #40]
+ 599 01bc 1344     		add	r3, r3, r2
+ 600 01be BB61     		str	r3, [r7, #24]
+ 601 01c0 BA6C     		ldr	r2, [r7, #72]
+ 602 01c2 BB69     		ldr	r3, [r7, #24]
+ 603 01c4 5340     		eors	r3, r3, r2
+ 604 01c6 BB64     		str	r3, [r7, #72]
+ 605 01c8 BB6C     		ldr	r3, [r7, #72]
+ 606 01ca 4FEA3363 		ror	r3, r3, #24
+ 607 01ce BB64     		str	r3, [r7, #72]
+ 608 01d0 BA6B     		ldr	r2, [r7, #56]
+ 609 01d2 BB6C     		ldr	r3, [r7, #72]
+ 610 01d4 1344     		add	r3, r3, r2
+ 611 01d6 BB63     		str	r3, [r7, #56]
+ 612 01d8 BA6A     		ldr	r2, [r7, #40]
+ 613 01da BB6B     		ldr	r3, [r7, #56]
+ 614 01dc 5340     		eors	r3, r3, r2
+ 615 01de BB62     		str	r3, [r7, #40]
+ 616 01e0 BB6A     		ldr	r3, [r7, #40]
+ 617 01e2 4FEA7363 		ror	r3, r3, #25
+ 618 01e6 BB62     		str	r3, [r7, #40]
+ 126:rng.c         **** 			QROUND( 0,  5, 10, 15);
+ 619              		.loc 1 126 4 discriminator 3
+ 620 01e8 FA68     		ldr	r2, [r7, #12]
+ 621 01ea 3B6A     		ldr	r3, [r7, #32]
+ 622 01ec 1344     		add	r3, r3, r2
+ 623 01ee FB60     		str	r3, [r7, #12]
+ 624 01f0 BA6C     		ldr	r2, [r7, #72]
+ 625 01f2 FB68     		ldr	r3, [r7, #12]
+ 626 01f4 5340     		eors	r3, r3, r2
+ 627 01f6 BB64     		str	r3, [r7, #72]
+ 628 01f8 BB6C     		ldr	r3, [r7, #72]
+ 629 01fa 4FEA3343 		ror	r3, r3, #16
+ 630 01fe BB64     		str	r3, [r7, #72]
+ 631 0200 7A6B     		ldr	r2, [r7, #52]
+ 632 0202 BB6C     		ldr	r3, [r7, #72]
+ 633 0204 1344     		add	r3, r3, r2
+ 634 0206 7B63     		str	r3, [r7, #52]
+ 635 0208 3A6A     		ldr	r2, [r7, #32]
+ 636 020a 7B6B     		ldr	r3, [r7, #52]
+ 637 020c 5340     		eors	r3, r3, r2
+ 638 020e 3B62     		str	r3, [r7, #32]
+ 639 0210 3B6A     		ldr	r3, [r7, #32]
+ 640 0212 4FEA3353 		ror	r3, r3, #20
+ 641 0216 3B62     		str	r3, [r7, #32]
+ 642 0218 FA68     		ldr	r2, [r7, #12]
+ 643 021a 3B6A     		ldr	r3, [r7, #32]
+ 644 021c 1344     		add	r3, r3, r2
+ 645 021e FB60     		str	r3, [r7, #12]
+ 646 0220 BA6C     		ldr	r2, [r7, #72]
+ 647 0222 FB68     		ldr	r3, [r7, #12]
+ 648 0224 5340     		eors	r3, r3, r2
+ 649 0226 BB64     		str	r3, [r7, #72]
+ 650 0228 BB6C     		ldr	r3, [r7, #72]
+ 651 022a 4FEA3363 		ror	r3, r3, #24
+ 652 022e BB64     		str	r3, [r7, #72]
+ 653 0230 7A6B     		ldr	r2, [r7, #52]
+ 654 0232 BB6C     		ldr	r3, [r7, #72]
+ 655 0234 1344     		add	r3, r3, r2
+ 656 0236 7B63     		str	r3, [r7, #52]
+ 657 0238 3A6A     		ldr	r2, [r7, #32]
+ 658 023a 7B6B     		ldr	r3, [r7, #52]
+ 659 023c 5340     		eors	r3, r3, r2
+ 660 023e 3B62     		str	r3, [r7, #32]
+ 661 0240 3B6A     		ldr	r3, [r7, #32]
+ 662 0242 4FEA7363 		ror	r3, r3, #25
+ 663 0246 3B62     		str	r3, [r7, #32]
+ 127:rng.c         **** 			QROUND( 1,  6, 11, 12);
+ 664              		.loc 1 127 4 discriminator 3
+ 665 0248 3A69     		ldr	r2, [r7, #16]
+ 666 024a 7B6A     		ldr	r3, [r7, #36]
+ 667 024c 1344     		add	r3, r3, r2
+ 668 024e 3B61     		str	r3, [r7, #16]
+ 669 0250 FA6B     		ldr	r2, [r7, #60]
+ 670 0252 3B69     		ldr	r3, [r7, #16]
+ 671 0254 5340     		eors	r3, r3, r2
+ 672 0256 FB63     		str	r3, [r7, #60]
+ 673 0258 FB6B     		ldr	r3, [r7, #60]
+ 674 025a 4FEA3343 		ror	r3, r3, #16
+ 675 025e FB63     		str	r3, [r7, #60]
+ 676 0260 BA6B     		ldr	r2, [r7, #56]
+ 677 0262 FB6B     		ldr	r3, [r7, #60]
+ 678 0264 1344     		add	r3, r3, r2
+ 679 0266 BB63     		str	r3, [r7, #56]
+ 680 0268 7A6A     		ldr	r2, [r7, #36]
+ 681 026a BB6B     		ldr	r3, [r7, #56]
+ 682 026c 5340     		eors	r3, r3, r2
+ 683 026e 7B62     		str	r3, [r7, #36]
+ 684 0270 7B6A     		ldr	r3, [r7, #36]
+ 685 0272 4FEA3353 		ror	r3, r3, #20
+ 686 0276 7B62     		str	r3, [r7, #36]
+ 687 0278 3A69     		ldr	r2, [r7, #16]
+ 688 027a 7B6A     		ldr	r3, [r7, #36]
+ 689 027c 1344     		add	r3, r3, r2
+ 690 027e 3B61     		str	r3, [r7, #16]
+ 691 0280 FA6B     		ldr	r2, [r7, #60]
+ 692 0282 3B69     		ldr	r3, [r7, #16]
+ 693 0284 5340     		eors	r3, r3, r2
+ 694 0286 FB63     		str	r3, [r7, #60]
+ 695 0288 FB6B     		ldr	r3, [r7, #60]
+ 696 028a 4FEA3363 		ror	r3, r3, #24
+ 697 028e FB63     		str	r3, [r7, #60]
+ 698 0290 BA6B     		ldr	r2, [r7, #56]
+ 699 0292 FB6B     		ldr	r3, [r7, #60]
+ 700 0294 1344     		add	r3, r3, r2
+ 701 0296 BB63     		str	r3, [r7, #56]
+ 702 0298 7A6A     		ldr	r2, [r7, #36]
+ 703 029a BB6B     		ldr	r3, [r7, #56]
+ 704 029c 5340     		eors	r3, r3, r2
+ 705 029e 7B62     		str	r3, [r7, #36]
+ 706 02a0 7B6A     		ldr	r3, [r7, #36]
+ 707 02a2 4FEA7363 		ror	r3, r3, #25
+ 708 02a6 7B62     		str	r3, [r7, #36]
+ 128:rng.c         **** 			QROUND( 2,  7,  8, 13);
+ 709              		.loc 1 128 4 discriminator 3
+ 710 02a8 7A69     		ldr	r2, [r7, #20]
+ 711 02aa BB6A     		ldr	r3, [r7, #40]
+ 712 02ac 1344     		add	r3, r3, r2
+ 713 02ae 7B61     		str	r3, [r7, #20]
+ 714 02b0 3A6C     		ldr	r2, [r7, #64]
+ 715 02b2 7B69     		ldr	r3, [r7, #20]
+ 716 02b4 5340     		eors	r3, r3, r2
+ 717 02b6 3B64     		str	r3, [r7, #64]
+ 718 02b8 3B6C     		ldr	r3, [r7, #64]
+ 719 02ba 4FEA3343 		ror	r3, r3, #16
+ 720 02be 3B64     		str	r3, [r7, #64]
+ 721 02c0 FA6A     		ldr	r2, [r7, #44]
+ 722 02c2 3B6C     		ldr	r3, [r7, #64]
+ 723 02c4 1344     		add	r3, r3, r2
+ 724 02c6 FB62     		str	r3, [r7, #44]
+ 725 02c8 BA6A     		ldr	r2, [r7, #40]
+ 726 02ca FB6A     		ldr	r3, [r7, #44]
+ 727 02cc 5340     		eors	r3, r3, r2
+ 728 02ce BB62     		str	r3, [r7, #40]
+ 729 02d0 BB6A     		ldr	r3, [r7, #40]
+ 730 02d2 4FEA3353 		ror	r3, r3, #20
+ 731 02d6 BB62     		str	r3, [r7, #40]
+ 732 02d8 7A69     		ldr	r2, [r7, #20]
+ 733 02da BB6A     		ldr	r3, [r7, #40]
+ 734 02dc 1344     		add	r3, r3, r2
+ 735 02de 7B61     		str	r3, [r7, #20]
+ 736 02e0 3A6C     		ldr	r2, [r7, #64]
+ 737 02e2 7B69     		ldr	r3, [r7, #20]
+ 738 02e4 5340     		eors	r3, r3, r2
+ 739 02e6 3B64     		str	r3, [r7, #64]
+ 740 02e8 3B6C     		ldr	r3, [r7, #64]
+ 741 02ea 4FEA3363 		ror	r3, r3, #24
+ 742 02ee 3B64     		str	r3, [r7, #64]
+ 743 02f0 FA6A     		ldr	r2, [r7, #44]
+ 744 02f2 3B6C     		ldr	r3, [r7, #64]
+ 745 02f4 1344     		add	r3, r3, r2
+ 746 02f6 FB62     		str	r3, [r7, #44]
+ 747 02f8 BA6A     		ldr	r2, [r7, #40]
+ 748 02fa FB6A     		ldr	r3, [r7, #44]
+ 749 02fc 5340     		eors	r3, r3, r2
+ 750 02fe BB62     		str	r3, [r7, #40]
+ 751 0300 BB6A     		ldr	r3, [r7, #40]
+ 752 0302 4FEA7363 		ror	r3, r3, #25
+ 753 0306 BB62     		str	r3, [r7, #40]
+ 129:rng.c         **** 			QROUND( 3,  4,  9, 14);
+ 754              		.loc 1 129 4 discriminator 3
+ 755 0308 BA69     		ldr	r2, [r7, #24]
+ 756 030a FB69     		ldr	r3, [r7, #28]
+ 757 030c 1344     		add	r3, r3, r2
+ 758 030e BB61     		str	r3, [r7, #24]
+ 759 0310 7A6C     		ldr	r2, [r7, #68]
+ 760 0312 BB69     		ldr	r3, [r7, #24]
+ 761 0314 5340     		eors	r3, r3, r2
+ 762 0316 7B64     		str	r3, [r7, #68]
+ 763 0318 7B6C     		ldr	r3, [r7, #68]
+ 764 031a 4FEA3343 		ror	r3, r3, #16
+ 765 031e 7B64     		str	r3, [r7, #68]
+ 766 0320 3A6B     		ldr	r2, [r7, #48]
+ 767 0322 7B6C     		ldr	r3, [r7, #68]
+ 768 0324 1344     		add	r3, r3, r2
+ 769 0326 3B63     		str	r3, [r7, #48]
+ 770 0328 FA69     		ldr	r2, [r7, #28]
+ 771 032a 3B6B     		ldr	r3, [r7, #48]
+ 772 032c 5340     		eors	r3, r3, r2
+ 773 032e FB61     		str	r3, [r7, #28]
+ 774 0330 FB69     		ldr	r3, [r7, #28]
+ 775 0332 4FEA3353 		ror	r3, r3, #20
+ 776 0336 FB61     		str	r3, [r7, #28]
+ 777 0338 BA69     		ldr	r2, [r7, #24]
+ 778 033a FB69     		ldr	r3, [r7, #28]
+ 779 033c 1344     		add	r3, r3, r2
+ 780 033e BB61     		str	r3, [r7, #24]
+ 781 0340 7A6C     		ldr	r2, [r7, #68]
+ 782 0342 BB69     		ldr	r3, [r7, #24]
+ 783 0344 5340     		eors	r3, r3, r2
+ 784 0346 7B64     		str	r3, [r7, #68]
+ 785 0348 7B6C     		ldr	r3, [r7, #68]
+ 786 034a 4FEA3363 		ror	r3, r3, #24
+ 787 034e 7B64     		str	r3, [r7, #68]
+ 788 0350 3A6B     		ldr	r2, [r7, #48]
+ 789 0352 7B6C     		ldr	r3, [r7, #68]
+ 790 0354 1344     		add	r3, r3, r2
+ 791 0356 3B63     		str	r3, [r7, #48]
+ 792 0358 FA69     		ldr	r2, [r7, #28]
+ 793 035a 3B6B     		ldr	r3, [r7, #48]
+ 794 035c 5340     		eors	r3, r3, r2
+ 795 035e FB61     		str	r3, [r7, #28]
+ 796 0360 FB69     		ldr	r3, [r7, #28]
+ 797 0362 4FEA7363 		ror	r3, r3, #25
+ 798 0366 FB61     		str	r3, [r7, #28]
+ 105:rng.c         **** 
+ 799              		.loc 1 105 25 discriminator 3
+ 800 0368 FB6C     		ldr	r3, [r7, #76]
+ 801 036a 0133     		adds	r3, r3, #1
+ 802 036c FB64     		str	r3, [r7, #76]
+ 803              	.L6:
+ 105:rng.c         **** 
+ 804              		.loc 1 105 3 discriminator 1
+ 805 036e FB6C     		ldr	r3, [r7, #76]
+ 806 0370 092B     		cmp	r3, #9
+ 807 0372 7FF779AE 		ble	.L7
+ 130:rng.c         **** 
+ 131:rng.c         **** #undef QROUND
+ 132:rng.c         **** 
+ 133:rng.c         **** 		}
+ 134:rng.c         **** 
+ 135:rng.c         **** 		for (v = 0; v < 4; v ++) {
+ 808              		.loc 1 135 10
+ 809 0376 0023     		movs	r3, #0
+ 810 0378 3B65     		str	r3, [r7, #80]
+ 811              		.loc 1 135 3
+ 812 037a 15E0     		b	.L8
+ 813              	.L9:
+ 136:rng.c         **** 			state[v] += CW[v];
+ 814              		.loc 1 136 13 discriminator 3
+ 815 037c 3B6D     		ldr	r3, [r7, #80]
+ 816 037e 9B00     		lsls	r3, r3, #2
+ 817 0380 07F16002 		add	r2, r7, #96
+ 818 0384 1344     		add	r3, r3, r2
+ 819 0386 53F8542C 		ldr	r2, [r3, #-84]
+ 820              		.loc 1 136 18 discriminator 3
+ 821 038a 5E49     		ldr	r1, .L17
+ 822 038c 3B6D     		ldr	r3, [r7, #80]
+ 823 038e 51F82330 		ldr	r3, [r1, r3, lsl #2]
+ 824              		.loc 1 136 13 discriminator 3
+ 825 0392 1A44     		add	r2, r2, r3
+ 826 0394 3B6D     		ldr	r3, [r7, #80]
+ 827 0396 9B00     		lsls	r3, r3, #2
+ 828 0398 07F16001 		add	r1, r7, #96
+ 829 039c 0B44     		add	r3, r3, r1
+ 830 039e 43F8542C 		str	r2, [r3, #-84]
+ 135:rng.c         **** 			state[v] += CW[v];
+ 831              		.loc 1 135 24 discriminator 3
+ 832 03a2 3B6D     		ldr	r3, [r7, #80]
+ 833 03a4 0133     		adds	r3, r3, #1
+ 834 03a6 3B65     		str	r3, [r7, #80]
+ 835              	.L8:
+ 135:rng.c         **** 			state[v] += CW[v];
+ 836              		.loc 1 135 3 discriminator 1
+ 837 03a8 3B6D     		ldr	r3, [r7, #80]
+ 838 03aa 032B     		cmp	r3, #3
+ 839 03ac E6D9     		bls	.L9
+ 137:rng.c         **** 		}
+ 138:rng.c         **** 		for (v = 4; v < 14; v ++) {
+ 840              		.loc 1 138 10
+ 841 03ae 0423     		movs	r3, #4
+ 842 03b0 3B65     		str	r3, [r7, #80]
+ 843              		.loc 1 138 3
+ 844 03b2 1BE0     		b	.L10
+ 845              	.L11:
+ 139:rng.c         **** 			state[v] += ((uint32_t *)p->state.d)[v - 4];
+ 846              		.loc 1 139 13 discriminator 3
+ 847 03b4 3B6D     		ldr	r3, [r7, #80]
+ 848 03b6 9B00     		lsls	r3, r3, #2
+ 849 03b8 07F16002 		add	r2, r7, #96
+ 850 03bc 1344     		add	r3, r3, r2
+ 851 03be 53F8542C 		ldr	r2, [r3, #-84]
+ 852              		.loc 1 139 29 discriminator 3
+ 853 03c2 7B68     		ldr	r3, [r7, #4]
+ 854 03c4 03F50271 		add	r1, r3, #520
+ 855              		.loc 1 139 40 discriminator 3
+ 856 03c8 3B6D     		ldr	r3, [r7, #80]
+ 857 03ca 03F18043 		add	r3, r3, #1073741824
+ 858 03ce 043B     		subs	r3, r3, #4
+ 859 03d0 9B00     		lsls	r3, r3, #2
+ 860 03d2 0B44     		add	r3, r3, r1
+ 861 03d4 1B68     		ldr	r3, [r3]
+ 862              		.loc 1 139 13 discriminator 3
+ 863 03d6 1A44     		add	r2, r2, r3
+ 864 03d8 3B6D     		ldr	r3, [r7, #80]
+ 865 03da 9B00     		lsls	r3, r3, #2
+ 866 03dc 07F16001 		add	r1, r7, #96
+ 867 03e0 0B44     		add	r3, r3, r1
+ 868 03e2 43F8542C 		str	r2, [r3, #-84]
+ 138:rng.c         **** 			state[v] += ((uint32_t *)p->state.d)[v - 4];
+ 869              		.loc 1 138 25 discriminator 3
+ 870 03e6 3B6D     		ldr	r3, [r7, #80]
+ 871 03e8 0133     		adds	r3, r3, #1
+ 872 03ea 3B65     		str	r3, [r7, #80]
+ 873              	.L10:
+ 138:rng.c         **** 			state[v] += ((uint32_t *)p->state.d)[v - 4];
+ 874              		.loc 1 138 3 discriminator 1
+ 875 03ec 3B6D     		ldr	r3, [r7, #80]
+ 876 03ee 0D2B     		cmp	r3, #13
+ 877 03f0 E0D9     		bls	.L11
+ 140:rng.c         **** 		}
+ 141:rng.c         **** 		state[14] += ((uint32_t *)p->state.d)[10]
+ 878              		.loc 1 141 13
+ 879 03f2 7A6C     		ldr	r2, [r7, #68]
+ 880              		.loc 1 141 29
+ 881 03f4 7B68     		ldr	r3, [r7, #4]
+ 882 03f6 03F50273 		add	r3, r3, #520
+ 883              		.loc 1 141 40
+ 884 03fa 2833     		adds	r3, r3, #40
+ 885 03fc 1968     		ldr	r1, [r3]
+ 142:rng.c         **** 			^ (uint32_t)cc;
+ 886              		.loc 1 142 6
+ 887 03fe BB6D     		ldr	r3, [r7, #88]
+ 888              		.loc 1 142 4
+ 889 0400 4B40     		eors	r3, r3, r1
+ 141:rng.c         **** 			^ (uint32_t)cc;
+ 890              		.loc 1 141 13
+ 891 0402 1344     		add	r3, r3, r2
+ 892 0404 7B64     		str	r3, [r7, #68]
+ 143:rng.c         **** 		state[15] += ((uint32_t *)p->state.d)[11]
+ 893              		.loc 1 143 13
+ 894 0406 BE6C     		ldr	r6, [r7, #72]
+ 895              		.loc 1 143 29
+ 896 0408 7B68     		ldr	r3, [r7, #4]
+ 897 040a 03F50273 		add	r3, r3, #520
+ 898              		.loc 1 143 40
+ 899 040e 2C33     		adds	r3, r3, #44
+ 900 0410 1A68     		ldr	r2, [r3]
+ 901 0412 3A60     		str	r2, [r7]
+ 144:rng.c         **** 			^ (uint32_t)(cc >> 32);
+ 902              		.loc 1 144 20
+ 903 0414 D7E91601 		ldrd	r0, [r7, #88]
+ 904 0418 4FF00002 		mov	r2, #0
+ 905 041c 4FF00003 		mov	r3, #0
+ 906 0420 0A00     		movs	r2, r1
+ 907 0422 0023     		movs	r3, #0
+ 908              		.loc 1 144 6
+ 909 0424 1346     		mov	r3, r2
+ 910              		.loc 1 144 4
+ 911 0426 3A68     		ldr	r2, [r7]
+ 912 0428 5340     		eors	r3, r3, r2
+ 143:rng.c         **** 		state[15] += ((uint32_t *)p->state.d)[11]
+ 913              		.loc 1 143 13
+ 914 042a 3344     		add	r3, r3, r6
+ 915 042c BB64     		str	r3, [r7, #72]
+ 145:rng.c         **** 		cc ++;
+ 916              		.loc 1 145 6
+ 917 042e D7E91623 		ldrd	r2, [r7, #88]
+ 918 0432 541C     		adds	r4, r2, #1
+ 919 0434 43F10005 		adc	r5, r3, #0
+ 920 0438 C7E91645 		strd	r4, [r7, #88]
+ 146:rng.c         **** 
+ 147:rng.c         **** 		/*
+ 148:rng.c         **** 		 * We mimic the interleaving that is used in the AVX2
+ 149:rng.c         **** 		 * implementation.
+ 150:rng.c         **** 		 */
+ 151:rng.c         **** 		for (v = 0; v < 16; v ++) {
+ 921              		.loc 1 151 10
+ 922 043c 0023     		movs	r3, #0
+ 923 043e 3B65     		str	r3, [r7, #80]
+ 924              		.loc 1 151 3
+ 925 0440 44E0     		b	.L12
+ 926              	.L13:
+ 152:rng.c         **** 			p->buf.d[(u << 2) + (v << 5) + 0] =
+ 153:rng.c         **** 				(uint8_t)state[v];
+ 927              		.loc 1 153 19 discriminator 3
+ 928 0442 3B6D     		ldr	r3, [r7, #80]
+ 929 0444 9B00     		lsls	r3, r3, #2
+ 930 0446 07F16002 		add	r2, r7, #96
+ 931 044a 1344     		add	r3, r3, r2
+ 932 044c 53F8541C 		ldr	r1, [r3, #-84]
+ 152:rng.c         **** 			p->buf.d[(u << 2) + (v << 5) + 0] =
+ 933              		.loc 1 152 16 discriminator 3
+ 934 0450 7B6D     		ldr	r3, [r7, #84]
+ 935 0452 9A00     		lsls	r2, r3, #2
+ 152:rng.c         **** 			p->buf.d[(u << 2) + (v << 5) + 0] =
+ 936              		.loc 1 152 27 discriminator 3
+ 937 0454 3B6D     		ldr	r3, [r7, #80]
+ 938 0456 5B01     		lsls	r3, r3, #5
+ 152:rng.c         **** 			p->buf.d[(u << 2) + (v << 5) + 0] =
+ 939              		.loc 1 152 33 discriminator 3
+ 940 0458 1344     		add	r3, r3, r2
+ 941              		.loc 1 153 5 discriminator 3
+ 942 045a C9B2     		uxtb	r1, r1
+ 152:rng.c         **** 			p->buf.d[(u << 2) + (v << 5) + 0] =
+ 943              		.loc 1 152 38 discriminator 3
+ 944 045c 7A68     		ldr	r2, [r7, #4]
+ 945 045e D154     		strb	r1, [r2, r3]
+ 154:rng.c         **** 			p->buf.d[(u << 2) + (v << 5) + 1] =
+ 155:rng.c         **** 				(uint8_t)(state[v] >> 8);
+ 946              		.loc 1 155 20 discriminator 3
+ 947 0460 3B6D     		ldr	r3, [r7, #80]
+ 948 0462 9B00     		lsls	r3, r3, #2
+ 949 0464 07F16002 		add	r2, r7, #96
+ 950 0468 1344     		add	r3, r3, r2
+ 951 046a 53F8543C 		ldr	r3, [r3, #-84]
+ 952              		.loc 1 155 24 discriminator 3
+ 953 046e 190A     		lsrs	r1, r3, #8
+ 154:rng.c         **** 			p->buf.d[(u << 2) + (v << 5) + 1] =
+ 954              		.loc 1 154 16 discriminator 3
+ 955 0470 7B6D     		ldr	r3, [r7, #84]
+ 956 0472 9A00     		lsls	r2, r3, #2
+ 154:rng.c         **** 			p->buf.d[(u << 2) + (v << 5) + 1] =
+ 957              		.loc 1 154 27 discriminator 3
+ 958 0474 3B6D     		ldr	r3, [r7, #80]
+ 959 0476 5B01     		lsls	r3, r3, #5
+ 154:rng.c         **** 			p->buf.d[(u << 2) + (v << 5) + 1] =
+ 960              		.loc 1 154 22 discriminator 3
+ 961 0478 1344     		add	r3, r3, r2
+ 154:rng.c         **** 			p->buf.d[(u << 2) + (v << 5) + 1] =
+ 962              		.loc 1 154 33 discriminator 3
+ 963 047a 0133     		adds	r3, r3, #1
+ 964              		.loc 1 155 5 discriminator 3
+ 965 047c C9B2     		uxtb	r1, r1
+ 154:rng.c         **** 			p->buf.d[(u << 2) + (v << 5) + 1] =
+ 966              		.loc 1 154 38 discriminator 3
+ 967 047e 7A68     		ldr	r2, [r7, #4]
+ 968 0480 D154     		strb	r1, [r2, r3]
+ 156:rng.c         **** 			p->buf.d[(u << 2) + (v << 5) + 2] =
+ 157:rng.c         **** 				(uint8_t)(state[v] >> 16);
+ 969              		.loc 1 157 20 discriminator 3
+ 970 0482 3B6D     		ldr	r3, [r7, #80]
+ 971 0484 9B00     		lsls	r3, r3, #2
+ 972 0486 07F16002 		add	r2, r7, #96
+ 973 048a 1344     		add	r3, r3, r2
+ 974 048c 53F8543C 		ldr	r3, [r3, #-84]
+ 975              		.loc 1 157 24 discriminator 3
+ 976 0490 190C     		lsrs	r1, r3, #16
+ 156:rng.c         **** 			p->buf.d[(u << 2) + (v << 5) + 2] =
+ 977              		.loc 1 156 16 discriminator 3
+ 978 0492 7B6D     		ldr	r3, [r7, #84]
+ 979 0494 9A00     		lsls	r2, r3, #2
+ 156:rng.c         **** 			p->buf.d[(u << 2) + (v << 5) + 2] =
+ 980              		.loc 1 156 27 discriminator 3
+ 981 0496 3B6D     		ldr	r3, [r7, #80]
+ 982 0498 5B01     		lsls	r3, r3, #5
+ 156:rng.c         **** 			p->buf.d[(u << 2) + (v << 5) + 2] =
+ 983              		.loc 1 156 22 discriminator 3
+ 984 049a 1344     		add	r3, r3, r2
+ 156:rng.c         **** 			p->buf.d[(u << 2) + (v << 5) + 2] =
+ 985              		.loc 1 156 33 discriminator 3
+ 986 049c 0233     		adds	r3, r3, #2
+ 987              		.loc 1 157 5 discriminator 3
+ 988 049e C9B2     		uxtb	r1, r1
+ 156:rng.c         **** 			p->buf.d[(u << 2) + (v << 5) + 2] =
+ 989              		.loc 1 156 38 discriminator 3
+ 990 04a0 7A68     		ldr	r2, [r7, #4]
+ 991 04a2 D154     		strb	r1, [r2, r3]
+ 158:rng.c         **** 			p->buf.d[(u << 2) + (v << 5) + 3] =
+ 159:rng.c         **** 				(uint8_t)(state[v] >> 24);
+ 992              		.loc 1 159 20 discriminator 3
+ 993 04a4 3B6D     		ldr	r3, [r7, #80]
+ 994 04a6 9B00     		lsls	r3, r3, #2
+ 995 04a8 07F16002 		add	r2, r7, #96
+ 996 04ac 1344     		add	r3, r3, r2
+ 997 04ae 53F8543C 		ldr	r3, [r3, #-84]
+ 998              		.loc 1 159 24 discriminator 3
+ 999 04b2 190E     		lsrs	r1, r3, #24
+ 158:rng.c         **** 			p->buf.d[(u << 2) + (v << 5) + 3] =
+ 1000              		.loc 1 158 16 discriminator 3
+ 1001 04b4 7B6D     		ldr	r3, [r7, #84]
+ 1002 04b6 9A00     		lsls	r2, r3, #2
+ 158:rng.c         **** 			p->buf.d[(u << 2) + (v << 5) + 3] =
+ 1003              		.loc 1 158 27 discriminator 3
+ 1004 04b8 3B6D     		ldr	r3, [r7, #80]
+ 1005 04ba 5B01     		lsls	r3, r3, #5
+ 158:rng.c         **** 			p->buf.d[(u << 2) + (v << 5) + 3] =
+ 1006              		.loc 1 158 22 discriminator 3
+ 1007 04bc 1344     		add	r3, r3, r2
+ 158:rng.c         **** 			p->buf.d[(u << 2) + (v << 5) + 3] =
+ 1008              		.loc 1 158 33 discriminator 3
+ 1009 04be 0333     		adds	r3, r3, #3
+ 1010              		.loc 1 159 5 discriminator 3
+ 1011 04c0 C9B2     		uxtb	r1, r1
+ 158:rng.c         **** 			p->buf.d[(u << 2) + (v << 5) + 3] =
+ 1012              		.loc 1 158 38 discriminator 3
+ 1013 04c2 7A68     		ldr	r2, [r7, #4]
+ 1014 04c4 D154     		strb	r1, [r2, r3]
+ 151:rng.c         **** 			p->buf.d[(u << 2) + (v << 5) + 0] =
+ 1015              		.loc 1 151 25 discriminator 3
+ 1016 04c6 3B6D     		ldr	r3, [r7, #80]
+ 1017 04c8 0133     		adds	r3, r3, #1
+ 1018 04ca 3B65     		str	r3, [r7, #80]
+ 1019              	.L12:
+ 151:rng.c         **** 			p->buf.d[(u << 2) + (v << 5) + 0] =
+ 1020              		.loc 1 151 3 discriminator 1
+ 1021 04cc 3B6D     		ldr	r3, [r7, #80]
+ 1022 04ce 0F2B     		cmp	r3, #15
+ 1023 04d0 B7D9     		bls	.L13
+ 1024              	.LBE3:
+  96:rng.c         **** 		uint32_t state[16];
+ 1025              		.loc 1 96 23 discriminator 2
+ 1026 04d2 7B6D     		ldr	r3, [r7, #84]
+ 1027 04d4 0133     		adds	r3, r3, #1
+ 1028 04d6 7B65     		str	r3, [r7, #84]
+ 1029              	.L5:
+  96:rng.c         **** 		uint32_t state[16];
+ 1030              		.loc 1 96 2 discriminator 1
+ 1031 04d8 7B6D     		ldr	r3, [r7, #84]
+ 1032 04da 072B     		cmp	r3, #7
+ 1033 04dc 7FF69FAD 		bls	.L14
+ 160:rng.c         **** 		}
+ 161:rng.c         **** 	}
+ 162:rng.c         **** 	*(uint64_t *)(p->state.d + 48) = cc;
+ 1034              		.loc 1 162 16
+ 1035 04e0 7B68     		ldr	r3, [r7, #4]
+ 1036 04e2 03F50273 		add	r3, r3, #520
+ 1037              		.loc 1 162 3
+ 1038 04e6 03F13001 		add	r1, r3, #48
+ 1039              		.loc 1 162 33
+ 1040 04ea D7E91623 		ldrd	r2, [r7, #88]
+ 1041 04ee C1E90023 		strd	r2, [r1]
+ 163:rng.c         **** 
+ 164:rng.c         **** 
+ 165:rng.c         **** 	p->ptr = 0;
+ 1042              		.loc 1 165 9
+ 1043 04f2 7B68     		ldr	r3, [r7, #4]
+ 1044 04f4 0022     		movs	r2, #0
+ 1045 04f6 C3F80022 		str	r2, [r3, #512]
+ 166:rng.c         **** }
+ 1046              		.loc 1 166 1
+ 1047 04fa 00BF     		nop
+ 1048 04fc 6437     		adds	r7, r7, #100
+ 1049              	.LCFI8:
+ 1050              		.cfi_def_cfa_offset 20
+ 1051 04fe BD46     		mov	sp, r7
+ 1052              	.LCFI9:
+ 1053              		.cfi_def_cfa_register 13
+ 1054              		@ sp needed
+ 1055 0500 F0BD     		pop	{r4, r5, r6, r7, pc}
+ 1056              	.L18:
+ 1057 0502 00BF     		.align	2
+ 1058              	.L17:
+ 1059 0504 40010000 		.word	CW.0
+ 1060              		.cfi_endproc
+ 1061              	.LFE19:
+ 1063              		.section	.text.falcon_inner_prng_get_bytes,"ax",%progbits
+ 1064              		.align	1
+ 1065              		.global	falcon_inner_prng_get_bytes
+ 1066              		.syntax unified
+ 1067              		.thumb
+ 1068              		.thumb_func
+ 1069              		.fpu softvfp
+ 1071              	falcon_inner_prng_get_bytes:
+ 1072              	.LFB20:
+ 167:rng.c         **** 
+ 168:rng.c         **** /* see inner.h */
+ 169:rng.c         **** void
+ 170:rng.c         **** Zf(prng_get_bytes)(prng *p, void *dst, size_t len)
+ 171:rng.c         **** {
+ 1073              		.loc 1 171 1
+ 1074              		.cfi_startproc
+ 1075              		@ args = 0, pretend = 0, frame = 24
+ 1076              		@ frame_needed = 1, uses_anonymous_args = 0
+ 1077 0000 80B5     		push	{r7, lr}
+ 1078              	.LCFI10:
+ 1079              		.cfi_def_cfa_offset 8
+ 1080              		.cfi_offset 7, -8
+ 1081              		.cfi_offset 14, -4
+ 1082 0002 86B0     		sub	sp, sp, #24
+ 1083              	.LCFI11:
+ 1084              		.cfi_def_cfa_offset 32
+ 1085 0004 00AF     		add	r7, sp, #0
+ 1086              	.LCFI12:
+ 1087              		.cfi_def_cfa_register 7
+ 1088 0006 F860     		str	r0, [r7, #12]
+ 1089 0008 B960     		str	r1, [r7, #8]
+ 1090 000a 7A60     		str	r2, [r7, #4]
+ 172:rng.c         **** 	uint8_t *buf;
+ 173:rng.c         **** 
+ 174:rng.c         **** 	buf = dst;
+ 1091              		.loc 1 174 6
+ 1092 000c BB68     		ldr	r3, [r7, #8]
+ 1093 000e 7B61     		str	r3, [r7, #20]
+ 175:rng.c         **** 	while (len > 0) {
+ 1094              		.loc 1 175 8
+ 1095 0010 2AE0     		b	.L20
+ 1096              	.L22:
+ 1097              	.LBB4:
+ 176:rng.c         **** 		size_t clen;
+ 177:rng.c         **** 
+ 178:rng.c         **** 		clen = (sizeof p->buf.d) - p->ptr;
+ 1098              		.loc 1 178 31
+ 1099 0012 FB68     		ldr	r3, [r7, #12]
+ 1100 0014 D3F80032 		ldr	r3, [r3, #512]
+ 1101              		.loc 1 178 8
+ 1102 0018 C3F50073 		rsb	r3, r3, #512
+ 1103 001c 3B61     		str	r3, [r7, #16]
+ 179:rng.c         **** 		if (clen > len) {
+ 1104              		.loc 1 179 6
+ 1105 001e 3A69     		ldr	r2, [r7, #16]
+ 1106 0020 7B68     		ldr	r3, [r7, #4]
+ 1107 0022 9A42     		cmp	r2, r3
+ 1108 0024 01D9     		bls	.L21
+ 180:rng.c         **** 			clen = len;
+ 1109              		.loc 1 180 9
+ 1110 0026 7B68     		ldr	r3, [r7, #4]
+ 1111 0028 3B61     		str	r3, [r7, #16]
+ 1112              	.L21:
+ 181:rng.c         **** 		}
+ 182:rng.c         **** 		memcpy(buf, p->buf.d, clen);
+ 1113              		.loc 1 182 21
+ 1114 002a FB68     		ldr	r3, [r7, #12]
+ 1115              		.loc 1 182 3
+ 1116 002c 3A69     		ldr	r2, [r7, #16]
+ 1117 002e 1946     		mov	r1, r3
+ 1118 0030 7869     		ldr	r0, [r7, #20]
+ 1119 0032 FFF7FEFF 		bl	memcpy
+ 183:rng.c         **** 		buf += clen;
+ 1120              		.loc 1 183 7
+ 1121 0036 7A69     		ldr	r2, [r7, #20]
+ 1122 0038 3B69     		ldr	r3, [r7, #16]
+ 1123 003a 1344     		add	r3, r3, r2
+ 1124 003c 7B61     		str	r3, [r7, #20]
+ 184:rng.c         **** 		len -= clen;
+ 1125              		.loc 1 184 7
+ 1126 003e 7A68     		ldr	r2, [r7, #4]
+ 1127 0040 3B69     		ldr	r3, [r7, #16]
+ 1128 0042 D31A     		subs	r3, r2, r3
+ 1129 0044 7B60     		str	r3, [r7, #4]
+ 185:rng.c         **** 		p->ptr += clen;
+ 1130              		.loc 1 185 10
+ 1131 0046 FB68     		ldr	r3, [r7, #12]
+ 1132 0048 D3F80022 		ldr	r2, [r3, #512]
+ 1133 004c 3B69     		ldr	r3, [r7, #16]
+ 1134 004e 1A44     		add	r2, r2, r3
+ 1135 0050 FB68     		ldr	r3, [r7, #12]
+ 1136 0052 C3F80022 		str	r2, [r3, #512]
+ 186:rng.c         **** 		if (p->ptr == sizeof p->buf.d) {
+ 1137              		.loc 1 186 8
+ 1138 0056 FB68     		ldr	r3, [r7, #12]
+ 1139 0058 D3F80032 		ldr	r3, [r3, #512]
+ 1140              		.loc 1 186 6
+ 1141 005c B3F5007F 		cmp	r3, #512
+ 1142 0060 02D1     		bne	.L20
+ 187:rng.c         **** 			Zf(prng_refill)(p);
+ 1143              		.loc 1 187 4
+ 1144 0062 F868     		ldr	r0, [r7, #12]
+ 1145 0064 FFF7FEFF 		bl	falcon_inner_prng_refill
+ 1146              	.L20:
+ 1147              	.LBE4:
+ 175:rng.c         **** 		size_t clen;
+ 1148              		.loc 1 175 8
+ 1149 0068 7B68     		ldr	r3, [r7, #4]
+ 1150 006a 002B     		cmp	r3, #0
+ 1151 006c D1D1     		bne	.L22
+ 188:rng.c         **** 		}
+ 189:rng.c         **** 	}
+ 190:rng.c         **** }
+ 1152              		.loc 1 190 1
+ 1153 006e 00BF     		nop
+ 1154 0070 00BF     		nop
+ 1155 0072 1837     		adds	r7, r7, #24
+ 1156              	.LCFI13:
+ 1157              		.cfi_def_cfa_offset 8
+ 1158 0074 BD46     		mov	sp, r7
+ 1159              	.LCFI14:
+ 1160              		.cfi_def_cfa_register 13
+ 1161              		@ sp needed
+ 1162 0076 80BD     		pop	{r7, pc}
+ 1163              		.cfi_endproc
+ 1164              	.LFE20:
+ 1166              		.section	.rodata
+ 1167              		.align	2
+ 1170              	CW.0:
+ 1171 0140 65787061 		.word	1634760805
+ 1172 0144 6E642033 		.word	857760878
+ 1173 0148 322D6279 		.word	2036477234
+ 1174 014c 7465206B 		.word	1797285236
+ 1175              		.text
+ 1176              	.Letext0:
+ 1177              		.file 2 "c:\\users\\user\\chipwhisperer5_64\\cw\\home\\portable\\armgcc\\gcc-arm-none-eabi-10-2020
+ 1178              		.file 3 "c:\\users\\user\\chipwhisperer5_64\\cw\\home\\portable\\armgcc\\gcc-arm-none-eabi-10-2020
+ 1179              		.file 4 "c:\\users\\user\\chipwhisperer5_64\\cw\\home\\portable\\armgcc\\gcc-arm-none-eabi-10-2020
+ 1180              		.file 5 "inner.h"
+ 1181              		.file 6 "fpr.h"
+DEFINED SYMBOLS
+                            *ABS*:00000000 rng.c
+C:\Users\user\AppData\Local\Temp\ccx51SC6.s:16     .rodata:00000000 $d
+C:\Users\user\AppData\Local\Temp\ccx51SC6.s:19     .rodata:00000000 fpr_q
+C:\Users\user\AppData\Local\Temp\ccx51SC6.s:25     .rodata:00000008 fpr_inverse_of_q
+C:\Users\user\AppData\Local\Temp\ccx51SC6.s:31     .rodata:00000010 fpr_inv_2sqrsigma0
+C:\Users\user\AppData\Local\Temp\ccx51SC6.s:37     .rodata:00000018 fpr_inv_sigma
+C:\Users\user\AppData\Local\Temp\ccx51SC6.s:63     .rodata:00000070 fpr_sigma_min
+C:\Users\user\AppData\Local\Temp\ccx51SC6.s:89     .rodata:000000c8 fpr_log2
+C:\Users\user\AppData\Local\Temp\ccx51SC6.s:95     .rodata:000000d0 fpr_inv_log2
+C:\Users\user\AppData\Local\Temp\ccx51SC6.s:101    .rodata:000000d8 fpr_bnorm_max
+C:\Users\user\AppData\Local\Temp\ccx51SC6.s:107    .rodata:000000e0 fpr_zero
+C:\Users\user\AppData\Local\Temp\ccx51SC6.s:112    .rodata:000000e8 fpr_one
+C:\Users\user\AppData\Local\Temp\ccx51SC6.s:118    .rodata:000000f0 fpr_two
+C:\Users\user\AppData\Local\Temp\ccx51SC6.s:124    .rodata:000000f8 fpr_onehalf
+C:\Users\user\AppData\Local\Temp\ccx51SC6.s:130    .rodata:00000100 fpr_invsqrt2
+C:\Users\user\AppData\Local\Temp\ccx51SC6.s:136    .rodata:00000108 fpr_invsqrt8
+C:\Users\user\AppData\Local\Temp\ccx51SC6.s:142    .rodata:00000110 fpr_ptwo31
+C:\Users\user\AppData\Local\Temp\ccx51SC6.s:148    .rodata:00000118 fpr_ptwo31m1
+C:\Users\user\AppData\Local\Temp\ccx51SC6.s:154    .rodata:00000120 fpr_mtwo31m1
+C:\Users\user\AppData\Local\Temp\ccx51SC6.s:160    .rodata:00000128 fpr_ptwo63m1
+C:\Users\user\AppData\Local\Temp\ccx51SC6.s:166    .rodata:00000130 fpr_mtwo63m1
+C:\Users\user\AppData\Local\Temp\ccx51SC6.s:172    .rodata:00000138 fpr_ptwo63
+C:\Users\user\AppData\Local\Temp\ccx51SC6.s:176    .text.falcon_inner_prng_init:00000000 $t
+C:\Users\user\AppData\Local\Temp\ccx51SC6.s:184    .text.falcon_inner_prng_init:00000000 falcon_inner_prng_init
+C:\Users\user\AppData\Local\Temp\ccx51SC6.s:359    .text.falcon_inner_prng_refill:00000000 falcon_inner_prng_refill
+C:\Users\user\AppData\Local\Temp\ccx51SC6.s:352    .text.falcon_inner_prng_refill:00000000 $t
+C:\Users\user\AppData\Local\Temp\ccx51SC6.s:437    .text.falcon_inner_prng_refill:00000064 $d
+C:\Users\user\AppData\Local\Temp\ccx51SC6.s:1170   .rodata:00000140 CW.0
+C:\Users\user\AppData\Local\Temp\ccx51SC6.s:440    .text.falcon_inner_prng_refill:00000068 $t
+C:\Users\user\AppData\Local\Temp\ccx51SC6.s:1059   .text.falcon_inner_prng_refill:00000504 $d
+C:\Users\user\AppData\Local\Temp\ccx51SC6.s:1064   .text.falcon_inner_prng_get_bytes:00000000 $t
+C:\Users\user\AppData\Local\Temp\ccx51SC6.s:1071   .text.falcon_inner_prng_get_bytes:00000000 falcon_inner_prng_get_bytes
+
+UNDEFINED SYMBOLS
+falcon_inner_i_shake256_extract
+memcpy

@@ -1,0 +1,836 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="ChipFalcon"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/user/Dropbox/CLionProjects/ChipFalcon/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/user/Dropbox/CLionProjects/ChipFalcon/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/user/Dropbox/CLionProjects/ChipFalcon/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/user/Dropbox/CLionProjects/ChipFalcon/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="ChipFalcon">
+				<Option output="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/cmake-build-debug/ChipFalcon.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal"/>
+					<Add directory="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/saml11"/>
+					<Add directory="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/saml11/CMSIS"/>
+					<Add directory="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/saml11/component"/>
+					<Add directory="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/saml11/instance"/>
+					<Add directory="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/saml11/pio"/>
+					<Add directory="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/stm32f0"/>
+					<Add directory="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/stm32f0/CMSIS"/>
+					<Add directory="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/stm32f0/CMSIS/core"/>
+					<Add directory="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/stm32f0/CMSIS/device"/>
+					<Add directory="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/stm32f0/Legacy"/>
+					<Add directory="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/stm32f3"/>
+					<Add directory="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/stm32f3/CMSIS"/>
+					<Add directory="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/stm32f3/CMSIS/core"/>
+					<Add directory="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/stm32f3/CMSIS/device"/>
+					<Add directory="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/stm32f3/Legacy"/>
+					<Add directory="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/xmega"/>
+					<Add directory="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/simpleserial"/>
+					<Add directory="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/SS1x_firmware"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/9.2.0/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/9.2.0/../../../../include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/9.2.0/include-fixed"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/user/Dropbox/CLionProjects/ChipFalcon/cmake-build-debug/Makefile&quot;  VERBOSE=1 ChipFalcon"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/user/Dropbox/CLionProjects/ChipFalcon/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/user/Dropbox/CLionProjects/ChipFalcon/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/user/Dropbox/CLionProjects/ChipFalcon/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="ChipFalcon/fast">
+				<Option output="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/cmake-build-debug/ChipFalcon.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal"/>
+					<Add directory="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/saml11"/>
+					<Add directory="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/saml11/CMSIS"/>
+					<Add directory="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/saml11/component"/>
+					<Add directory="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/saml11/instance"/>
+					<Add directory="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/saml11/pio"/>
+					<Add directory="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/stm32f0"/>
+					<Add directory="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/stm32f0/CMSIS"/>
+					<Add directory="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/stm32f0/CMSIS/core"/>
+					<Add directory="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/stm32f0/CMSIS/device"/>
+					<Add directory="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/stm32f0/Legacy"/>
+					<Add directory="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/stm32f3"/>
+					<Add directory="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/stm32f3/CMSIS"/>
+					<Add directory="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/stm32f3/CMSIS/core"/>
+					<Add directory="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/stm32f3/CMSIS/device"/>
+					<Add directory="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/stm32f3/Legacy"/>
+					<Add directory="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/xmega"/>
+					<Add directory="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/simpleserial"/>
+					<Add directory="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/SS1x_firmware"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/9.2.0/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/9.2.0/../../../../include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/9.2.0/include-fixed"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/user/Dropbox/CLionProjects/ChipFalcon/cmake-build-debug/Makefile&quot;  VERBOSE=1 ChipFalcon/fast"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/user/Dropbox/CLionProjects/ChipFalcon/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/user/Dropbox/CLionProjects/ChipFalcon/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/user/Dropbox/CLionProjects/ChipFalcon/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/user/Dropbox/CLionProjects/ChipFalcon/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/user/Dropbox/CLionProjects/ChipFalcon/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/user/Dropbox/CLionProjects/ChipFalcon/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/user/Dropbox/CLionProjects/ChipFalcon/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/user/Dropbox/CLionProjects/ChipFalcon/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/user/Dropbox/CLionProjects/ChipFalcon/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/user/Dropbox/CLionProjects/ChipFalcon/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/user/Dropbox/CLionProjects/ChipFalcon/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/SS1x_firmware/api.c">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/SS1x_firmware/api.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/SS1x_firmware/codec.c">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/SS1x_firmware/common.c">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/SS1x_firmware/del.c">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/SS1x_firmware/fft.c">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/SS1x_firmware/fft.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/SS1x_firmware/fpr.c">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/SS1x_firmware/fpr.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/SS1x_firmware/inner.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/SS1x_firmware/katrng.c">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/SS1x_firmware/katrng.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/SS1x_firmware/keygen.c">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/SS1x_firmware/main.c">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/SS1x_firmware/nist.c">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/SS1x_firmware/nist.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/SS1x_firmware/rng.c">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/SS1x_firmware/shake.c">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/SS1x_firmware/sign.c">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/SS1x_firmware/vrfy.c">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/hal.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/saml11/CMSIS/arm_common_tables.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/saml11/CMSIS/arm_const_structs.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/saml11/CMSIS/arm_math.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/saml11/CMSIS/cmsis_armcc.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/saml11/CMSIS/cmsis_armclang.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/saml11/CMSIS/cmsis_compiler.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/saml11/CMSIS/cmsis_gcc.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/saml11/CMSIS/core_armv8mbl.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/saml11/CMSIS/core_armv8mml.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/saml11/CMSIS/core_cm0.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/saml11/CMSIS/core_cm0plus.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/saml11/CMSIS/core_cm23.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/saml11/CMSIS/core_cm3.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/saml11/CMSIS/core_cm33.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/saml11/CMSIS/core_cm4.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/saml11/CMSIS/core_cm7.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/saml11/CMSIS/core_sc000.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/saml11/CMSIS/core_sc300.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/saml11/CMSIS/tz_context.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/saml11/component-version.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/saml11/component/ac.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/saml11/component/adc.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/saml11/component/ccl.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/saml11/component/dac.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/saml11/component/dmac.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/saml11/component/dsu.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/saml11/component/eic.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/saml11/component/evsys.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/saml11/component/freqm.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/saml11/component/gclk.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/saml11/component/idau.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/saml11/component/mclk.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/saml11/component/nvmctrl.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/saml11/component/opamp.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/saml11/component/osc32kctrl.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/saml11/component/oscctrl.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/saml11/component/pac.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/saml11/component/pm.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/saml11/component/port.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/saml11/component/ptc.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/saml11/component/rstc.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/saml11/component/rtc.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/saml11/component/sercom.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/saml11/component/supc.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/saml11/component/tc.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/saml11/component/tram.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/saml11/component/trng.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/saml11/component/wdt.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/saml11/instance/ac.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/saml11/instance/adc.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/saml11/instance/ccl.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/saml11/instance/dac.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/saml11/instance/dmac.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/saml11/instance/dsu.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/saml11/instance/eic.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/saml11/instance/evsys.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/saml11/instance/freqm.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/saml11/instance/gclk.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/saml11/instance/idau.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/saml11/instance/mclk.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/saml11/instance/nvmctrl.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/saml11/instance/opamp.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/saml11/instance/osc32kctrl.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/saml11/instance/oscctrl.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/saml11/instance/pac.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/saml11/instance/pm.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/saml11/instance/port.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/saml11/instance/ptc.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/saml11/instance/rstc.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/saml11/instance/rtc.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/saml11/instance/sercom0.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/saml11/instance/sercom1.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/saml11/instance/sercom2.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/saml11/instance/supc.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/saml11/instance/tc0.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/saml11/instance/tc1.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/saml11/instance/tc2.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/saml11/instance/tram.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/saml11/instance/trng.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/saml11/instance/wdt.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/saml11/pio/saml11d14a.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/saml11/pio/saml11d15a.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/saml11/pio/saml11d16a.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/saml11/pio/saml11e14a.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/saml11/pio/saml11e15a.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/saml11/pio/saml11e16a.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/saml11/sam.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/saml11/saml11_hal.c">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/saml11/saml11_hal.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/saml11/saml11e16a.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/saml11/startup_saml11e16a.c">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/saml11/system_saml11.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/saml11/system_saml11e16a.c">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/stm32f0/CMSIS/core/arm_common_tables.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/stm32f0/CMSIS/core/arm_const_structs.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/stm32f0/CMSIS/core/arm_math.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/stm32f0/CMSIS/core/cmsis_armcc.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/stm32f0/CMSIS/core/cmsis_armcc_V6.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/stm32f0/CMSIS/core/cmsis_gcc.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/stm32f0/CMSIS/core/core_cm0.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/stm32f0/CMSIS/core/core_cm0plus.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/stm32f0/CMSIS/core/core_cm3.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/stm32f0/CMSIS/core/core_cm4.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/stm32f0/CMSIS/core/core_cm7.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/stm32f0/CMSIS/core/core_cmFunc.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/stm32f0/CMSIS/core/core_cmInstr.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/stm32f0/CMSIS/core/core_cmSimd.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/stm32f0/CMSIS/core/core_sc000.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/stm32f0/CMSIS/core/core_sc300.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/stm32f0/CMSIS/device/stm32f030x6.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/stm32f0/CMSIS/device/stm32f030x8.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/stm32f0/CMSIS/device/stm32f030xc.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/stm32f0/CMSIS/device/stm32f031x6.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/stm32f0/CMSIS/device/stm32f038xx.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/stm32f0/CMSIS/device/stm32f042x6.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/stm32f0/CMSIS/device/stm32f048xx.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/stm32f0/CMSIS/device/stm32f051x8.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/stm32f0/CMSIS/device/stm32f058xx.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/stm32f0/CMSIS/device/stm32f070x6.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/stm32f0/CMSIS/device/stm32f070xb.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/stm32f0/CMSIS/device/stm32f071xb.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/stm32f0/CMSIS/device/stm32f072xb.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/stm32f0/CMSIS/device/stm32f078xx.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/stm32f0/CMSIS/device/stm32f091xc.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/stm32f0/CMSIS/device/stm32f098xx.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/stm32f0/CMSIS/device/stm32f0xx.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/stm32f0/CMSIS/device/system_stm32f0xx.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/stm32f0/Legacy/stm32_hal_legacy.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/stm32f0/stm32f0_hal.c">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/stm32f0/stm32f0_hal.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/stm32f0/stm32f0_hal_lowlevel.c">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/stm32f0/stm32f0_hal_lowlevel.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/stm32f0/stm32f0xx_hal_def.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/stm32f0/stm32f0xx_hal_dma.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/stm32f0/stm32f0xx_hal_dma_ex.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/stm32f0/stm32f0xx_hal_flash.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/stm32f0/stm32f0xx_hal_flash_ex.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/stm32f0/stm32f0xx_hal_gpio.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/stm32f0/stm32f0xx_hal_gpio_ex.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/stm32f0/stm32f0xx_hal_rcc.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/stm32f0/stm32f0xx_hal_rcc_ex.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/stm32f0/stm32f0xx_hal_uart.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/stm32f0/stm32f0xx_hal_uart_ex.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/stm32f3/CMSIS/core/arm_common_tables.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/stm32f3/CMSIS/core/arm_const_structs.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/stm32f3/CMSIS/core/arm_math.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/stm32f3/CMSIS/core/cmsis_armcc.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/stm32f3/CMSIS/core/cmsis_armcc_V6.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/stm32f3/CMSIS/core/cmsis_gcc.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/stm32f3/CMSIS/core/core_cm0.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/stm32f3/CMSIS/core/core_cm0plus.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/stm32f3/CMSIS/core/core_cm3.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/stm32f3/CMSIS/core/core_cm4.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/stm32f3/CMSIS/core/core_cm7.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/stm32f3/CMSIS/core/core_cmFunc.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/stm32f3/CMSIS/core/core_cmInstr.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/stm32f3/CMSIS/core/core_cmSimd.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/stm32f3/CMSIS/core/core_sc000.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/stm32f3/CMSIS/core/core_sc300.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/stm32f3/CMSIS/device/stm32f301x8.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/stm32f3/CMSIS/device/stm32f302x8.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/stm32f3/CMSIS/device/stm32f302xc.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/stm32f3/CMSIS/device/stm32f302xe.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/stm32f3/CMSIS/device/stm32f303x8.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/stm32f3/CMSIS/device/stm32f303xc.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/stm32f3/CMSIS/device/stm32f303xe.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/stm32f3/CMSIS/device/stm32f318xx.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/stm32f3/CMSIS/device/stm32f328xx.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/stm32f3/CMSIS/device/stm32f334x8.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/stm32f3/CMSIS/device/stm32f358xx.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/stm32f3/CMSIS/device/stm32f373xc.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/stm32f3/CMSIS/device/stm32f378xx.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/stm32f3/CMSIS/device/stm32f398xx.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/stm32f3/CMSIS/device/stm32f3xx.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/stm32f3/CMSIS/device/system_stm32f3xx.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/stm32f3/Legacy/stm32_hal_legacy.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/stm32f3/stm32f3_hal.c">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/stm32f3/stm32f3_hal.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/stm32f3/stm32f3_hal_lowlevel.c">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/stm32f3/stm32f3_hal_lowlevel.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/stm32f3/stm32f3_hal_seccan.c">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/stm32f3/stm32f3_hal_seccan.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/stm32f3/stm32f3_sysmem.c">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/stm32f3/stm32f3xx_hal_adc.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/stm32f3/stm32f3xx_hal_adc_ex.c">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/stm32f3/stm32f3xx_hal_adc_ex.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/stm32f3/stm32f3xx_hal_can.c">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/stm32f3/stm32f3xx_hal_can.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/stm32f3/stm32f3xx_hal_cortex.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/stm32f3/stm32f3xx_hal_def.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/stm32f3/stm32f3xx_hal_dma.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/stm32f3/stm32f3xx_hal_dma_ex.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/stm32f3/stm32f3xx_hal_flash.c">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/stm32f3/stm32f3xx_hal_flash.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/stm32f3/stm32f3xx_hal_flash_ex.c">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/stm32f3/stm32f3xx_hal_flash_ex.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/stm32f3/stm32f3xx_hal_gpio.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/stm32f3/stm32f3xx_hal_gpio_ex.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/stm32f3/stm32f3xx_hal_rcc.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/stm32f3/stm32f3xx_hal_rcc_ex.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/stm32f3/stm32f3xx_hal_tim.c">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/stm32f3/stm32f3xx_hal_tim.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/stm32f3/stm32f3xx_hal_tim_ex.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/stm32f3/stm32f3xx_hal_uart.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/stm32f3/stm32f3xx_hal_uart_ex.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/stm32f3/stm32f3xx_hal_usart.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/stm32f3/stm32f3xx_hal_usart_ex.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/xmega/XMEGA_AES_driver.c">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/xmega/XMEGA_AES_driver.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/xmega/avr_compiler.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/xmega/uart.c">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/xmega/uart.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/xmega/usart_driver.c">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/xmega/usart_driver.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/xmega/xmega_hal.c">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/hal/xmega/xmega_hal.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/simpleserial/simpleserial.c">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/base/simpleserial/simpleserial.h">
+			<Option target="ChipFalcon"/>
+		</Unit>
+		<Unit filename="C:/Users/user/Dropbox/CLionProjects/ChipFalcon/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

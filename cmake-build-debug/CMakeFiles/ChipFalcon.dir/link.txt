@@ -1,0 +1,3 @@
+C:\Users\user\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\213.6777.58\bin\cmake\win\bin\cmake.exe -E rm -f CMakeFiles\ChipFalcon.dir/objects.a
+C:\MinGW\bin\ar.exe qc CMakeFiles\ChipFalcon.dir/objects.a @CMakeFiles\ChipFalcon.dir\objects1.rsp
+C:\MinGW\bin\gcc.exe -g -Wl,--whole-archive CMakeFiles\ChipFalcon.dir/objects.a -Wl,--no-whole-archive -o ChipFalcon.exe -Wl,--out-implib,libChipFalcon.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\ChipFalcon.dir\linklibs.rsp

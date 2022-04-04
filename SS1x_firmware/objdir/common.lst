@@ -1,0 +1,1324 @@
+   1              		.cpu cortex-m4
+   2              		.eabi_attribute 20, 1
+   3              		.eabi_attribute 21, 1
+   4              		.eabi_attribute 23, 3
+   5              		.eabi_attribute 24, 1
+   6              		.eabi_attribute 25, 1
+   7              		.eabi_attribute 26, 1
+   8              		.eabi_attribute 30, 6
+   9              		.eabi_attribute 34, 1
+  10              		.eabi_attribute 18, 4
+  11              		.file	"common.c"
+  12              		.text
+  13              	.Ltext0:
+  14              		.cfi_sections	.debug_frame
+  15              		.section	.rodata
+  16              		.align	3
+  19              	fpr_q:
+  20 0000 00000000 		.word	0
+  21 0004 8000C840 		.word	1086849152
+  22              		.align	3
+  25              	fpr_inverse_of_q:
+  26 0008 82A79790 		.word	-1869109374
+  27 000c E354153F 		.word	1058362595
+  28              		.align	3
+  31              	fpr_inv_2sqrsigma0:
+  32 0010 C2BB83C1 		.word	-1048331326
+  33 0014 8B4FC33F 		.word	1069764491
+  34              		.align	3
+  37              	fpr_inv_sigma:
+  38 0018 00000000 		.word	0
+  39 001c 00000000 		.word	0
+  40 0020 9A16247E 		.word	2116294298
+  41 0024 EB487C3F 		.word	1065109739
+  42 0028 D9AE8C54 		.word	1418505945
+  43 002c 0AE57B3F 		.word	1065084170
+  44 0030 2C769EE0 		.word	-526485972
+  45 0034 2E857B3F 		.word	1065059630
+  46 0038 36DACAD3 		.word	-741680586
+  47 003c 5EFC7A3F 		.word	1065024606
+  48 0040 EDB37609 		.word	158774253
+  49 0044 3B7B7A3F 		.word	1064991547
+  50 0048 989CCA82 		.word	-2100650856
+  51 004c 12017A3F 		.word	1064960274
+  52 0050 36275FCE 		.word	-832624842
+  53 0054 498D793F 		.word	1064930633
+  54 0058 EED96EC5 		.word	-982590994
+  55 005c 571F793F 		.word	1064902487
+  56 0060 CAC764DE 		.word	-563820598
+  57 0064 C2B6783F 		.word	1064875714
+  58 0068 E31A31F6 		.word	-164554013
+  59 006c 1E53783F 		.word	1064850206
+  60              		.align	3
+  63              	fpr_sigma_min:
+  64 0070 00000000 		.word	0
+  65 0074 00000000 		.word	0
+  66 0078 8B564406 		.word	105141899
+  67 007c 38DDF13F 		.word	1072815416
+  68 0080 2686ADDC 		.word	-592607706
+  69 0084 2E1DF23F 		.word	1072831790
+  70 0088 7A7CAAE1 		.word	-508920710
+  71 008c 465CF23F 		.word	1072847942
+  72 0090 25FB4A57 		.word	1464531749
+  73 0094 5CB9F23F 		.word	1072871772
+  74 0098 B622FEC7 		.word	-939646282
+  75 009c AB14F33F 		.word	1072895147
+  76 00a0 C3D77534 		.word	880138179
+  77 00a4 4E6EF33F 		.word	1072918094
+  78 00a8 24C2A166 		.word	1721877028
+  79 00ac 5AC6F33F 		.word	1072940634
+  80 00b0 A0B38C35 		.word	898413472
+  81 00b4 E51CF43F 		.word	1072962789
+  82 00b8 757A1FBF 		.word	-1088456075
+  83 00bc 0172F43F 		.word	1072984577
+  84 00c0 64C79099 		.word	-1718565020
+  85 00c4 C1C5F43F 		.word	1073006017
+  86              		.align	3
+  89              	fpr_log2:
+  90 00c8 EF39FAFE 		.word	-17155601
+  91 00cc 422EE63F 		.word	1072049730
+  92              		.align	3
+  95              	fpr_inv_log2:
+  96 00d0 FE822B65 		.word	1697350398
+  97 00d4 4715F73F 		.word	1073157447
+  98              		.align	3
+ 101              	fpr_bnorm_max:
+ 102 00d8 ACADD85F 		.word	1608035756
+ 103 00dc 9A6DD040 		.word	1087401370
+ 104              		.align	3
+ 107              	fpr_zero:
+ 108 00e0 00000000 		.space	8
+ 108      00000000 
+ 109              		.align	3
+ 112              	fpr_one:
+ 113 00e8 00000000 		.word	0
+ 114 00ec 0000F03F 		.word	1072693248
+ 115              		.align	3
+ 118              	fpr_two:
+ 119 00f0 00000000 		.word	0
+ 120 00f4 00000040 		.word	1073741824
+ 121              		.align	3
+ 124              	fpr_onehalf:
+ 125 00f8 00000000 		.word	0
+ 126 00fc 0000E03F 		.word	1071644672
+ 127              		.align	3
+ 130              	fpr_invsqrt2:
+ 131 0100 CD3B7F66 		.word	1719614413
+ 132 0104 9EA0E63F 		.word	1072079006
+ 133              		.align	3
+ 136              	fpr_invsqrt8:
+ 137 0108 CD3B7F66 		.word	1719614413
+ 138 010c 9EA0D63F 		.word	1071030430
+ 139              		.align	3
+ 142              	fpr_ptwo31:
+ 143 0110 00000000 		.word	0
+ 144 0114 0000E041 		.word	1105199104
+ 145              		.align	3
+ 148              	fpr_ptwo31m1:
+ 149 0118 0000C0FF 		.word	-4194304
+ 150 011c FFFFDF41 		.word	1105199103
+ 151              		.align	3
+ 154              	fpr_mtwo31m1:
+ 155 0120 0000C0FF 		.word	-4194304
+ 156 0124 FFFFDFC1 		.word	-1042284545
+ 157              		.align	3
+ 160              	fpr_ptwo63m1:
+ 161 0128 00000000 		.word	0
+ 162 012c 0000E043 		.word	1138753536
+ 163              		.align	3
+ 166              	fpr_mtwo63m1:
+ 167 0130 00000000 		.word	0
+ 168 0134 0000E0C3 		.word	-1008730112
+ 169              		.align	3
+ 172              	fpr_ptwo63:
+ 173 0138 00000000 		.word	0
+ 174 013c 0000E043 		.word	1138753536
+ 175              		.section	.text.falcon_inner_hash_to_point_vartime,"ax",%progbits
+ 176              		.align	1
+ 177              		.global	falcon_inner_hash_to_point_vartime
+ 178              		.arch armv7e-m
+ 179              		.syntax unified
+ 180              		.thumb
+ 181              		.thumb_func
+ 182              		.fpu softvfp
+ 184              	falcon_inner_hash_to_point_vartime:
+ 185              	.LFB18:
+ 186              		.file 1 "common.c"
+   1:common.c      **** /*
+   2:common.c      ****  * Support functions for signatures (hash-to-point, norm).
+   3:common.c      ****  *
+   4:common.c      ****  * ==========================(LICENSE BEGIN)============================
+   5:common.c      ****  *
+   6:common.c      ****  * Copyright (c) 2017-2019  Falcon Project
+   7:common.c      ****  *
+   8:common.c      ****  * Permission is hereby granted, free of charge, to any person obtaining
+   9:common.c      ****  * a copy of this software and associated documentation files (the
+  10:common.c      ****  * "Software"), to deal in the Software without restriction, including
+  11:common.c      ****  * without limitation the rights to use, copy, modify, merge, publish,
+  12:common.c      ****  * distribute, sublicense, and/or sell copies of the Software, and to
+  13:common.c      ****  * permit persons to whom the Software is furnished to do so, subject to
+  14:common.c      ****  * the following conditions:
+  15:common.c      ****  *
+  16:common.c      ****  * The above copyright notice and this permission notice shall be
+  17:common.c      ****  * included in all copies or substantial portions of the Software.
+  18:common.c      ****  *
+  19:common.c      ****  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+  20:common.c      ****  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+  21:common.c      ****  * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+  22:common.c      ****  * IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+  23:common.c      ****  * CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+  24:common.c      ****  * TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+  25:common.c      ****  * SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+  26:common.c      ****  *
+  27:common.c      ****  * ===========================(LICENSE END)=============================
+  28:common.c      ****  *
+  29:common.c      ****  * @author   Thomas Pornin <thomas.pornin@nccgroup.com>
+  30:common.c      ****  */
+  31:common.c      **** 
+  32:common.c      **** #include "inner.h"
+  33:common.c      **** 
+  34:common.c      **** /* see inner.h */
+  35:common.c      **** void
+  36:common.c      **** Zf(hash_to_point_vartime)(
+  37:common.c      **** 	inner_shake256_context *sc,
+  38:common.c      **** 	uint16_t *x, unsigned logn)
+  39:common.c      **** {
+ 187              		.loc 1 39 1
+ 188              		.cfi_startproc
+ 189              		@ args = 0, pretend = 0, frame = 32
+ 190              		@ frame_needed = 1, uses_anonymous_args = 0
+ 191 0000 80B5     		push	{r7, lr}
+ 192              	.LCFI0:
+ 193              		.cfi_def_cfa_offset 8
+ 194              		.cfi_offset 7, -8
+ 195              		.cfi_offset 14, -4
+ 196 0002 88B0     		sub	sp, sp, #32
+ 197              	.LCFI1:
+ 198              		.cfi_def_cfa_offset 40
+ 199 0004 00AF     		add	r7, sp, #0
+ 200              	.LCFI2:
+ 201              		.cfi_def_cfa_register 7
+ 202 0006 F860     		str	r0, [r7, #12]
+ 203 0008 B960     		str	r1, [r7, #8]
+ 204 000a 7A60     		str	r2, [r7, #4]
+  40:common.c      **** 	/*
+  41:common.c      **** 	 * This is the straightforward per-the-spec implementation. It
+  42:common.c      **** 	 * is not constant-time, thus it might reveal information on the
+  43:common.c      **** 	 * plaintext (at least, enough to check the plaintext against a
+  44:common.c      **** 	 * list of potential plaintexts) in a scenario where the
+  45:common.c      **** 	 * attacker does not have access to the signature value or to
+  46:common.c      **** 	 * the public key, but knows the nonce (without knowledge of the
+  47:common.c      **** 	 * nonce, the hashed output cannot be matched against potential
+  48:common.c      **** 	 * plaintexts).
+  49:common.c      **** 	 */
+  50:common.c      **** 	size_t n;
+  51:common.c      **** 
+  52:common.c      **** 	n = (size_t)1 << logn;
+ 205              		.loc 1 52 4
+ 206 000c 0122     		movs	r2, #1
+ 207 000e 7B68     		ldr	r3, [r7, #4]
+ 208 0010 02FA03F3 		lsl	r3, r2, r3
+ 209 0014 FB61     		str	r3, [r7, #28]
+  53:common.c      **** 	while (n > 0) {
+ 210              		.loc 1 53 8
+ 211 0016 23E0     		b	.L2
+ 212              	.L6:
+ 213              	.LBB2:
+  54:common.c      **** 		uint8_t buf[2];
+  55:common.c      **** 		uint32_t w;
+  56:common.c      **** 
+  57:common.c      **** 		inner_shake256_extract(sc, (void *)buf, sizeof buf);
+ 214              		.loc 1 57 3
+ 215 0018 07F11403 		add	r3, r7, #20
+ 216 001c 0222     		movs	r2, #2
+ 217 001e 1946     		mov	r1, r3
+ 218 0020 F868     		ldr	r0, [r7, #12]
+ 219 0022 FFF7FEFF 		bl	falcon_inner_i_shake256_extract
+  58:common.c      **** 		w = ((unsigned)buf[0] << 8) | (unsigned)buf[1];
+ 220              		.loc 1 58 21
+ 221 0026 3B7D     		ldrb	r3, [r7, #20]	@ zero_extendqisi2
+ 222              		.loc 1 58 25
+ 223 0028 1B02     		lsls	r3, r3, #8
+ 224              		.loc 1 58 46
+ 225 002a 7A7D     		ldrb	r2, [r7, #21]	@ zero_extendqisi2
+ 226              		.loc 1 58 5
+ 227 002c 1343     		orrs	r3, r3, r2
+ 228 002e BB61     		str	r3, [r7, #24]
+  59:common.c      **** 		if (w < 61445) {
+ 229              		.loc 1 59 6
+ 230 0030 BB69     		ldr	r3, [r7, #24]
+ 231 0032 4FF20402 		movw	r2, #61444
+ 232 0036 9342     		cmp	r3, r2
+ 233 0038 12D8     		bhi	.L2
+  60:common.c      **** 			while (w >= 12289) {
+ 234              		.loc 1 60 10
+ 235 003a 04E0     		b	.L4
+ 236              	.L5:
+  61:common.c      **** 				w -= 12289;
+ 237              		.loc 1 61 7
+ 238 003c BB69     		ldr	r3, [r7, #24]
+ 239 003e A3F54053 		sub	r3, r3, #12288
+ 240 0042 013B     		subs	r3, r3, #1
+ 241 0044 BB61     		str	r3, [r7, #24]
+ 242              	.L4:
+  60:common.c      **** 			while (w >= 12289) {
+ 243              		.loc 1 60 10
+ 244 0046 BB69     		ldr	r3, [r7, #24]
+ 245 0048 B3F5405F 		cmp	r3, #12288
+ 246 004c F6D8     		bhi	.L5
+  62:common.c      **** 			}
+  63:common.c      **** 			*x ++ = (uint16_t)w;
+ 247              		.loc 1 63 7
+ 248 004e BB68     		ldr	r3, [r7, #8]
+ 249 0050 9A1C     		adds	r2, r3, #2
+ 250 0052 BA60     		str	r2, [r7, #8]
+ 251              		.loc 1 63 12
+ 252 0054 BA69     		ldr	r2, [r7, #24]
+ 253 0056 92B2     		uxth	r2, r2
+ 254              		.loc 1 63 10
+ 255 0058 1A80     		strh	r2, [r3]	@ movhi
+  64:common.c      **** 			n --;
+ 256              		.loc 1 64 6
+ 257 005a FB69     		ldr	r3, [r7, #28]
+ 258 005c 013B     		subs	r3, r3, #1
+ 259 005e FB61     		str	r3, [r7, #28]
+ 260              	.L2:
+ 261              	.LBE2:
+  53:common.c      **** 		uint8_t buf[2];
+ 262              		.loc 1 53 8
+ 263 0060 FB69     		ldr	r3, [r7, #28]
+ 264 0062 002B     		cmp	r3, #0
+ 265 0064 D8D1     		bne	.L6
+  65:common.c      **** 		}
+  66:common.c      **** 	}
+  67:common.c      **** }
+ 266              		.loc 1 67 1
+ 267 0066 00BF     		nop
+ 268 0068 00BF     		nop
+ 269 006a 2037     		adds	r7, r7, #32
+ 270              	.LCFI3:
+ 271              		.cfi_def_cfa_offset 8
+ 272 006c BD46     		mov	sp, r7
+ 273              	.LCFI4:
+ 274              		.cfi_def_cfa_register 13
+ 275              		@ sp needed
+ 276 006e 80BD     		pop	{r7, pc}
+ 277              		.cfi_endproc
+ 278              	.LFE18:
+ 280              		.section	.text.falcon_inner_hash_to_point_ct,"ax",%progbits
+ 281              		.align	1
+ 282              		.global	falcon_inner_hash_to_point_ct
+ 283              		.syntax unified
+ 284              		.thumb
+ 285              		.thumb_func
+ 286              		.fpu softvfp
+ 288              	falcon_inner_hash_to_point_ct:
+ 289              	.LFB19:
+  68:common.c      **** 
+  69:common.c      **** /* see inner.h */
+  70:common.c      **** void
+  71:common.c      **** Zf(hash_to_point_ct)(
+  72:common.c      **** 	inner_shake256_context *sc,
+  73:common.c      **** 	uint16_t *x, unsigned logn, uint8_t *tmp)
+  74:common.c      **** {
+ 290              		.loc 1 74 1
+ 291              		.cfi_startproc
+ 292              		@ args = 0, pretend = 0, frame = 216
+ 293              		@ frame_needed = 1, uses_anonymous_args = 0
+ 294 0000 80B5     		push	{r7, lr}
+ 295              	.LCFI5:
+ 296              		.cfi_def_cfa_offset 8
+ 297              		.cfi_offset 7, -8
+ 298              		.cfi_offset 14, -4
+ 299 0002 B6B0     		sub	sp, sp, #216
+ 300              	.LCFI6:
+ 301              		.cfi_def_cfa_offset 224
+ 302 0004 00AF     		add	r7, sp, #0
+ 303              	.LCFI7:
+ 304              		.cfi_def_cfa_register 7
+ 305 0006 F860     		str	r0, [r7, #12]
+ 306 0008 B960     		str	r1, [r7, #8]
+ 307 000a 7A60     		str	r2, [r7, #4]
+ 308 000c 3B60     		str	r3, [r7]
+  75:common.c      **** 	/*
+  76:common.c      **** 	 * Each 16-bit sample is a value in 0..65535. The value is
+  77:common.c      **** 	 * kept if it falls in 0..61444 (because 61445 = 5*12289)
+  78:common.c      **** 	 * and rejected otherwise; thus, each sample has probability
+  79:common.c      **** 	 * about 0.93758 of being selected.
+  80:common.c      **** 	 *
+  81:common.c      **** 	 * We want to oversample enough to be sure that we will
+  82:common.c      **** 	 * have enough values with probability at least 1 - 2^(-256).
+  83:common.c      **** 	 * Depending on degree N, this leads to the following
+  84:common.c      **** 	 * required oversampling:
+  85:common.c      **** 	 *
+  86:common.c      **** 	 *   logn     n  oversampling
+  87:common.c      **** 	 *     1      2     65
+  88:common.c      **** 	 *     2      4     67
+  89:common.c      **** 	 *     3      8     71
+  90:common.c      **** 	 *     4     16     77
+  91:common.c      **** 	 *     5     32     86
+  92:common.c      **** 	 *     6     64    100
+  93:common.c      **** 	 *     7    128    122
+  94:common.c      **** 	 *     8    256    154
+  95:common.c      **** 	 *     9    512    205
+  96:common.c      **** 	 *    10   1024    287
+  97:common.c      **** 	 *
+  98:common.c      **** 	 * If logn >= 7, then the provided temporary buffer is large
+  99:common.c      **** 	 * enough. Otherwise, we use a stack buffer of 63 entries
+ 100:common.c      **** 	 * (i.e. 126 bytes) for the values that do not fit in tmp[].
+ 101:common.c      **** 	 */
+ 102:common.c      **** 
+ 103:common.c      **** 	static const uint16_t overtab[] = {
+ 104:common.c      **** 		0, /* unused */
+ 105:common.c      **** 		65,
+ 106:common.c      **** 		67,
+ 107:common.c      **** 		71,
+ 108:common.c      **** 		77,
+ 109:common.c      **** 		86,
+ 110:common.c      **** 		100,
+ 111:common.c      **** 		122,
+ 112:common.c      **** 		154,
+ 113:common.c      **** 		205,
+ 114:common.c      **** 		287
+ 115:common.c      **** 	};
+ 116:common.c      **** 
+ 117:common.c      **** 	unsigned n, n2, u, m, p, over;
+ 118:common.c      **** 	uint16_t *tt1, tt2[63];
+ 119:common.c      **** 
+ 120:common.c      **** 	/*
+ 121:common.c      **** 	 * We first generate m 16-bit value. Values 0..n-1 go to x[].
+ 122:common.c      **** 	 * Values n..2*n-1 go to tt1[]. Values 2*n and later go to tt2[].
+ 123:common.c      **** 	 * We also reduce modulo q the values; rejected values are set
+ 124:common.c      **** 	 * to 0xFFFF.
+ 125:common.c      **** 	 */
+ 126:common.c      **** 	n = 1U << logn;
+ 309              		.loc 1 126 4
+ 310 000e 0122     		movs	r2, #1
+ 311 0010 7B68     		ldr	r3, [r7, #4]
+ 312 0012 02FA03F3 		lsl	r3, r2, r3
+ 313 0016 C7F8C030 		str	r3, [r7, #192]
+ 127:common.c      **** 	n2 = n << 1;
+ 314              		.loc 1 127 5
+ 315 001a D7F8C030 		ldr	r3, [r7, #192]
+ 316 001e 5B00     		lsls	r3, r3, #1
+ 317 0020 C7F8BC30 		str	r3, [r7, #188]
+ 128:common.c      **** 	over = overtab[logn];
+ 318              		.loc 1 128 16
+ 319 0024 C14A     		ldr	r2, .L26
+ 320 0026 7B68     		ldr	r3, [r7, #4]
+ 321 0028 32F81330 		ldrh	r3, [r2, r3, lsl #1]
+ 322              		.loc 1 128 7
+ 323 002c C7F8B830 		str	r3, [r7, #184]
+ 129:common.c      **** 	m = n + over;
+ 324              		.loc 1 129 4
+ 325 0030 D7F8C020 		ldr	r2, [r7, #192]
+ 326 0034 D7F8B830 		ldr	r3, [r7, #184]
+ 327 0038 1344     		add	r3, r3, r2
+ 328 003a C7F8B430 		str	r3, [r7, #180]
+ 130:common.c      **** 	tt1 = (uint16_t *)tmp;
+ 329              		.loc 1 130 6
+ 330 003e 3B68     		ldr	r3, [r7]
+ 331 0040 C7F8B030 		str	r3, [r7, #176]
+ 131:common.c      **** 	for (u = 0; u < m; u ++) {
+ 332              		.loc 1 131 9
+ 333 0044 0023     		movs	r3, #0
+ 334 0046 C7F8D430 		str	r3, [r7, #212]
+ 335              		.loc 1 131 2
+ 336 004a 7CE0     		b	.L8
+ 337              	.L12:
+ 338              	.LBB3:
+ 132:common.c      **** 		uint8_t buf[2];
+ 133:common.c      **** 		uint32_t w, wr;
+ 134:common.c      **** 
+ 135:common.c      **** 		inner_shake256_extract(sc, buf, sizeof buf);
+ 339              		.loc 1 135 3
+ 340 004c 07F11403 		add	r3, r7, #20
+ 341 0050 0222     		movs	r2, #2
+ 342 0052 1946     		mov	r1, r3
+ 343 0054 F868     		ldr	r0, [r7, #12]
+ 344 0056 FFF7FEFF 		bl	falcon_inner_i_shake256_extract
+ 136:common.c      **** 		w = ((uint32_t)buf[0] << 8) | (uint32_t)buf[1];
+ 345              		.loc 1 136 21
+ 346 005a 3B7D     		ldrb	r3, [r7, #20]	@ zero_extendqisi2
+ 347              		.loc 1 136 25
+ 348 005c 1B02     		lsls	r3, r3, #8
+ 349              		.loc 1 136 46
+ 350 005e 7A7D     		ldrb	r2, [r7, #21]	@ zero_extendqisi2
+ 351              		.loc 1 136 5
+ 352 0060 1343     		orrs	r3, r3, r2
+ 353 0062 C7F89C30 		str	r3, [r7, #156]
+ 137:common.c      **** 		wr = w - ((uint32_t)24578 & (((w - 24578) >> 31) - 1));
+ 354              		.loc 1 137 36
+ 355 0066 D7F89C30 		ldr	r3, [r7, #156]
+ 356 006a A3F5C043 		sub	r3, r3, #24576
+ 357 006e 023B     		subs	r3, r3, #2
+ 358              		.loc 1 137 45
+ 359 0070 DB0F     		lsrs	r3, r3, #31
+ 360              		.loc 1 137 52
+ 361 0072 5A1E     		subs	r2, r3, #1
+ 362              		.loc 1 137 29
+ 363 0074 46F20203 		movw	r3, #24578
+ 364 0078 1340     		ands	r3, r3, r2
+ 365              		.loc 1 137 6
+ 366 007a D7F89C20 		ldr	r2, [r7, #156]
+ 367 007e D31A     		subs	r3, r2, r3
+ 368 0080 C7F89830 		str	r3, [r7, #152]
+ 138:common.c      **** 		wr = wr - ((uint32_t)24578 & (((wr - 24578) >> 31) - 1));
+ 369              		.loc 1 138 38
+ 370 0084 D7F89830 		ldr	r3, [r7, #152]
+ 371 0088 A3F5C043 		sub	r3, r3, #24576
+ 372 008c 023B     		subs	r3, r3, #2
+ 373              		.loc 1 138 47
+ 374 008e DB0F     		lsrs	r3, r3, #31
+ 375              		.loc 1 138 54
+ 376 0090 5A1E     		subs	r2, r3, #1
+ 377              		.loc 1 138 30
+ 378 0092 46F20203 		movw	r3, #24578
+ 379 0096 1340     		ands	r3, r3, r2
+ 380              		.loc 1 138 6
+ 381 0098 D7F89820 		ldr	r2, [r7, #152]
+ 382 009c D31A     		subs	r3, r2, r3
+ 383 009e C7F89830 		str	r3, [r7, #152]
+ 139:common.c      **** 		wr = wr - ((uint32_t)12289 & (((wr - 12289) >> 31) - 1));
+ 384              		.loc 1 139 38
+ 385 00a2 D7F89830 		ldr	r3, [r7, #152]
+ 386 00a6 A3F54053 		sub	r3, r3, #12288
+ 387 00aa 013B     		subs	r3, r3, #1
+ 388              		.loc 1 139 47
+ 389 00ac DB0F     		lsrs	r3, r3, #31
+ 390              		.loc 1 139 54
+ 391 00ae 5A1E     		subs	r2, r3, #1
+ 392              		.loc 1 139 30
+ 393 00b0 43F20103 		movw	r3, #12289
+ 394 00b4 1340     		ands	r3, r3, r2
+ 395              		.loc 1 139 6
+ 396 00b6 D7F89820 		ldr	r2, [r7, #152]
+ 397 00ba D31A     		subs	r3, r2, r3
+ 398 00bc C7F89830 		str	r3, [r7, #152]
+ 140:common.c      **** 		wr |= ((w - 61445) >> 31) - 1;
+ 399              		.loc 1 140 13
+ 400 00c0 D7F89C30 		ldr	r3, [r7, #156]
+ 401 00c4 A3F57043 		sub	r3, r3, #61440
+ 402 00c8 053B     		subs	r3, r3, #5
+ 403              		.loc 1 140 22
+ 404 00ca DB0F     		lsrs	r3, r3, #31
+ 405              		.loc 1 140 29
+ 406 00cc 013B     		subs	r3, r3, #1
+ 407              		.loc 1 140 6
+ 408 00ce D7F89820 		ldr	r2, [r7, #152]
+ 409 00d2 1343     		orrs	r3, r3, r2
+ 410 00d4 C7F89830 		str	r3, [r7, #152]
+ 141:common.c      **** 		if (u < n) {
+ 411              		.loc 1 141 6
+ 412 00d8 D7F8D420 		ldr	r2, [r7, #212]
+ 413 00dc D7F8C030 		ldr	r3, [r7, #192]
+ 414 00e0 9A42     		cmp	r2, r3
+ 415 00e2 09D2     		bcs	.L9
+ 142:common.c      **** 			x[u] = (uint16_t)wr;
+ 416              		.loc 1 142 5
+ 417 00e4 D7F8D430 		ldr	r3, [r7, #212]
+ 418 00e8 5B00     		lsls	r3, r3, #1
+ 419 00ea BA68     		ldr	r2, [r7, #8]
+ 420 00ec 1344     		add	r3, r3, r2
+ 421              		.loc 1 142 11
+ 422 00ee D7F89820 		ldr	r2, [r7, #152]
+ 423 00f2 92B2     		uxth	r2, r2
+ 424              		.loc 1 142 9
+ 425 00f4 1A80     		strh	r2, [r3]	@ movhi
+ 426 00f6 21E0     		b	.L10
+ 427              	.L9:
+ 143:common.c      **** 		} else if (u < n2) {
+ 428              		.loc 1 143 13
+ 429 00f8 D7F8D420 		ldr	r2, [r7, #212]
+ 430 00fc D7F8BC30 		ldr	r3, [r7, #188]
+ 431 0100 9A42     		cmp	r2, r3
+ 432 0102 0DD2     		bcs	.L11
+ 144:common.c      **** 			tt1[u - n] = (uint16_t)wr;
+ 433              		.loc 1 144 10
+ 434 0104 D7F8D420 		ldr	r2, [r7, #212]
+ 435 0108 D7F8C030 		ldr	r3, [r7, #192]
+ 436 010c D31A     		subs	r3, r2, r3
+ 437              		.loc 1 144 7
+ 438 010e 5B00     		lsls	r3, r3, #1
+ 439 0110 D7F8B020 		ldr	r2, [r7, #176]
+ 440 0114 1344     		add	r3, r3, r2
+ 441              		.loc 1 144 17
+ 442 0116 D7F89820 		ldr	r2, [r7, #152]
+ 443 011a 92B2     		uxth	r2, r2
+ 444              		.loc 1 144 15
+ 445 011c 1A80     		strh	r2, [r3]	@ movhi
+ 446 011e 0DE0     		b	.L10
+ 447              	.L11:
+ 145:common.c      **** 		} else {
+ 146:common.c      **** 			tt2[u - n2] = (uint16_t)wr;
+ 448              		.loc 1 146 10
+ 449 0120 D7F8D420 		ldr	r2, [r7, #212]
+ 450 0124 D7F8BC30 		ldr	r3, [r7, #188]
+ 451 0128 D31A     		subs	r3, r2, r3
+ 452              		.loc 1 146 18
+ 453 012a D7F89820 		ldr	r2, [r7, #152]
+ 454 012e 92B2     		uxth	r2, r2
+ 455              		.loc 1 146 16
+ 456 0130 5B00     		lsls	r3, r3, #1
+ 457 0132 07F1D801 		add	r1, r7, #216
+ 458 0136 0B44     		add	r3, r3, r1
+ 459 0138 23F8C02C 		strh	r2, [r3, #-192]	@ movhi
+ 460              	.L10:
+ 461              	.LBE3:
+ 131:common.c      **** 		uint8_t buf[2];
+ 462              		.loc 1 131 23 discriminator 2
+ 463 013c D7F8D430 		ldr	r3, [r7, #212]
+ 464 0140 0133     		adds	r3, r3, #1
+ 465 0142 C7F8D430 		str	r3, [r7, #212]
+ 466              	.L8:
+ 131:common.c      **** 		uint8_t buf[2];
+ 467              		.loc 1 131 2 discriminator 1
+ 468 0146 D7F8D420 		ldr	r2, [r7, #212]
+ 469 014a D7F8B430 		ldr	r3, [r7, #180]
+ 470 014e 9A42     		cmp	r2, r3
+ 471 0150 FFF47CAF 		bcc	.L12
+ 147:common.c      **** 		}
+ 148:common.c      **** 	}
+ 149:common.c      **** 
+ 150:common.c      **** 	/*
+ 151:common.c      **** 	 * Now we must "squeeze out" the invalid values. We do this in
+ 152:common.c      **** 	 * a logarithmic sequence of passes; each pass computes where a
+ 153:common.c      **** 	 * value should go, and moves it down by 'p' slots if necessary,
+ 154:common.c      **** 	 * where 'p' uses an increasing powers-of-two scale. It can be
+ 155:common.c      **** 	 * shown that in all cases where the loop decides that a value
+ 156:common.c      **** 	 * has to be moved down by p slots, the destination slot is
+ 157:common.c      **** 	 * "free" (i.e. contains an invalid value).
+ 158:common.c      **** 	 */
+ 159:common.c      **** 	for (p = 1; p <= over; p <<= 1) {
+ 472              		.loc 1 159 9
+ 473 0154 0123     		movs	r3, #1
+ 474 0156 C7F8D030 		str	r3, [r7, #208]
+ 475              		.loc 1 159 2
+ 476 015a DAE0     		b	.L13
+ 477              	.L24:
+ 478              	.LBB4:
+ 160:common.c      **** 		unsigned v;
+ 161:common.c      **** 
+ 162:common.c      **** 		/*
+ 163:common.c      **** 		 * In the loop below:
+ 164:common.c      **** 		 *
+ 165:common.c      **** 		 *   - v contains the index of the final destination of
+ 166:common.c      **** 		 *     the value; it is recomputed dynamically based on
+ 167:common.c      **** 		 *     whether values are valid or not.
+ 168:common.c      **** 		 *
+ 169:common.c      **** 		 *   - u is the index of the value we consider ("source");
+ 170:common.c      **** 		 *     its address is s.
+ 171:common.c      **** 		 *
+ 172:common.c      **** 		 *   - The loop may swap the value with the one at index
+ 173:common.c      **** 		 *     u-p. The address of the swap destination is d.
+ 174:common.c      **** 		 */
+ 175:common.c      **** 		v = 0;
+ 479              		.loc 1 175 5
+ 480 015c 0023     		movs	r3, #0
+ 481 015e C7F8CC30 		str	r3, [r7, #204]
+ 176:common.c      **** 		for (u = 0; u < m; u ++) {
+ 482              		.loc 1 176 10
+ 483 0162 0023     		movs	r3, #0
+ 484 0164 C7F8D430 		str	r3, [r7, #212]
+ 485              		.loc 1 176 3
+ 486 0168 C7E0     		b	.L14
+ 487              	.L23:
+ 488              	.LBB5:
+ 177:common.c      **** 			uint16_t *s, *d;
+ 178:common.c      **** 			unsigned j, sv, dv, mk;
+ 179:common.c      **** 
+ 180:common.c      **** 			if (u < n) {
+ 489              		.loc 1 180 7
+ 490 016a D7F8D420 		ldr	r2, [r7, #212]
+ 491 016e D7F8C030 		ldr	r3, [r7, #192]
+ 492 0172 9A42     		cmp	r2, r3
+ 493 0174 07D2     		bcs	.L15
+ 181:common.c      **** 				s = &x[u];
+ 494              		.loc 1 181 11
+ 495 0176 D7F8D430 		ldr	r3, [r7, #212]
+ 496 017a 5B00     		lsls	r3, r3, #1
+ 497              		.loc 1 181 7
+ 498 017c BA68     		ldr	r2, [r7, #8]
+ 499 017e 1344     		add	r3, r3, r2
+ 500 0180 C7F8C830 		str	r3, [r7, #200]
+ 501 0184 1CE0     		b	.L16
+ 502              	.L15:
+ 182:common.c      **** 			} else if (u < n2) {
+ 503              		.loc 1 182 14
+ 504 0186 D7F8D420 		ldr	r2, [r7, #212]
+ 505 018a D7F8BC30 		ldr	r3, [r7, #188]
+ 506 018e 9A42     		cmp	r2, r3
+ 507 0190 0BD2     		bcs	.L17
+ 183:common.c      **** 				s = &tt1[u - n];
+ 508              		.loc 1 183 16
+ 509 0192 D7F8D420 		ldr	r2, [r7, #212]
+ 510 0196 D7F8C030 		ldr	r3, [r7, #192]
+ 511 019a D31A     		subs	r3, r2, r3
+ 512              		.loc 1 183 13
+ 513 019c 5B00     		lsls	r3, r3, #1
+ 514              		.loc 1 183 7
+ 515 019e D7F8B020 		ldr	r2, [r7, #176]
+ 516 01a2 1344     		add	r3, r3, r2
+ 517 01a4 C7F8C830 		str	r3, [r7, #200]
+ 518 01a8 0AE0     		b	.L16
+ 519              	.L17:
+ 184:common.c      **** 			} else {
+ 185:common.c      **** 				s = &tt2[u - n2];
+ 520              		.loc 1 185 16
+ 521 01aa D7F8D420 		ldr	r2, [r7, #212]
+ 522 01ae D7F8BC30 		ldr	r3, [r7, #188]
+ 523 01b2 D31A     		subs	r3, r2, r3
+ 524              		.loc 1 185 7
+ 525 01b4 07F11802 		add	r2, r7, #24
+ 526 01b8 5B00     		lsls	r3, r3, #1
+ 527 01ba 1344     		add	r3, r3, r2
+ 528 01bc C7F8C830 		str	r3, [r7, #200]
+ 529              	.L16:
+ 186:common.c      **** 			}
+ 187:common.c      **** 			sv = *s;
+ 530              		.loc 1 187 9
+ 531 01c0 D7F8C830 		ldr	r3, [r7, #200]
+ 532 01c4 1B88     		ldrh	r3, [r3]
+ 533              		.loc 1 187 7
+ 534 01c6 C7F8AC30 		str	r3, [r7, #172]
+ 188:common.c      **** 
+ 189:common.c      **** 			/*
+ 190:common.c      **** 			 * The value in sv should ultimately go to
+ 191:common.c      **** 			 * address v, i.e. jump back by u-v slots.
+ 192:common.c      **** 			 */
+ 193:common.c      **** 			j = u - v;
+ 535              		.loc 1 193 6
+ 536 01ca D7F8D420 		ldr	r2, [r7, #212]
+ 537 01ce D7F8CC30 		ldr	r3, [r7, #204]
+ 538 01d2 D31A     		subs	r3, r2, r3
+ 539 01d4 C7F8A830 		str	r3, [r7, #168]
+ 194:common.c      **** 
+ 195:common.c      **** 			/*
+ 196:common.c      **** 			 * We increment v for the next iteration, but
+ 197:common.c      **** 			 * only if the source value is valid. The mask
+ 198:common.c      **** 			 * 'mk' is -1 if the value is valid, 0 otherwise,
+ 199:common.c      **** 			 * so we _subtract_ mk.
+ 200:common.c      **** 			 */
+ 201:common.c      **** 			mk = (sv >> 15) - 1U;
+ 540              		.loc 1 201 13
+ 541 01d8 D7F8AC30 		ldr	r3, [r7, #172]
+ 542 01dc DB0B     		lsrs	r3, r3, #15
+ 543              		.loc 1 201 7
+ 544 01de 013B     		subs	r3, r3, #1
+ 545 01e0 C7F8A430 		str	r3, [r7, #164]
+ 202:common.c      **** 			v -= mk;
+ 546              		.loc 1 202 6
+ 547 01e4 D7F8CC20 		ldr	r2, [r7, #204]
+ 548 01e8 D7F8A430 		ldr	r3, [r7, #164]
+ 549 01ec D31A     		subs	r3, r2, r3
+ 550 01ee C7F8CC30 		str	r3, [r7, #204]
+ 203:common.c      **** 
+ 204:common.c      **** 			/*
+ 205:common.c      **** 			 * In this loop we consider jumps by p slots; if
+ 206:common.c      **** 			 * u < p then there is nothing more to do.
+ 207:common.c      **** 			 */
+ 208:common.c      **** 			if (u < p) {
+ 551              		.loc 1 208 7
+ 552 01f2 D7F8D420 		ldr	r2, [r7, #212]
+ 553 01f6 D7F8D030 		ldr	r3, [r7, #208]
+ 554 01fa 9A42     		cmp	r2, r3
+ 555 01fc 77D3     		bcc	.L25
+ 209:common.c      **** 				continue;
+ 210:common.c      **** 			}
+ 211:common.c      **** 
+ 212:common.c      **** 			/*
+ 213:common.c      **** 			 * Destination for the swap: value at address u-p.
+ 214:common.c      **** 			 */
+ 215:common.c      **** 			if ((u - p) < n) {
+ 556              		.loc 1 215 11
+ 557 01fe D7F8D420 		ldr	r2, [r7, #212]
+ 558 0202 D7F8D030 		ldr	r3, [r7, #208]
+ 559 0206 D31A     		subs	r3, r2, r3
+ 560              		.loc 1 215 7
+ 561 0208 D7F8C020 		ldr	r2, [r7, #192]
+ 562 020c 9A42     		cmp	r2, r3
+ 563 020e 0AD9     		bls	.L20
+ 216:common.c      **** 				d = &x[u - p];
+ 564              		.loc 1 216 14
+ 565 0210 D7F8D420 		ldr	r2, [r7, #212]
+ 566 0214 D7F8D030 		ldr	r3, [r7, #208]
+ 567 0218 D31A     		subs	r3, r2, r3
+ 568              		.loc 1 216 11
+ 569 021a 5B00     		lsls	r3, r3, #1
+ 570              		.loc 1 216 7
+ 571 021c BA68     		ldr	r2, [r7, #8]
+ 572 021e 1344     		add	r3, r3, r2
+ 573 0220 C7F8C430 		str	r3, [r7, #196]
+ 574 0224 25E0     		b	.L21
+ 575              	.L20:
+ 217:common.c      **** 			} else if ((u - p) < n2) {
+ 576              		.loc 1 217 18
+ 577 0226 D7F8D420 		ldr	r2, [r7, #212]
+ 578 022a D7F8D030 		ldr	r3, [r7, #208]
+ 579 022e D31A     		subs	r3, r2, r3
+ 580              		.loc 1 217 14
+ 581 0230 D7F8BC20 		ldr	r2, [r7, #188]
+ 582 0234 9A42     		cmp	r2, r3
+ 583 0236 0ED9     		bls	.L22
+ 218:common.c      **** 				d = &tt1[(u - p) - n];
+ 584              		.loc 1 218 17
+ 585 0238 D7F8D420 		ldr	r2, [r7, #212]
+ 586 023c D7F8D030 		ldr	r3, [r7, #208]
+ 587 0240 D21A     		subs	r2, r2, r3
+ 588              		.loc 1 218 22
+ 589 0242 D7F8C030 		ldr	r3, [r7, #192]
+ 590 0246 D31A     		subs	r3, r2, r3
+ 591              		.loc 1 218 13
+ 592 0248 5B00     		lsls	r3, r3, #1
+ 593              		.loc 1 218 7
+ 594 024a D7F8B020 		ldr	r2, [r7, #176]
+ 595 024e 1344     		add	r3, r3, r2
+ 596 0250 C7F8C430 		str	r3, [r7, #196]
+ 597 0254 0DE0     		b	.L21
+ 598              	.L22:
+ 219:common.c      **** 			} else {
+ 220:common.c      **** 				d = &tt2[(u - p) - n2];
+ 599              		.loc 1 220 17
+ 600 0256 D7F8D420 		ldr	r2, [r7, #212]
+ 601 025a D7F8D030 		ldr	r3, [r7, #208]
+ 602 025e D21A     		subs	r2, r2, r3
+ 603              		.loc 1 220 22
+ 604 0260 D7F8BC30 		ldr	r3, [r7, #188]
+ 605 0264 D31A     		subs	r3, r2, r3
+ 606              		.loc 1 220 7
+ 607 0266 07F11802 		add	r2, r7, #24
+ 608 026a 5B00     		lsls	r3, r3, #1
+ 609 026c 1344     		add	r3, r3, r2
+ 610 026e C7F8C430 		str	r3, [r7, #196]
+ 611              	.L21:
+ 221:common.c      **** 			}
+ 222:common.c      **** 			dv = *d;
+ 612              		.loc 1 222 9
+ 613 0272 D7F8C430 		ldr	r3, [r7, #196]
+ 614 0276 1B88     		ldrh	r3, [r3]
+ 615              		.loc 1 222 7
+ 616 0278 C7F8A030 		str	r3, [r7, #160]
+ 223:common.c      **** 
+ 224:common.c      **** 			/*
+ 225:common.c      **** 			 * The swap should be performed only if the source
+ 226:common.c      **** 			 * is valid AND the jump j has its 'p' bit set.
+ 227:common.c      **** 			 */
+ 228:common.c      **** 			mk &= -(((j & p) + 0x1FF) >> 9);
+ 617              		.loc 1 228 16
+ 618 027c D7F8A820 		ldr	r2, [r7, #168]
+ 619 0280 D7F8D030 		ldr	r3, [r7, #208]
+ 620 0284 1340     		ands	r3, r3, r2
+ 621              		.loc 1 228 21
+ 622 0286 03F2FF13 		addw	r3, r3, #511
+ 623              		.loc 1 228 30
+ 624 028a 5B0A     		lsrs	r3, r3, #9
+ 625              		.loc 1 228 10
+ 626 028c 5B42     		rsbs	r3, r3, #0
+ 627              		.loc 1 228 7
+ 628 028e D7F8A420 		ldr	r2, [r7, #164]
+ 629 0292 1340     		ands	r3, r3, r2
+ 630 0294 C7F8A430 		str	r3, [r7, #164]
+ 229:common.c      **** 
+ 230:common.c      **** 			*s = (uint16_t)(sv ^ (mk & (sv ^ dv)));
+ 631              		.loc 1 230 9
+ 632 0298 D7F8AC30 		ldr	r3, [r7, #172]
+ 633 029c 9AB2     		uxth	r2, r3
+ 634              		.loc 1 230 29
+ 635 029e D7F8A430 		ldr	r3, [r7, #164]
+ 636 02a2 99B2     		uxth	r1, r3
+ 637              		.loc 1 230 35
+ 638 02a4 D7F8AC30 		ldr	r3, [r7, #172]
+ 639 02a8 98B2     		uxth	r0, r3
+ 640 02aa D7F8A030 		ldr	r3, [r7, #160]
+ 641 02ae 9BB2     		uxth	r3, r3
+ 642 02b0 4340     		eors	r3, r3, r0
+ 643 02b2 9BB2     		uxth	r3, r3
+ 644              		.loc 1 230 29
+ 645 02b4 0B40     		ands	r3, r3, r1
+ 646 02b6 9BB2     		uxth	r3, r3
+ 647              		.loc 1 230 9
+ 648 02b8 5340     		eors	r3, r3, r2
+ 649 02ba 9AB2     		uxth	r2, r3
+ 650              		.loc 1 230 7
+ 651 02bc D7F8C830 		ldr	r3, [r7, #200]
+ 652 02c0 1A80     		strh	r2, [r3]	@ movhi
+ 231:common.c      **** 			*d = (uint16_t)(dv ^ (mk & (sv ^ dv)));
+ 653              		.loc 1 231 9
+ 654 02c2 D7F8A030 		ldr	r3, [r7, #160]
+ 655 02c6 9AB2     		uxth	r2, r3
+ 656              		.loc 1 231 29
+ 657 02c8 D7F8A430 		ldr	r3, [r7, #164]
+ 658 02cc 99B2     		uxth	r1, r3
+ 659              		.loc 1 231 35
+ 660 02ce D7F8AC30 		ldr	r3, [r7, #172]
+ 661 02d2 98B2     		uxth	r0, r3
+ 662 02d4 D7F8A030 		ldr	r3, [r7, #160]
+ 663 02d8 9BB2     		uxth	r3, r3
+ 664 02da 4340     		eors	r3, r3, r0
+ 665 02dc 9BB2     		uxth	r3, r3
+ 666              		.loc 1 231 29
+ 667 02de 0B40     		ands	r3, r3, r1
+ 668 02e0 9BB2     		uxth	r3, r3
+ 669              		.loc 1 231 9
+ 670 02e2 5340     		eors	r3, r3, r2
+ 671 02e4 9AB2     		uxth	r2, r3
+ 672              		.loc 1 231 7
+ 673 02e6 D7F8C430 		ldr	r3, [r7, #196]
+ 674 02ea 1A80     		strh	r2, [r3]	@ movhi
+ 675 02ec 00E0     		b	.L19
+ 676              	.L25:
+ 209:common.c      **** 			}
+ 677              		.loc 1 209 5
+ 678 02ee 00BF     		nop
+ 679              	.L19:
+ 680              	.LBE5:
+ 176:common.c      **** 			uint16_t *s, *d;
+ 681              		.loc 1 176 24 discriminator 2
+ 682 02f0 D7F8D430 		ldr	r3, [r7, #212]
+ 683 02f4 0133     		adds	r3, r3, #1
+ 684 02f6 C7F8D430 		str	r3, [r7, #212]
+ 685              	.L14:
+ 176:common.c      **** 			uint16_t *s, *d;
+ 686              		.loc 1 176 3 discriminator 1
+ 687 02fa D7F8D420 		ldr	r2, [r7, #212]
+ 688 02fe D7F8B430 		ldr	r3, [r7, #180]
+ 689 0302 9A42     		cmp	r2, r3
+ 690 0304 FFF431AF 		bcc	.L23
+ 691              	.LBE4:
+ 159:common.c      **** 		unsigned v;
+ 692              		.loc 1 159 27 discriminator 2
+ 693 0308 D7F8D030 		ldr	r3, [r7, #208]
+ 694 030c 5B00     		lsls	r3, r3, #1
+ 695 030e C7F8D030 		str	r3, [r7, #208]
+ 696              	.L13:
+ 159:common.c      **** 		unsigned v;
+ 697              		.loc 1 159 2 discriminator 1
+ 698 0312 D7F8D020 		ldr	r2, [r7, #208]
+ 699 0316 D7F8B830 		ldr	r3, [r7, #184]
+ 700 031a 9A42     		cmp	r2, r3
+ 701 031c 7FF61EAF 		bls	.L24
+ 232:common.c      **** 		}
+ 233:common.c      **** 	}
+ 234:common.c      **** }
+ 702              		.loc 1 234 1
+ 703 0320 00BF     		nop
+ 704 0322 00BF     		nop
+ 705 0324 D837     		adds	r7, r7, #216
+ 706              	.LCFI8:
+ 707              		.cfi_def_cfa_offset 8
+ 708 0326 BD46     		mov	sp, r7
+ 709              	.LCFI9:
+ 710              		.cfi_def_cfa_register 13
+ 711              		@ sp needed
+ 712 0328 80BD     		pop	{r7, pc}
+ 713              	.L27:
+ 714 032a 00BF     		.align	2
+ 715              	.L26:
+ 716 032c 6C010000 		.word	overtab.0
+ 717              		.cfi_endproc
+ 718              	.LFE19:
+ 720              		.section	.rodata
+ 721              		.align	2
+ 724              	l2bound:
+ 725 0140 00000000 		.word	0
+ 726 0144 7A8C0100 		.word	101498
+ 727 0148 4A2F0300 		.word	208714
+ 728 014c 418B0600 		.word	428865
+ 729 0150 879C0D00 		.word	892039
+ 730 0154 18451C00 		.word	1852696
+ 731 0158 46A23A00 		.word	3842630
+ 732 015c B6747900 		.word	7959734
+ 733 0160 C049FB00 		.word	16468416
+ 734 0164 26540702 		.word	34034726
+ 735 0168 9A293004 		.word	70265242
+ 736              		.section	.text.falcon_inner_is_short,"ax",%progbits
+ 737              		.align	1
+ 738              		.global	falcon_inner_is_short
+ 739              		.syntax unified
+ 740              		.thumb
+ 741              		.thumb_func
+ 742              		.fpu softvfp
+ 744              	falcon_inner_is_short:
+ 745              	.LFB20:
+ 235:common.c      **** 
+ 236:common.c      **** /*
+ 237:common.c      ****  * Acceptance bound for the (squared) l2-norm of the signature depends
+ 238:common.c      ****  * on the degree. This array is indexed by logn (1 to 10). These bounds
+ 239:common.c      ****  * are _inclusive_ (they are equal to floor(beta^2)).
+ 240:common.c      ****  */
+ 241:common.c      **** static const uint32_t l2bound[] = {
+ 242:common.c      **** 	0,    /* unused */
+ 243:common.c      **** 	101498,
+ 244:common.c      **** 	208714,
+ 245:common.c      **** 	428865,
+ 246:common.c      **** 	892039,
+ 247:common.c      **** 	1852696,
+ 248:common.c      **** 	3842630,
+ 249:common.c      **** 	7959734,
+ 250:common.c      **** 	16468416,
+ 251:common.c      **** 	34034726,
+ 252:common.c      **** 	70265242
+ 253:common.c      **** };
+ 254:common.c      **** 
+ 255:common.c      **** /* see inner.h */
+ 256:common.c      **** int
+ 257:common.c      **** Zf(is_short)(
+ 258:common.c      **** 	const int16_t *s1, const int16_t *s2, unsigned logn)
+ 259:common.c      **** {
+ 746              		.loc 1 259 1
+ 747              		.cfi_startproc
+ 748              		@ args = 0, pretend = 0, frame = 40
+ 749              		@ frame_needed = 1, uses_anonymous_args = 0
+ 750              		@ link register save eliminated.
+ 751 0000 80B4     		push	{r7}
+ 752              	.LCFI10:
+ 753              		.cfi_def_cfa_offset 4
+ 754              		.cfi_offset 7, -4
+ 755 0002 8BB0     		sub	sp, sp, #44
+ 756              	.LCFI11:
+ 757              		.cfi_def_cfa_offset 48
+ 758 0004 00AF     		add	r7, sp, #0
+ 759              	.LCFI12:
+ 760              		.cfi_def_cfa_register 7
+ 761 0006 F860     		str	r0, [r7, #12]
+ 762 0008 B960     		str	r1, [r7, #8]
+ 763 000a 7A60     		str	r2, [r7, #4]
+ 260:common.c      **** 	/*
+ 261:common.c      **** 	 * We use the l2-norm. Code below uses only 32-bit operations to
+ 262:common.c      **** 	 * compute the square of the norm with saturation to 2^32-1 if
+ 263:common.c      **** 	 * the value exceeds 2^31-1.
+ 264:common.c      **** 	 */
+ 265:common.c      **** 	size_t n, u;
+ 266:common.c      **** 	uint32_t s, ng;
+ 267:common.c      **** 
+ 268:common.c      **** 	n = (size_t)1 << logn;
+ 764              		.loc 1 268 4
+ 765 000c 0122     		movs	r2, #1
+ 766 000e 7B68     		ldr	r3, [r7, #4]
+ 767 0010 02FA03F3 		lsl	r3, r2, r3
+ 768 0014 BB61     		str	r3, [r7, #24]
+ 269:common.c      **** 	s = 0;
+ 769              		.loc 1 269 4
+ 770 0016 0023     		movs	r3, #0
+ 771 0018 3B62     		str	r3, [r7, #32]
+ 270:common.c      **** 	ng = 0;
+ 772              		.loc 1 270 5
+ 773 001a 0023     		movs	r3, #0
+ 774 001c FB61     		str	r3, [r7, #28]
+ 271:common.c      **** 	for (u = 0; u < n; u ++) {
+ 775              		.loc 1 271 9
+ 776 001e 0023     		movs	r3, #0
+ 777 0020 7B62     		str	r3, [r7, #36]
+ 778              		.loc 1 271 2
+ 779 0022 26E0     		b	.L29
+ 780              	.L30:
+ 781              	.LBB6:
+ 272:common.c      **** 		int32_t z;
+ 273:common.c      **** 
+ 274:common.c      **** 		z = s1[u];
+ 782              		.loc 1 274 9 discriminator 3
+ 783 0024 7B6A     		ldr	r3, [r7, #36]
+ 784 0026 5B00     		lsls	r3, r3, #1
+ 785 0028 FA68     		ldr	r2, [r7, #12]
+ 786 002a 1344     		add	r3, r3, r2
+ 787 002c B3F90030 		ldrsh	r3, [r3]
+ 788              		.loc 1 274 5 discriminator 3
+ 789 0030 7B61     		str	r3, [r7, #20]
+ 275:common.c      **** 		s += (uint32_t)(z * z);
+ 790              		.loc 1 275 21 discriminator 3
+ 791 0032 7B69     		ldr	r3, [r7, #20]
+ 792 0034 03FB03F3 		mul	r3, r3, r3
+ 793              		.loc 1 275 8 discriminator 3
+ 794 0038 1A46     		mov	r2, r3
+ 795              		.loc 1 275 5 discriminator 3
+ 796 003a 3B6A     		ldr	r3, [r7, #32]
+ 797 003c 1344     		add	r3, r3, r2
+ 798 003e 3B62     		str	r3, [r7, #32]
+ 276:common.c      **** 		ng |= s;
+ 799              		.loc 1 276 6 discriminator 3
+ 800 0040 FA69     		ldr	r2, [r7, #28]
+ 801 0042 3B6A     		ldr	r3, [r7, #32]
+ 802 0044 1343     		orrs	r3, r3, r2
+ 803 0046 FB61     		str	r3, [r7, #28]
+ 277:common.c      **** 		z = s2[u];
+ 804              		.loc 1 277 9 discriminator 3
+ 805 0048 7B6A     		ldr	r3, [r7, #36]
+ 806 004a 5B00     		lsls	r3, r3, #1
+ 807 004c BA68     		ldr	r2, [r7, #8]
+ 808 004e 1344     		add	r3, r3, r2
+ 809 0050 B3F90030 		ldrsh	r3, [r3]
+ 810              		.loc 1 277 5 discriminator 3
+ 811 0054 7B61     		str	r3, [r7, #20]
+ 278:common.c      **** 		s += (uint32_t)(z * z);
+ 812              		.loc 1 278 21 discriminator 3
+ 813 0056 7B69     		ldr	r3, [r7, #20]
+ 814 0058 03FB03F3 		mul	r3, r3, r3
+ 815              		.loc 1 278 8 discriminator 3
+ 816 005c 1A46     		mov	r2, r3
+ 817              		.loc 1 278 5 discriminator 3
+ 818 005e 3B6A     		ldr	r3, [r7, #32]
+ 819 0060 1344     		add	r3, r3, r2
+ 820 0062 3B62     		str	r3, [r7, #32]
+ 279:common.c      **** 		ng |= s;
+ 821              		.loc 1 279 6 discriminator 3
+ 822 0064 FA69     		ldr	r2, [r7, #28]
+ 823 0066 3B6A     		ldr	r3, [r7, #32]
+ 824 0068 1343     		orrs	r3, r3, r2
+ 825 006a FB61     		str	r3, [r7, #28]
+ 826              	.LBE6:
+ 271:common.c      **** 		int32_t z;
+ 827              		.loc 1 271 23 discriminator 3
+ 828 006c 7B6A     		ldr	r3, [r7, #36]
+ 829 006e 0133     		adds	r3, r3, #1
+ 830 0070 7B62     		str	r3, [r7, #36]
+ 831              	.L29:
+ 271:common.c      **** 		int32_t z;
+ 832              		.loc 1 271 2 discriminator 1
+ 833 0072 7A6A     		ldr	r2, [r7, #36]
+ 834 0074 BB69     		ldr	r3, [r7, #24]
+ 835 0076 9A42     		cmp	r2, r3
+ 836 0078 D4D3     		bcc	.L30
+ 280:common.c      **** 	}
+ 281:common.c      **** 	s |= -(ng >> 31);
+ 837              		.loc 1 281 7
+ 838 007a FB69     		ldr	r3, [r7, #28]
+ 839 007c DB17     		asrs	r3, r3, #31
+ 840 007e 1A46     		mov	r2, r3
+ 841              		.loc 1 281 4
+ 842 0080 3B6A     		ldr	r3, [r7, #32]
+ 843 0082 1343     		orrs	r3, r3, r2
+ 844 0084 3B62     		str	r3, [r7, #32]
+ 282:common.c      **** 
+ 283:common.c      **** 	return s <= l2bound[logn];
+ 845              		.loc 1 283 21
+ 846 0086 074A     		ldr	r2, .L32
+ 847 0088 7B68     		ldr	r3, [r7, #4]
+ 848 008a 52F82330 		ldr	r3, [r2, r3, lsl #2]
+ 849              		.loc 1 283 11
+ 850 008e 3A6A     		ldr	r2, [r7, #32]
+ 851 0090 9A42     		cmp	r2, r3
+ 852 0092 94BF     		ite	ls
+ 853 0094 0123     		movls	r3, #1
+ 854 0096 0023     		movhi	r3, #0
+ 855 0098 DBB2     		uxtb	r3, r3
+ 284:common.c      **** }
+ 856              		.loc 1 284 1
+ 857 009a 1846     		mov	r0, r3
+ 858 009c 2C37     		adds	r7, r7, #44
+ 859              	.LCFI13:
+ 860              		.cfi_def_cfa_offset 4
+ 861 009e BD46     		mov	sp, r7
+ 862              	.LCFI14:
+ 863              		.cfi_def_cfa_register 13
+ 864              		@ sp needed
+ 865 00a0 80BC     		pop	{r7}
+ 866              	.LCFI15:
+ 867              		.cfi_restore 7
+ 868              		.cfi_def_cfa_offset 0
+ 869 00a2 7047     		bx	lr
+ 870              	.L33:
+ 871              		.align	2
+ 872              	.L32:
+ 873 00a4 40010000 		.word	l2bound
+ 874              		.cfi_endproc
+ 875              	.LFE20:
+ 877              		.section	.text.falcon_inner_is_short_half,"ax",%progbits
+ 878              		.align	1
+ 879              		.global	falcon_inner_is_short_half
+ 880              		.syntax unified
+ 881              		.thumb
+ 882              		.thumb_func
+ 883              		.fpu softvfp
+ 885              	falcon_inner_is_short_half:
+ 886              	.LFB21:
+ 285:common.c      **** 
+ 286:common.c      **** /* see inner.h */
+ 287:common.c      **** int
+ 288:common.c      **** Zf(is_short_half)(
+ 289:common.c      **** 	uint32_t sqn, const int16_t *s2, unsigned logn)
+ 290:common.c      **** {
+ 887              		.loc 1 290 1
+ 888              		.cfi_startproc
+ 889              		@ args = 0, pretend = 0, frame = 32
+ 890              		@ frame_needed = 1, uses_anonymous_args = 0
+ 891              		@ link register save eliminated.
+ 892 0000 80B4     		push	{r7}
+ 893              	.LCFI16:
+ 894              		.cfi_def_cfa_offset 4
+ 895              		.cfi_offset 7, -4
+ 896 0002 89B0     		sub	sp, sp, #36
+ 897              	.LCFI17:
+ 898              		.cfi_def_cfa_offset 40
+ 899 0004 00AF     		add	r7, sp, #0
+ 900              	.LCFI18:
+ 901              		.cfi_def_cfa_register 7
+ 902 0006 F860     		str	r0, [r7, #12]
+ 903 0008 B960     		str	r1, [r7, #8]
+ 904 000a 7A60     		str	r2, [r7, #4]
+ 291:common.c      **** 	size_t n, u;
+ 292:common.c      **** 	uint32_t ng;
+ 293:common.c      **** 
+ 294:common.c      **** 	n = (size_t)1 << logn;
+ 905              		.loc 1 294 4
+ 906 000c 0122     		movs	r2, #1
+ 907 000e 7B68     		ldr	r3, [r7, #4]
+ 908 0010 02FA03F3 		lsl	r3, r2, r3
+ 909 0014 7B61     		str	r3, [r7, #20]
+ 295:common.c      **** 	ng = -(sqn >> 31);
+ 910              		.loc 1 295 7
+ 911 0016 FB68     		ldr	r3, [r7, #12]
+ 912 0018 DB17     		asrs	r3, r3, #31
+ 913              		.loc 1 295 5
+ 914 001a BB61     		str	r3, [r7, #24]
+ 296:common.c      **** 	for (u = 0; u < n; u ++) {
+ 915              		.loc 1 296 9
+ 916 001c 0023     		movs	r3, #0
+ 917 001e FB61     		str	r3, [r7, #28]
+ 918              		.loc 1 296 2
+ 919 0020 14E0     		b	.L35
+ 920              	.L36:
+ 921              	.LBB7:
+ 297:common.c      **** 		int32_t z;
+ 298:common.c      **** 
+ 299:common.c      **** 		z = s2[u];
+ 922              		.loc 1 299 9 discriminator 3
+ 923 0022 FB69     		ldr	r3, [r7, #28]
+ 924 0024 5B00     		lsls	r3, r3, #1
+ 925 0026 BA68     		ldr	r2, [r7, #8]
+ 926 0028 1344     		add	r3, r3, r2
+ 927 002a B3F90030 		ldrsh	r3, [r3]
+ 928              		.loc 1 299 5 discriminator 3
+ 929 002e 3B61     		str	r3, [r7, #16]
+ 300:common.c      **** 		sqn += (uint32_t)(z * z);
+ 930              		.loc 1 300 23 discriminator 3
+ 931 0030 3B69     		ldr	r3, [r7, #16]
+ 932 0032 03FB03F3 		mul	r3, r3, r3
+ 933              		.loc 1 300 10 discriminator 3
+ 934 0036 1A46     		mov	r2, r3
+ 935              		.loc 1 300 7 discriminator 3
+ 936 0038 FB68     		ldr	r3, [r7, #12]
+ 937 003a 1344     		add	r3, r3, r2
+ 938 003c FB60     		str	r3, [r7, #12]
+ 301:common.c      **** 		ng |= sqn;
+ 939              		.loc 1 301 6 discriminator 3
+ 940 003e BA69     		ldr	r2, [r7, #24]
+ 941 0040 FB68     		ldr	r3, [r7, #12]
+ 942 0042 1343     		orrs	r3, r3, r2
+ 943 0044 BB61     		str	r3, [r7, #24]
+ 944              	.LBE7:
+ 296:common.c      **** 		int32_t z;
+ 945              		.loc 1 296 23 discriminator 3
+ 946 0046 FB69     		ldr	r3, [r7, #28]
+ 947 0048 0133     		adds	r3, r3, #1
+ 948 004a FB61     		str	r3, [r7, #28]
+ 949              	.L35:
+ 296:common.c      **** 		int32_t z;
+ 950              		.loc 1 296 2 discriminator 1
+ 951 004c FA69     		ldr	r2, [r7, #28]
+ 952 004e 7B69     		ldr	r3, [r7, #20]
+ 953 0050 9A42     		cmp	r2, r3
+ 954 0052 E6D3     		bcc	.L36
+ 302:common.c      **** 	}
+ 303:common.c      **** 	sqn |= -(ng >> 31);
+ 955              		.loc 1 303 9
+ 956 0054 BB69     		ldr	r3, [r7, #24]
+ 957 0056 DB17     		asrs	r3, r3, #31
+ 958 0058 1A46     		mov	r2, r3
+ 959              		.loc 1 303 6
+ 960 005a FB68     		ldr	r3, [r7, #12]
+ 961 005c 1343     		orrs	r3, r3, r2
+ 962 005e FB60     		str	r3, [r7, #12]
+ 304:common.c      **** 
+ 305:common.c      **** 	return sqn <= l2bound[logn];
+ 963              		.loc 1 305 23
+ 964 0060 074A     		ldr	r2, .L38
+ 965 0062 7B68     		ldr	r3, [r7, #4]
+ 966 0064 52F82330 		ldr	r3, [r2, r3, lsl #2]
+ 967              		.loc 1 305 13
+ 968 0068 FA68     		ldr	r2, [r7, #12]
+ 969 006a 9A42     		cmp	r2, r3
+ 970 006c 94BF     		ite	ls
+ 971 006e 0123     		movls	r3, #1
+ 972 0070 0023     		movhi	r3, #0
+ 973 0072 DBB2     		uxtb	r3, r3
+ 306:common.c      **** }
+ 974              		.loc 1 306 1
+ 975 0074 1846     		mov	r0, r3
+ 976 0076 2437     		adds	r7, r7, #36
+ 977              	.LCFI19:
+ 978              		.cfi_def_cfa_offset 4
+ 979 0078 BD46     		mov	sp, r7
+ 980              	.LCFI20:
+ 981              		.cfi_def_cfa_register 13
+ 982              		@ sp needed
+ 983 007a 80BC     		pop	{r7}
+ 984              	.LCFI21:
+ 985              		.cfi_restore 7
+ 986              		.cfi_def_cfa_offset 0
+ 987 007c 7047     		bx	lr
+ 988              	.L39:
+ 989 007e 00BF     		.align	2
+ 990              	.L38:
+ 991 0080 40010000 		.word	l2bound
+ 992              		.cfi_endproc
+ 993              	.LFE21:
+ 995              		.section	.rodata
+ 996              		.align	2
+ 999              	overtab.0:
+ 1000 016c 0000     		.short	0
+ 1001 016e 4100     		.short	65
+ 1002 0170 4300     		.short	67
+ 1003 0172 4700     		.short	71
+ 1004 0174 4D00     		.short	77
+ 1005 0176 5600     		.short	86
+ 1006 0178 6400     		.short	100
+ 1007 017a 7A00     		.short	122
+ 1008 017c 9A00     		.short	154
+ 1009 017e CD00     		.short	205
+ 1010 0180 1F01     		.short	287
+ 1011              		.text
+ 1012              	.Letext0:
+ 1013              		.file 2 "c:\\users\\user\\chipwhisperer5_64\\cw\\home\\portable\\armgcc\\gcc-arm-none-eabi-10-2020
+ 1014              		.file 3 "c:\\users\\user\\chipwhisperer5_64\\cw\\home\\portable\\armgcc\\gcc-arm-none-eabi-10-2020
+ 1015              		.file 4 "c:\\users\\user\\chipwhisperer5_64\\cw\\home\\portable\\armgcc\\gcc-arm-none-eabi-10-2020
+ 1016              		.file 5 "inner.h"
+ 1017              		.file 6 "fpr.h"
+DEFINED SYMBOLS
+                            *ABS*:00000000 common.c
+C:\Users\user\AppData\Local\Temp\cc6WE4T5.s:16     .rodata:00000000 $d
+C:\Users\user\AppData\Local\Temp\cc6WE4T5.s:19     .rodata:00000000 fpr_q
+C:\Users\user\AppData\Local\Temp\cc6WE4T5.s:25     .rodata:00000008 fpr_inverse_of_q
+C:\Users\user\AppData\Local\Temp\cc6WE4T5.s:31     .rodata:00000010 fpr_inv_2sqrsigma0
+C:\Users\user\AppData\Local\Temp\cc6WE4T5.s:37     .rodata:00000018 fpr_inv_sigma
+C:\Users\user\AppData\Local\Temp\cc6WE4T5.s:63     .rodata:00000070 fpr_sigma_min
+C:\Users\user\AppData\Local\Temp\cc6WE4T5.s:89     .rodata:000000c8 fpr_log2
+C:\Users\user\AppData\Local\Temp\cc6WE4T5.s:95     .rodata:000000d0 fpr_inv_log2
+C:\Users\user\AppData\Local\Temp\cc6WE4T5.s:101    .rodata:000000d8 fpr_bnorm_max
+C:\Users\user\AppData\Local\Temp\cc6WE4T5.s:107    .rodata:000000e0 fpr_zero
+C:\Users\user\AppData\Local\Temp\cc6WE4T5.s:112    .rodata:000000e8 fpr_one
+C:\Users\user\AppData\Local\Temp\cc6WE4T5.s:118    .rodata:000000f0 fpr_two
+C:\Users\user\AppData\Local\Temp\cc6WE4T5.s:124    .rodata:000000f8 fpr_onehalf
+C:\Users\user\AppData\Local\Temp\cc6WE4T5.s:130    .rodata:00000100 fpr_invsqrt2
+C:\Users\user\AppData\Local\Temp\cc6WE4T5.s:136    .rodata:00000108 fpr_invsqrt8
+C:\Users\user\AppData\Local\Temp\cc6WE4T5.s:142    .rodata:00000110 fpr_ptwo31
+C:\Users\user\AppData\Local\Temp\cc6WE4T5.s:148    .rodata:00000118 fpr_ptwo31m1
+C:\Users\user\AppData\Local\Temp\cc6WE4T5.s:154    .rodata:00000120 fpr_mtwo31m1
+C:\Users\user\AppData\Local\Temp\cc6WE4T5.s:160    .rodata:00000128 fpr_ptwo63m1
+C:\Users\user\AppData\Local\Temp\cc6WE4T5.s:166    .rodata:00000130 fpr_mtwo63m1
+C:\Users\user\AppData\Local\Temp\cc6WE4T5.s:172    .rodata:00000138 fpr_ptwo63
+C:\Users\user\AppData\Local\Temp\cc6WE4T5.s:176    .text.falcon_inner_hash_to_point_vartime:00000000 $t
+C:\Users\user\AppData\Local\Temp\cc6WE4T5.s:184    .text.falcon_inner_hash_to_point_vartime:00000000 falcon_inner_hash_to_point_vartime
+C:\Users\user\AppData\Local\Temp\cc6WE4T5.s:281    .text.falcon_inner_hash_to_point_ct:00000000 $t
+C:\Users\user\AppData\Local\Temp\cc6WE4T5.s:288    .text.falcon_inner_hash_to_point_ct:00000000 falcon_inner_hash_to_point_ct
+C:\Users\user\AppData\Local\Temp\cc6WE4T5.s:716    .text.falcon_inner_hash_to_point_ct:0000032c $d
+C:\Users\user\AppData\Local\Temp\cc6WE4T5.s:999    .rodata:0000016c overtab.0
+C:\Users\user\AppData\Local\Temp\cc6WE4T5.s:724    .rodata:00000140 l2bound
+C:\Users\user\AppData\Local\Temp\cc6WE4T5.s:737    .text.falcon_inner_is_short:00000000 $t
+C:\Users\user\AppData\Local\Temp\cc6WE4T5.s:744    .text.falcon_inner_is_short:00000000 falcon_inner_is_short
+C:\Users\user\AppData\Local\Temp\cc6WE4T5.s:873    .text.falcon_inner_is_short:000000a4 $d
+C:\Users\user\AppData\Local\Temp\cc6WE4T5.s:878    .text.falcon_inner_is_short_half:00000000 $t
+C:\Users\user\AppData\Local\Temp\cc6WE4T5.s:885    .text.falcon_inner_is_short_half:00000000 falcon_inner_is_short_half
+C:\Users\user\AppData\Local\Temp\cc6WE4T5.s:991    .text.falcon_inner_is_short_half:00000080 $d
+
+UNDEFINED SYMBOLS
+falcon_inner_i_shake256_extract
